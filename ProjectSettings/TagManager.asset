@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - PlayerProjectile
+  - Walkable
+  - World
+  - Enemy
+  - debris
+  - Granate
+  - Bullet
+  - Water Dead
+  - EnemyBomb
+  - Item
+  - RunningTarget
+  - Boat
+  - Bridge
+  - Building
+  - Terrain
+  - Marco Boat
+  - Collectible
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Player
+  - World
+  - Enemy
+  - EnemySolid
+  - Freeman
+  - Building
+  - Walkable
+  - Item
+  - Bullet
+  - Pow
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background1
+    uniqueID: 2734852945
+    locked: 0
+  - name: Background2
+    uniqueID: 417985403
+    locked: 0
+  - name: Foreground1
+    uniqueID: 66740665
+    locked: 0
+  - name: Foreground2
+    uniqueID: 1428101073
+    locked: 0
+  - name: Foreground3
+    uniqueID: 3981695713
+    locked: 0
+  - name: Explosion
+    uniqueID: 348302749
+    locked: 0
+  - name: Enemy
+    uniqueID: 114401969
+    locked: 0
+  - name: Pow
+    uniqueID: 755307227
+    locked: 0
+  - name: Player
+    uniqueID: 2153674355
+    locked: 0
+  - name: WaterStep
+    uniqueID: 457928087
+    locked: 0

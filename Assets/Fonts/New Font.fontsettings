@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!128 &12800000
+Font:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: New Font
+  serializedVersion: 5
+  m_AsciiStartOffset: 0
+  m_Tracking: 1
+  m_LineSpacing: 0.1
+  m_CharacterSpacing: 1
+  m_CharacterPadding: 0
+  m_ConvertCase: 0
+  m_DefaultMaterial: {fileID: 2100000, guid: d0e54e6b64c174e468a217fd87d1f972, type: 2}
+  m_CharacterRects:
+  - serializedVersion: 2
+    index: 97
+    uv:
+      serializedVersion: 2
+      x: 0.0043622144
+      y: 0.9788626
+      width: 0.020156438
+      height: -0.6283452
+    vert:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 50
+      height: 100
+    advance: 50
+    flipped: 0
+  - serializedVersion: 2
+    index: 98
+    uv:
+      serializedVersion: 2
+      x: 0.018802647
+      y: 0.3750004
+      width: 0.027376655
+      height: 0.6617241
+    vert:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 50
+      height: 100
+    advance: 50
+    flipped: 0
+  m_Texture: {fileID: 0}
+  m_KerningValues: []
+  m_PixelScale: 0.1
+  m_FontData: 
+  m_FontSize: 24
+  m_Ascent: 0
+  m_Descent: -0.1
+  m_DefaultStyle: 0
+  m_FontNames:
+  - a
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_FallbackFonts: []
+  m_FontRenderingMode: 0

@@ -1,0 +1,1548 @@
+fileFormatVersion: 2
+guid: f6f8adb0fe9adc34c84adcdda98844a8
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Warp Tubes_In_22
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 661
+        width: 59
+        height: 12
+      alignment: 9
+      pivot: {x: 0.5, y: 3.3333333}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7809da6958052b4ea9d6c3995d84d40
+      internalID: -1781683222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_In_21
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 661
+        width: 59
+        height: 13
+      alignment: 9
+      pivot: {x: 0.5, y: 3.0769231}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b9cb720358070149a106d556f51ccc4
+      internalID: -1506218545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_In_20
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 661
+        width: 59
+        height: 14
+      alignment: 9
+      pivot: {x: 0.5, y: 2.857143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c04ffd24ec37f24ea47b69addd2c615
+      internalID: -887230533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_In_19
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 661
+        width: 59
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 2.6666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20d2e06cb57233e43abfe8771a095e54
+      internalID: 913646135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_In_18
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 661
+        width: 59
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 2.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 914e23f310fb6494cba69dbe78ee301a
+      internalID: -2016104657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_In_17
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 661
+        width: 59
+        height: 17
+      alignment: 9
+      pivot: {x: 0.5, y: 2.3529413}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7be09379339d4d044b5b2b6406de2b95
+      internalID: -992440228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_In_16
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 661
+        width: 59
+        height: 19
+      alignment: 9
+      pivot: {x: 0.5, y: 2.1052632}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5a03112d1b6c104399592819da1deb9
+      internalID: -1693586056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_In_12
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 578
+        width: 59
+        height: 55
+      alignment: 9
+      pivot: {x: 0.5, y: 0.72727275}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b27f683b97e646e40ba53f16d430c4b8
+      internalID: -1247424037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_In_11
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 578
+        width: 59
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 224baa34419d9384694b066a550f403c
+      internalID: -1750611691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_In_10
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 578
+        width: 59
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0.51282054}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afba977f7fafced46a6f274dd77daca0
+      internalID: -368053114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_In_9
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 578
+        width: 59
+        height: 75
+      alignment: 9
+      pivot: {x: 0.5, y: 0.53333336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55a28b4668515604c8375e54078da4e8
+      internalID: -307578677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_30
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 609
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9187fc3cc6a79a46b93e6c270a7cb85
+      internalID: 1329547228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_In_14
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 578
+        width: 59
+        height: 25
+      alignment: 9
+      pivot: {x: 0.5, y: 1.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f43c48917d8425b4a8fe9cd0506cbe59
+      internalID: 1418039667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_In_13
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 578
+        width: 59
+        height: 27
+      alignment: 9
+      pivot: {x: 0.5, y: 1.4814814}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ba87f4b685e8fe47879495e7ceaa557
+      internalID: 697508251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_In_8
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 500
+        width: 59
+        height: 75
+      alignment: 9
+      pivot: {x: 0.5, y: 0.53333336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dfa458442cbf4f43ab415601054eb37
+      internalID: -224860745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_In_7
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 500
+        width: 59
+        height: 75
+      alignment: 9
+      pivot: {x: 0.5, y: 0.53333336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3682a3a5e3dfb1840bdcc5c552068bbc
+      internalID: -1396883724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_In_6
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 500
+        width: 59
+        height: 75
+      alignment: 9
+      pivot: {x: 0.5, y: 0.53333336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61d23d0a8c65f5c4287924d03c7210ad
+      internalID: 1667056239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_In_5
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 500
+        width: 59
+        height: 75
+      alignment: 9
+      pivot: {x: 0.5, y: 0.53333336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 959dee030dfc8884980cc43a05e6228e
+      internalID: -520683864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_In_4
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 500
+        width: 59
+        height: 75
+      alignment: 9
+      pivot: {x: 0.5, y: 0.53333336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2046d412a15cf9c429621118a47e3698
+      internalID: 1038686496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_In_3
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 500
+        width: 59
+        height: 75
+      alignment: 9
+      pivot: {x: 0.5, y: 0.53333336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 081ab3045eed672499b48969214b7085
+      internalID: 780048586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_In_2
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 500
+        width: 59
+        height: 75
+      alignment: 9
+      pivot: {x: 0.5, y: 0.53333336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0eae6114588d28945840812ccfe83f7a
+      internalID: 511242408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_In_1
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 500
+        width: 59
+        height: 75
+      alignment: 9
+      pivot: {x: 0.5, y: 0.53333336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dc83ed44bef32e4194c76d0b1d4c346
+      internalID: 734297910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_In_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 422
+        width: 59
+        height: 75
+      alignment: 9
+      pivot: {x: 0.5, y: 0.53333336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35deff9fa7998924a926ac7391dbdc5b
+      internalID: -2021005234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_In_23
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 426
+        width: 21
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aa5a58bf525cb44bb71755ea8755010
+      internalID: 2090141225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_Out_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 398
+        width: 59
+        height: 12
+      alignment: 9
+      pivot: {x: 0.5, y: 3.3333333}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abfbebdf8c64a764681abd22812c293e
+      internalID: -1583511428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_Out_1
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 398
+        width: 59
+        height: 13
+      alignment: 9
+      pivot: {x: 0.5, y: 3.0769231}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df9d01c5519995445b32b581a2c1a836
+      internalID: 978299135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_Out_2
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 398
+        width: 59
+        height: 14
+      alignment: 9
+      pivot: {x: 0.5, y: 2.857143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 126078bf95cd9d54aa3cd73e2da32ddb
+      internalID: 1742692644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_Out_3
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 398
+        width: 59
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 2.6666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a24947273c46ec84a8796b3a2886966e
+      internalID: 297585977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_Out_4
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 398
+        width: 59
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 2.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67720811fe3f87d4eb90845e45e4af59
+      internalID: -1202653357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_Out_5
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 398
+        width: 59
+        height: 17
+      alignment: 9
+      pivot: {x: 0.5, y: 2.3529413}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aedcd5b4224732f45a9f93fd6beb97c0
+      internalID: -1941411049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_Out_6
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 398
+        width: 59
+        height: 19
+      alignment: 9
+      pivot: {x: 0.5, y: 2.1052632}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 368126e8de65e6343bafb0d7a0a8bf5b
+      internalID: 1848741655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_Out_7
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 398
+        width: 59
+        height: 21
+      alignment: 9
+      pivot: {x: 0.5, y: 1.9047619}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7167804666d28846accd0559f7450c4
+      internalID: 1482210455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_Out_10
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 315
+        width: 59
+        height: 55
+      alignment: 9
+      pivot: {x: 0.5, y: 0.72727275}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a7f5c4a6f5736544b4016cab614f1cd
+      internalID: 1284553234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_Out_11
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 315
+        width: 59
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3db80ab7e5096f4409858ff13ea5cc9a
+      internalID: 931981794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_Out_12
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 315
+        width: 59
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0.51282054}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aed1171bf14dc734c9ee97f3cd26f632
+      internalID: 147597405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_Out_13
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 315
+        width: 59
+        height: 75
+      alignment: 9
+      pivot: {x: 0.5, y: 0.53333336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0e6afab88018a749830cefa85bae162
+      internalID: -312421545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_Out_8
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 315
+        width: 59
+        height: 25
+      alignment: 9
+      pivot: {x: 0.5, y: 1.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a23342106432fb46954f776067735c9
+      internalID: 963241450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_Out_9
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 315
+        width: 59
+        height: 27
+      alignment: 9
+      pivot: {x: 0.5, y: 1.4814814}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea262f525559c3c42a47b9c6f88a1a8d
+      internalID: -2003881010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_Out_14
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 237
+        width: 59
+        height: 75
+      alignment: 9
+      pivot: {x: 0.5, y: 0.53333336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26b6ee5c8f5387241af7249841e7fb23
+      internalID: -821281557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_Out_15
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 237
+        width: 59
+        height: 75
+      alignment: 9
+      pivot: {x: 0.5, y: 0.53333336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 222e1c79c1ca3ba4f98611a6c28c5169
+      internalID: -1133968239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_Out_16
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 237
+        width: 59
+        height: 75
+      alignment: 9
+      pivot: {x: 0.5, y: 0.53333336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 835ec2de388f7c5479177ef4aad645ff
+      internalID: 48534082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_Out_17
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 237
+        width: 59
+        height: 75
+      alignment: 9
+      pivot: {x: 0.5, y: 0.53333336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08679f69e2f8b9146a4470508114ce4f
+      internalID: -994270040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_Out_18
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 237
+        width: 59
+        height: 75
+      alignment: 9
+      pivot: {x: 0.5, y: 0.53333336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae25a85fa3aad464f8771f1ce79e8889
+      internalID: 849262325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_Out_19
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 237
+        width: 59
+        height: 75
+      alignment: 9
+      pivot: {x: 0.5, y: 0.53333336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53510c39b57644e45b7f6cd70e40c42d
+      internalID: -49826677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_Out_20
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 237
+        width: 59
+        height: 75
+      alignment: 9
+      pivot: {x: 0.5, y: 0.53333336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2af8653892c86446b3ec417cdf620c0
+      internalID: -1998778071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_Out_21
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 237
+        width: 59
+        height: 75
+      alignment: 9
+      pivot: {x: 0.5, y: 0.53333336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63fbff571ef3bdf48947428452b74fff
+      internalID: 1395043818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_Out_22
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 159
+        width: 59
+        height: 75
+      alignment: 9
+      pivot: {x: 0.5, y: 0.53333336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62baa2250798a1f439e75df8014974d2
+      internalID: -1793588735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_Out_23
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 163
+        width: 21
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1540821dbc095294b8b26d9b634d70d7
+      internalID: 529881959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_144
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 113
+        width: 54
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 953bcae85c1a630478ac290388a9cdf5
+      internalID: 1418882963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_149
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 71
+        width: 54
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ef063fc5cc9cdc47af1871e06ec7e3d
+      internalID: -636979986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_150
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 71
+        width: 54
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1744d5348c0973d4fab8c026718a6bd0
+      internalID: 1353613009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_151
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 71
+        width: 54
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28a7a70388782bd4797363135399547e
+      internalID: -382056212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_152
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 71
+        width: 54
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50653f724d413904c875cbc8296f8e26
+      internalID: 137189483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_153
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 71
+        width: 54
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92e773901f5c2b0459de64f59a7f9939
+      internalID: -1891790428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_154
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 71
+        width: 54
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 623c6744859b93f4da28935469ffb65a
+      internalID: -233665439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_155
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 71
+        width: 54
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de2f3214162346946b5db75d60ec1f85
+      internalID: 35832928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_156
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 71
+        width: 54
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d54697efaa398c64cb96990ca40d7c6a
+      internalID: 1487822597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_157
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 14
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c23cf0d92f28154e90878f6872a7e4b
+      internalID: -1373929220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_158
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 14
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64d81a2c491cb0f4db8304f51450a17c
+      internalID: -382258206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_159
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 14
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2efd4219c4a752d43b7869e8edf71cb6
+      internalID: -556266761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Warp Tubes_In_15
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 661
+        width: 59
+        height: 21
+      alignment: 9
+      pivot: {x: 0.5, y: 1.9047619}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66431a28479d939418b1d76eb1aee77d
+      internalID: -57855892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Warp Tubes_105: -976977250
+      Warp Tubes_106: -973146037
+      Warp Tubes_107: 415571360
+      Warp Tubes_108: 1829187397
+      Warp Tubes_109: 1550198712
+      Warp Tubes_110: -1861207291
+      Warp Tubes_111: -1136464830
+      Warp Tubes_112: 1249851231
+      Warp Tubes_113: -738540009
+      Warp Tubes_114: -785599175
+      Warp Tubes_115: -395266135
+      Warp Tubes_116: 1877904899
+      Warp Tubes_117: 735618065
+      Warp Tubes_118: 302424411
+      Warp Tubes_119: 842282305
+      Warp Tubes_120: -292348388
+      Warp Tubes_121: 1992816787
+      Warp Tubes_122: 588572678
+      Warp Tubes_123: -163078606
+      Warp Tubes_124: -1589148540
+      Warp Tubes_125: -1732638215
+      Warp Tubes_126: 817588538
+      Warp Tubes_127: 1787989837
+      Warp Tubes_128: 1213078572
+      Warp Tubes_129: -682100891
+      Warp Tubes_130: -1835518865
+      Warp Tubes_131: -1759483865
+      Warp Tubes_132: 54359900
+      Warp Tubes_134: 1580940861
+      Warp Tubes_135: -647195658
+      Warp Tubes_136: 818584079
+      Warp Tubes_137: -226862090
+      Warp Tubes_138: -950451586
+      Warp Tubes_139: 605595102
+      Warp Tubes_140: -910673289
+      Warp Tubes_142: 1182801527
+      Warp Tubes_143: -1040575920
+      Warp Tubes_144: 1418882963
+      Warp Tubes_145: 1933994262
+      Warp Tubes_146: 1138858886
+      Warp Tubes_147: -896504252
+      Warp Tubes_148: 1918946657
+      Warp Tubes_149: -636979986
+      Warp Tubes_150: 1353613009
+      Warp Tubes_151: -382056212
+      Warp Tubes_152: 137189483
+      Warp Tubes_153: -1891790428
+      Warp Tubes_154: -233665439
+      Warp Tubes_155: 35832928
+      Warp Tubes_156: 1487822597
+      Warp Tubes_157: -1373929220
+      Warp Tubes_158: -382258206
+      Warp Tubes_159: -556266761
+      Warp Tubes_160: -784287738
+      Warp Tubes_162: 119904443
+      Warp Tubes_163: 557371682
+      Warp Tubes_164: -568642755
+      Warp Tubes_165: -1755167621
+      Warp Tubes_166: -949437862
+      Warp Tubes_167: 1858088379
+      Warp Tubes_168: -684953681
+      Warp Tubes_169: -436918160
+      Warp Tubes_170: 1072107932
+      Warp Tubes_24: -1706853790
+      Warp Tubes_25: -1225634486
+      Warp Tubes_26: 525540557
+      Warp Tubes_27: 527048234
+      Warp Tubes_28: 47958894
+      Warp Tubes_29: -1771640089
+      Warp Tubes_30: 1329547228
+      Warp Tubes_31: -1845097471
+      Warp Tubes_32: -641389507
+      Warp Tubes_33: 1332762935
+      Warp Tubes_34: 546768435
+      Warp Tubes_35: 2057672782
+      Warp Tubes_36: 789112156
+      Warp Tubes_49: 1114387778
+      Warp Tubes_50: 895423603
+      Warp Tubes_51: 882615474
+      Warp Tubes_52: 401498581
+      Warp Tubes_53: 1203648114
+      Warp Tubes_54: 1712566007
+      Warp Tubes_55: -128956440
+      Warp Tubes_56: 157018692
+      Warp Tubes_57: 259614308
+      Warp Tubes_58: -1359596138
+      Warp Tubes_59: 152092898
+      Warp Tubes_60: 2124209340
+      Warp Tubes_61: -51211987
+      Warp Tubes_62: 1029611391
+      Warp Tubes_63: 1118053232
+      Warp Tubes_64: -921725610
+      Warp Tubes_65: -1704843299
+      Warp Tubes_66: 155065968
+      Warp Tubes_79: 1683042439
+      Warp Tubes_80: -161748890
+      Warp Tubes_81: 1102912798
+      Warp Tubes_82: 1939559977
+      Warp Tubes_83: -1453079897
+      Warp Tubes_84: -925081220
+      Warp Tubes_85: -203198402
+      Warp Tubes_86: -246432579
+      Warp Tubes_87: 606137113
+      Warp Tubes_88: -1211304700
+      Warp Tubes_89: 1314757439
+      Warp Tubes_90: 515589250
+      Warp Tubes_91: -818009239
+      Warp Tubes_92: 1489600348
+      Warp Tubes_In_0: -2021005234
+      Warp Tubes_In_1: 734297910
+      Warp Tubes_In_10: -368053114
+      Warp Tubes_In_11: -1750611691
+      Warp Tubes_In_12: -1247424037
+      Warp Tubes_In_13: 697508251
+      Warp Tubes_In_14: 1418039667
+      Warp Tubes_In_15: -57855892
+      Warp Tubes_In_16: -1693586056
+      Warp Tubes_In_17: -992440228
+      Warp Tubes_In_18: -2016104657
+      Warp Tubes_In_19: 913646135
+      Warp Tubes_In_2: 511242408
+      Warp Tubes_In_20: -887230533
+      Warp Tubes_In_21: -1506218545
+      Warp Tubes_In_22: -1781683222
+      Warp Tubes_In_23: 2090141225
+      Warp Tubes_In_3: 780048586
+      Warp Tubes_In_4: 1038686496
+      Warp Tubes_In_5: -520683864
+      Warp Tubes_In_6: 1667056239
+      Warp Tubes_In_7: -1396883724
+      Warp Tubes_In_8: -224860745
+      Warp Tubes_In_9: -307578677
+      Warp Tubes_Out_0: -1583511428
+      Warp Tubes_Out_1: 978299135
+      Warp Tubes_Out_10: 1284553234
+      Warp Tubes_Out_11: 931981794
+      Warp Tubes_Out_12: 147597405
+      Warp Tubes_Out_13: -312421545
+      Warp Tubes_Out_14: -821281557
+      Warp Tubes_Out_15: -1133968239
+      Warp Tubes_Out_16: 48534082
+      Warp Tubes_Out_17: -994270040
+      Warp Tubes_Out_18: 849262325
+      Warp Tubes_Out_19: -49826677
+      Warp Tubes_Out_2: 1742692644
+      Warp Tubes_Out_20: -1998778071
+      Warp Tubes_Out_21: 1395043818
+      Warp Tubes_Out_22: -1793588735
+      Warp Tubes_Out_23: 529881959
+      Warp Tubes_Out_3: 297585977
+      Warp Tubes_Out_4: -1202653357
+      Warp Tubes_Out_5: -1941411049
+      Warp Tubes_Out_6: 1848741655
+      Warp Tubes_Out_7: 1482210455
+      Warp Tubes_Out_8: 963241450
+      Warp Tubes_Out_9: -2003881010
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
