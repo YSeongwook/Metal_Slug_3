@@ -3485,7 +3485,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.67891693, y: -1.7499999, z: -0.5}
+  m_LocalPosition: {x: 0.678874, y: -1.7499999, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8870,23 +8870,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7144580458810267788, guid: 520b49f14e64d1f4ab10f08330ca0706, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7144580458810267788, guid: 520b49f14e64d1f4ab10f08330ca0706, type: 3}
       propertyPath: m_SortingLayerID
-      value: 66740665
+      value: 457928087
+      objectReference: {fileID: 0}
+    - target: {fileID: 7144580458810267791, guid: 520b49f14e64d1f4ab10f08330ca0706, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7144580459191694072, guid: 520b49f14e64d1f4ab10f08330ca0706, type: 3}
       propertyPath: m_SortingLayer
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7144580459191694072, guid: 520b49f14e64d1f4ab10f08330ca0706, type: 3}
       propertyPath: m_SortingLayerID
-      value: 1428101073
+      value: 114401969
       objectReference: {fileID: 0}
     - target: {fileID: 7144580459191694074, guid: 520b49f14e64d1f4ab10f08330ca0706, type: 3}
       propertyPath: m_Name
-      value: Boss1
+      value: Huge Hermit
       objectReference: {fileID: 0}
     - target: {fileID: 7144580459191694077, guid: 520b49f14e64d1f4ab10f08330ca0706, type: 3}
       propertyPath: m_RootOrder
@@ -10318,7 +10322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4479850931717060590, guid: a506750979ac53240911d5e25d17e56e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5789174
+      value: 0.578874
       objectReference: {fileID: 0}
     - target: {fileID: 4479850931717060590, guid: a506750979ac53240911d5e25d17e56e, type: 3}
       propertyPath: m_LocalPosition.y

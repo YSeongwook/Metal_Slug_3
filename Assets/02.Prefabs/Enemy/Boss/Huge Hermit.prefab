@@ -175,8 +175,10 @@ GameObject:
   - component: {fileID: 1859705039169141558}
   - component: {fileID: 4921628371596366543}
   - component: {fileID: 871486201}
+  - component: {fileID: 3497762559238943487}
+  - component: {fileID: 2726999563405183196}
   m_Layer: 0
-  m_Name: Boss1
+  m_Name: Huge Hermit
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -409,3 +411,42 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &3497762559238943487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7144580459191694074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48e8b7cbe1b36ff41a1e420fe5f70bd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 25
+  isMovable: 1
+  deathClip: {fileID: 0}
+  bossSpawner: {fileID: 0}
+  projSpawner: {fileID: 0}
+  boat: {fileID: 0}
+  speed: 0.7
+  normalFire: {fileID: 0}
+  heavyBomb: {fileID: 0}
+  canThrow: 1
+  fireDelta: 0.5
+  parallax: {fileID: 0}
+--- !u!114 &2726999563405183196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7144580459191694074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc32c8e7f0c44b546bc04b9051a531a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 600
+  lifeCount: 0
+  interestedInDamagesCount: 0

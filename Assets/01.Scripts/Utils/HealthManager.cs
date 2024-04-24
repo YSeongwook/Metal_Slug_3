@@ -8,6 +8,7 @@ public class HealthManager : MonoBehaviour
     private IDamaged[] componInterestedInDamages;   // 데미지를 받는 컴포넌트들의 배열
     public int interestedInDamagesCount = 0;        // 데미지를 받는 컴포넌트의 개수
 
+    public int MaxHP {  get { return maxHP; } }
     public int CurrentHP { get; set; }      // 현재 체력
     public bool IgnoreDamages { get; set; } // 데미지를 무시하는지 여부
 
