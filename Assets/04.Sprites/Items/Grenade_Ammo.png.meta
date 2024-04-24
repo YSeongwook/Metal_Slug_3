@@ -64,7 +64,7 @@ TextureImporter:
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 7
-  spritePivot: {x: 0.5, y: 0.5}
+  spritePivot: {x: 0.5, y: 0}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -111,7 +111,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: grenade_0
+      name: grenade_ammo_0
       rect:
         serializedVersion: 2
         x: 7
@@ -132,7 +132,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grenade_1
+      name: grenade_ammo_1
       rect:
         serializedVersion: 2
         x: 44
@@ -153,7 +153,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grenade_2
+      name: grenade_ammo_2
       rect:
         serializedVersion: 2
         x: 81
@@ -174,7 +174,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grenade_3
+      name: grenade_ammo_3
       rect:
         serializedVersion: 2
         x: 118
@@ -195,7 +195,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grenade_4
+      name: grenade_ammo_4
       rect:
         serializedVersion: 2
         x: 156
@@ -216,7 +216,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grenade_5
+      name: grenade_ammo_5
       rect:
         serializedVersion: 2
         x: 194
@@ -239,7 +239,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 307b1b51b56efed4e8977c10bd59ea22
     internalID: 0
     vertices: []
     indices: 
@@ -247,12 +247,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      grenade_0: 21300000
-      grenade_1: 21300002
-      grenade_2: 21300004
-      grenade_3: 21300006
-      grenade_4: 21300008
-      grenade_5: 21300010
+      grenade_ammo_0: 21300000
+      grenade_ammo_1: 21300002
+      grenade_ammo_2: 21300004
+      grenade_ammo_3: 21300006
+      grenade_ammo_4: 21300008
+      grenade_ammo_5: 21300010
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

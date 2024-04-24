@@ -83,7 +83,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 1
+  m_Name: Blood
   m_Speed: 1.75
   m_CycleOffset: 0
   m_Transitions:
@@ -114,7 +114,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 110294416}
-    m_Position: {x: 180, y: 90, z: 0}
+    m_Position: {x: 120, y: 90, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 110283416}
     m_Position: {x: -160, y: 210, z: 0}
@@ -125,6 +125,6 @@ AnimatorStateMachine:
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: -144, y: 60, z: 0}
   m_EntryPosition: {x: -144, y: 132, z: 0}
-  m_ExitPosition: {x: 204, y: 192, z: 0}
+  m_ExitPosition: {x: 140, y: 190, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 110283416}
