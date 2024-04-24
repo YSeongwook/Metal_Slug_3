@@ -1,30 +1,12 @@
 fileFormatVersion: 2
-guid: 302d852800059ed49ac10aad184daf22
+guid: 2e122ba47b569a14e95d280df0978bd0
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 21300000
-    second: grenade_0
-  - first:
-      213: 21300002
-    second: grenade_1
-  - first:
-      213: 21300004
-    second: grenade_2
-  - first:
-      213: 21300006
-    second: grenade_3
-  - first:
-      213: 21300008
-    second: grenade_4
-  - first:
-      213: 21300010
-    second: grenade_5
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -47,12 +29,12 @@ TextureImporter:
   generateCubemap: 6
   cubemapConvolution: 0
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: 16
+    aniso: 1
     mipBias: 0
     wrapU: 1
     wrapV: 1
@@ -63,8 +45,8 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 7
-  spritePivot: {x: 0.5, y: 0}
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -80,8 +62,8 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 1
-  cookieLightType: 1
+  applyGammaDecoding: 0
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -114,19 +96,19 @@ TextureImporter:
       name: grenade_ammo_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 0
+        x: 16
+        y: 205
         width: 32
-        height: 28
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02305410000000000800000000000000
-      internalID: 21300000
+      spriteID: f23d7832be8749649be5cba1ff7be002
+      internalID: 1628085986
       vertices: []
       indices: 
       edges: []
@@ -135,19 +117,19 @@ TextureImporter:
       name: grenade_ammo_1
       rect:
         serializedVersion: 2
-        x: 44
-        y: 0
+        x: 53
+        y: 205
         width: 32
-        height: 29
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22305410000000000800000000000000
-      internalID: 21300002
+      spriteID: af78403c4417603438337567c28243a1
+      internalID: -514353291
       vertices: []
       indices: 
       edges: []
@@ -156,19 +138,19 @@ TextureImporter:
       name: grenade_ammo_2
       rect:
         serializedVersion: 2
-        x: 81
-        y: 0
+        x: 90
+        y: 205
         width: 32
-        height: 30
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42305410000000000800000000000000
-      internalID: 21300004
+      spriteID: fd19b46c44182d440bdb94881a2b02a2
+      internalID: -1571820802
       vertices: []
       indices: 
       edges: []
@@ -177,19 +159,19 @@ TextureImporter:
       name: grenade_ammo_3
       rect:
         serializedVersion: 2
-        x: 118
-        y: 0
+        x: 127
+        y: 205
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62305410000000000800000000000000
-      internalID: 21300006
+      spriteID: 82a3417530f7d574b8387a55c965eb82
+      internalID: 1716265256
       vertices: []
       indices: 
       edges: []
@@ -198,19 +180,19 @@ TextureImporter:
       name: grenade_ammo_4
       rect:
         serializedVersion: 2
-        x: 156
-        y: 0
+        x: 165
+        y: 205
         width: 32
-        height: 31
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82305410000000000800000000000000
-      internalID: 21300008
+      spriteID: 31a8897c7b6f3414dbc3d896a62fb9dd
+      internalID: -248059469
       vertices: []
       indices: 
       edges: []
@@ -219,19 +201,40 @@ TextureImporter:
       name: grenade_ammo_5
       rect:
         serializedVersion: 2
-        x: 194
-        y: 0
+        x: 203
+        y: 205
         width: 32
-        height: 29
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2305410000000000800000000000000
-      internalID: 21300010
+      spriteID: 7c2396c66807aa74583c010744c15412
+      internalID: -1230098168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grenade_ammo_6
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 205
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dfa1040cd19aa54e820ab1a88d7ded6
+      internalID: 817209626
       vertices: []
       indices: 
       edges: []
@@ -239,7 +242,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 307b1b51b56efed4e8977c10bd59ea22
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -247,12 +250,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      grenade_ammo_0: 21300000
-      grenade_ammo_1: 21300002
-      grenade_ammo_2: 21300004
-      grenade_ammo_3: 21300006
-      grenade_ammo_4: 21300008
-      grenade_ammo_5: 21300010
+      grenade_ammo_0: 1628085986
+      grenade_ammo_1: -514353291
+      grenade_ammo_2: -1571820802
+      grenade_ammo_3: 1716265256
+      grenade_ammo_4: -248059469
+      grenade_ammo_5: -1230098168
+      grenade_ammo_6: 817209626
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
