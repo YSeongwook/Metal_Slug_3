@@ -8868,6 +8868,22 @@ PrefabInstance:
       propertyPath: runningTarget
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3497762559238943487, guid: 520b49f14e64d1f4ab10f08330ca0706, type: 3}
+      propertyPath: boat
+      value: 
+      objectReference: {fileID: 993310479}
+    - target: {fileID: 3497762559238943487, guid: 520b49f14e64d1f4ab10f08330ca0706, type: 3}
+      propertyPath: speed
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3497762559238943487, guid: 520b49f14e64d1f4ab10f08330ca0706, type: 3}
+      propertyPath: bossSpawner
+      value: 
+      objectReference: {fileID: 1613356787}
+    - target: {fileID: 3497762559238943487, guid: 520b49f14e64d1f4ab10f08330ca0706, type: 3}
+      propertyPath: projSpawner
+      value: 
+      objectReference: {fileID: 1941190555}
     - target: {fileID: 7144580458810267788, guid: 520b49f14e64d1f4ab10f08330ca0706, type: 3}
       propertyPath: m_SortingLayer
       value: 12
@@ -11714,7 +11730,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1613356787}
   m_Layer: 0
-  m_Name: BossSpawner
+  m_Name: Boss Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14045,6 +14061,11 @@ Transform:
   m_Father: {fileID: 1671533900}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1941190555 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1317732850, guid: 520b49f14e64d1f4ab10f08330ca0706, type: 3}
+  m_PrefabInstance: {fileID: 1149908797}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1978618810
 PrefabInstance:
   m_ObjectHideFlags: 0
