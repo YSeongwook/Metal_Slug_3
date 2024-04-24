@@ -1,0 +1,4313 @@
+fileFormatVersion: 2
+guid: 09607efae263704429001653448b7541
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: greencrab2_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1576
+        width: 51
+        height: 45
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd6edf5568587ca428a2580495f002f5
+      internalID: -1120877330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_1
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 1576
+        width: 50
+        height: 45
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d890a069d47315347ba8b930b68e3f6d
+      internalID: -2022677204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_2
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 1576
+        width: 50
+        height: 45
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 359d1bd4c0ca7ad4fa7c4b7c16f5f1ee
+      internalID: -1281268111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_3
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 1576
+        width: 52
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b878d39dde9f574e8d7fa42d053112e
+      internalID: 428045432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_4
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 1576
+        width: 53
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 206f963adc317504b97cf5a28c6f8d6f
+      internalID: 137810680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_5
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1528
+        width: 53
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b303bf3d6522dcc4493e57af16102bb8
+      internalID: 1861389804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_6
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 1528
+        width: 50
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a74ba0f4e70afe4e8520e89af53095f
+      internalID: 179707110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 1528
+        width: 51
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d085211041bf964ea0165dcc7236a51
+      internalID: -1925558526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_8
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 1528
+        width: 48
+        height: 45
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bc37829e5ae0b5469fec39d729a6ceb
+      internalID: 1835216252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_9
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 1528
+        width: 49
+        height: 45
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27ad2505fce03d745977eb8b9d348ee1
+      internalID: -2069576291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_10
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1475
+        width: 49
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7fab23cd9b93224c978de7236f78cf9
+      internalID: -844244882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_11
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 1475
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38b9e2c2a64eb9e47a7d4ffb77502f34
+      internalID: 840709121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_12
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 1475
+        width: 51
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ad2a321fb4b1504890ebeb15a215bb0
+      internalID: -32779090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_13
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 1475
+        width: 50
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 200482f5a95c13d46b2d5b10edb02c8c
+      internalID: -99227040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_14
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1420
+        width: 54
+        height: 45
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a31e16e3cd5bb9f4b9bec9132408174f
+      internalID: -1693536597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_15
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 1420
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21da2597aa22daf47be935529c423153
+      internalID: 1115064002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_16
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 1420
+        width: 54
+        height: 52
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 081bfdd194d67644d9bff1cf7822c208
+      internalID: -1235935601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_17
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 1420
+        width: 54
+        height: 52
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbc20f97abd6c534aa1e4a166e39548a
+      internalID: 1398796853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_18
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1365
+        width: 48
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a635225c64630b849b4f7ac1750e363b
+      internalID: -2100744866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_19
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 1365
+        width: 45
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 512878d351c727c47b7f76105db03297
+      internalID: 81839730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_20
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 1365
+        width: 40
+        height: 52
+      alignment: 9
+      pivot: {x: 0.5, y: 0.42307693}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46c6dea3279f3c742b362e5d74d4039c
+      internalID: -295497301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_21
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 1365
+        width: 43
+        height: 50
+      alignment: 9
+      pivot: {x: 0.5, y: 0.44}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e77bd1610d5e38341847fb89bdda149f
+      internalID: 1362406632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_22
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 1365
+        width: 54
+        height: 46
+      alignment: 9
+      pivot: {x: 0.5, y: 0.47826087}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 431c51019461e3e44b61436978e23325
+      internalID: 247793694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_23
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1310
+        width: 63
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 158f45c2b3f3fc740b46f91db02f99d3
+      internalID: -1239973555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_24
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 1310
+        width: 75
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39074870b79ebac4686554ead2f18a06
+      internalID: 786905343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_25
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 1309
+        width: 76
+        height: 45
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4888889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83cc8e2bb6519184fb677c6fcf0363f7
+      internalID: -1817813772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_26
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 1310
+        width: 64
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ec126cbef11feb4bad2bcb942d45d8a
+      internalID: 1620308791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_27
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1262
+        width: 59
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e5c9f4134ea2164e9a45ca3456c40f6
+      internalID: 645923836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_28
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 1262
+        width: 54
+        height: 45
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4888889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38378f87e167b7342a124600f5e824d0
+      internalID: -1735998524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_29
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 1262
+        width: 51
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d88853d23c093e542b224c54d349ffd4
+      internalID: 1462413997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_30
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1208
+        width: 52
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78c6ed01f75ab334e8ad5a0ca41437d4
+      internalID: -1841189416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_31
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 1208
+        width: 52
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f96515f1d736944b983ef5432d8f395
+      internalID: 617565270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_32
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 1208
+        width: 53
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f973f41d59c7c940a4469ab6e9d6cd5
+      internalID: -2010015524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_33
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 1208
+        width: 55
+        height: 42
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a9005dcba059d44aa6130fa366a8208
+      internalID: 1497208619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_34
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 1207
+        width: 56
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e7bea27fc169eb47b214a4068feb222
+      internalID: -1421838578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_35
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1153
+        width: 57
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8add0c83d32d45a4d942db08732dddb4
+      internalID: 1930986763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_36
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 1153
+        width: 57
+        height: 45
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5efb779773f368f4bbb880967736bd68
+      internalID: 1074260118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_37
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 1153
+        width: 54
+        height: 45
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52c5dee2abc80294e8aa9b27fdb3322c
+      internalID: 704941954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_38
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 1153
+        width: 53
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3494731388970b24e9d99df91b0f5c3f
+      internalID: 1957610920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_39
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1094
+        width: 56
+        height: 46
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9367ec3b7a08637408bd5a9107509dc4
+      internalID: -2090816030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_40
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 1094
+        width: 53
+        height: 45
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 503859a2405aaaf4b9960859a24fd2a3
+      internalID: 743033208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_41
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 1094
+        width: 54
+        height: 46
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8260e6ce2838f4049bcd3074f03a5c8c
+      internalID: 497287664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_42
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 1094
+        width: 55
+        height: 45
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ae68a968a34a6243a28d7749bc7e03f
+      internalID: 1960481036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_43
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1042
+        width: 53
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 618e85df6e5f48443bc2681021dd4cad
+      internalID: 633514173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_44
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 1042
+        width: 52
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11f75aed6eb933f459eb6e8ae575b658
+      internalID: -1979357636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_45
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 1042
+        width: 52
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18688f976036e944192027e749ba2dce
+      internalID: -868589934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_46
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 1042
+        width: 41
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 004defbc265c79a4bbc704817bc8fdbb
+      internalID: 979128442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_47
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 1042
+        width: 40
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99a78dbc59ac01f4c8333d43f98e36fa
+      internalID: 2067375091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_48
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1017
+        width: 35
+        height: 22
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a0a7562c51e53b4faf7090d465a721f
+      internalID: -1463138677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_49
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 1017
+        width: 37
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1722242b4482244a8fbb3b862175ee8
+      internalID: 799438480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_50
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 1017
+        width: 33
+        height: 13
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0a3e1e2cf304fe45b69b7136d04ac10
+      internalID: -719459028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_51
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 1017
+        width: 35
+        height: 13
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ac1bcf80acdb11459e41b112971ec4c
+      internalID: -1675171900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_52
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 1017
+        width: 34
+        height: 12
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aa2d3f8dff59fe448be2cf6db6eec69
+      internalID: 997788708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_53
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 980
+        width: 37
+        height: 27
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3801b57a3084900448f29cd074ad35d3
+      internalID: -832728233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_54
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 980
+        width: 33
+        height: 33
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82d4490625b72324fbb5f68306e435ed
+      internalID: -2074341463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_55
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 980
+        width: 34
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c579513e1ddecdf4d84df68e2e474f60
+      internalID: 2136337318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_56
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 980
+        width: 35
+        height: 29
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29b92c5425250f949b2739b54b564249
+      internalID: 357543129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_57
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 980
+        width: 36
+        height: 31
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 981a415e81736a74990cbceadcba268a
+      internalID: 1679880605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_58
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 980
+        width: 35
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e0879f483690544ca9a834b9f9928a5
+      internalID: 2068402476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_59
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 980
+        width: 36
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dffe681a910415245887140c7f74e8fb
+      internalID: -815786890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_60
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 948
+        width: 40
+        height: 29
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df85c6952a9012d4aa3cfa81459133ca
+      internalID: 1119081797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_61
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 948
+        width: 40
+        height: 23
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e6521efbfd52774ea9c8d27cd8a7deb
+      internalID: 2060992303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_62
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 948
+        width: 41
+        height: 21
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c186f4bfb4c04814caee43d4890aaa8c
+      internalID: -1075627277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_63
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 948
+        width: 44
+        height: 20
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c31d60c7a27a50748b53b8f6dc33f1cc
+      internalID: 1202364563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_64
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 948
+        width: 44
+        height: 19
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5aedc1dd35dc78488bb59c94156c0c2
+      internalID: -1765011822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_65
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 916
+        width: 33
+        height: 28
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8453824e4981f044aa20262c55341c7
+      internalID: 1263583439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_66
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 916
+        width: 33
+        height: 29
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4bdedf7a44cb5841b5be7964f9b1d9a
+      internalID: -885802899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_67
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 916
+        width: 37
+        height: 26
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaf2a7d72894a364fae03c1cab4157c9
+      internalID: 1911707093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_68
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 916
+        width: 35
+        height: 26
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fda88872387b43f44a7f1505a976e34e
+      internalID: -660292162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_69
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 916
+        width: 42
+        height: 21
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4267213da069aa4fa6fa1e86ab191e1
+      internalID: -2136178557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_70
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 916
+        width: 39
+        height: 22
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51349c0ebe02d1541a945024f8dcc4ad
+      internalID: 1287974264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_71
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 916
+        width: 41
+        height: 22
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 200fdd3ed4960374d88d69ec4ddcaad1
+      internalID: 1342936058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_72
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 886
+        width: 34
+        height: 23
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc70792b42f24174aaf7070c993bbd73
+      internalID: -1403179373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_73
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 886
+        width: 32
+        height: 19
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99a22b20c044daa4a80b2e9e0a288a8c
+      internalID: 1266506387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_74
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 886
+        width: 30
+        height: 22
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d090774b79a5bc46a04097b0007a1dc
+      internalID: -1982138048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_75
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 886
+        width: 31
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39c1afdf8dbd93d4a800c9f29c7cb0ab
+      internalID: -1446823652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_76
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 886
+        width: 29
+        height: 27
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a96c8b60820f3e4e9bb88373119dc97
+      internalID: 1584085999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_77
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 886
+        width: 39
+        height: 14
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4df5d6c060a530c4684e70126c4f80f1
+      internalID: -1976700054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_78
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 886
+        width: 39
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90472eb5f4a3d9742b0a932c20310988
+      internalID: 1173733314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_79
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 867
+        width: 38
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 678bcc29442c6ef44ae0ac7acd255fb8
+      internalID: 1196181250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_80
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 867
+        width: 39
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 295f8c90fb58d4446b0cca33fbe8060a
+      internalID: -213049212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_81
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 867
+        width: 39
+        height: 14
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dedef3584313ee745a9174a4846af293
+      internalID: 41036996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_82
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 867
+        width: 40
+        height: 14
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea65e871318ef4b4f82e10897af991ce
+      internalID: -1992091631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_83
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 837
+        width: 23
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84cfa39306200b44b8709689d4b09599
+      internalID: 502588298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_84
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 837
+        width: 24
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc450e6d11fa8154881c649281522fec
+      internalID: -1577040274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_85
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 837
+        width: 25
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb4c7b2bc495a1143ab04a21c20fb5ed
+      internalID: -1939869048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_86
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 837
+        width: 22
+        height: 18
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09ed8ab64a2e3f14880638b31833f3af
+      internalID: 339930493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_87
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 837
+        width: 21
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9924bfd29ef66c340b227d4974bf1255
+      internalID: 223574491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_88
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 837
+        width: 17
+        height: 27
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd9ab2dba451ca1499f7e78f3b1b88c6
+      internalID: -657812411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_89
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 837
+        width: 16
+        height: 25
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b760a9ea3cb85d43b40cb42b35518d8
+      internalID: -184347081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_90
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 837
+        width: 16
+        height: 22
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba5df443f49bb7641ba6648d14d5d694
+      internalID: 1779197916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_91
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 837
+        width: 13
+        height: 19
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd12f2bbebbc515419edd1b976bd3d46
+      internalID: -824992545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_92
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 837
+        width: 19
+        height: 17
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 876856180ff8ae4499831108661853ac
+      internalID: 1104817915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_93
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 837
+        width: 27
+        height: 9
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1f66d1be31cb4e46b59adce35f84585
+      internalID: 857684384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_94
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 837
+        width: 24
+        height: 12
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4627a36a2c4768b49b4c84116784aaaa
+      internalID: 619074509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_95
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 823
+        width: 25
+        height: 11
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49cb80711b4f62d4ea148f669c6ea873
+      internalID: 1352943194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_96
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 823
+        width: 27
+        height: 8
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28e1b4cdd05617a46b3a92c67fcfc5d0
+      internalID: 294693518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_97
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 823
+        width: 27
+        height: 8
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec89ccda1259a0341b5e7a67ee8b89d3
+      internalID: 1559663740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_98
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 775
+        width: 51
+        height: 45
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa1b91598d27db5438edba8851f7e8d8
+      internalID: -937280935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_99
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 775
+        width: 52
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e05940cd38f4f54caadae1e009e12d3
+      internalID: -670031860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_100
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 775
+        width: 58
+        height: 42
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21c83a89fbd8cb343a8ae6c4f3eb18b5
+      internalID: 1451972597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_101
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 775
+        width: 61
+        height: 42
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1736c57e01a77ba4f80b2d8bea11df15
+      internalID: 36919328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_102
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 727
+        width: 59
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd54fa5aa7f5e1a45a12a0a07e11e372
+      internalID: -243880169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_103
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 727
+        width: 57
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0376edefca1b4e749b4e09467377226a
+      internalID: 1124865830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_104
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 727
+        width: 60
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09f591414899ed64bba0be0d9ed06d3a
+      internalID: 1211011098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_105
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 727
+        width: 59
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd626d6a4db9d5c47b9c160ab47990e1
+      internalID: -1696559817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_106
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 680
+        width: 59
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90100c7494be7cd488e03d79b9815ce2
+      internalID: 901153967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_107
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 680
+        width: 57
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44136d3c24d9101418ec9332033b84e6
+      internalID: 871415427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_108
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 680
+        width: 60
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a4597d29e41b274daec2413a2d66097
+      internalID: -923955151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_109
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 680
+        width: 59
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4d22780046559e47a2ac50fe39552b7
+      internalID: -182390405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_110
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 633
+        width: 59
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b201b05546398a41b8342d23da3ebbc
+      internalID: -346009755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_111
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 633
+        width: 58
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e864f76d9be5d146a7ed50d019cb090
+      internalID: 105149990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_112
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 633
+        width: 55
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8fde7c60ef47744299ab467ec3dbe19
+      internalID: 907123103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_113
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 633
+        width: 51
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65d68887fe8b073449b6b2163e58d128
+      internalID: -610734666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_114
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 584
+        width: 58
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 610b24617f46e3b43beb881f40ab0269
+      internalID: -2013375574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_115
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 584
+        width: 55
+        height: 45
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36081cd886df816409b8065b9df96145
+      internalID: 2122016718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_116
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 584
+        width: 55
+        height: 46
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17735a38f877ca849a9a3306505d83ad
+      internalID: 1696519618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_117
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 584
+        width: 55
+        height: 45
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 031565ae5c187774bbbee21d05ab3ecc
+      internalID: 614392530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_118
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 536
+        width: 55
+        height: 45
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6726f3d60755318409558c6c3b093d70
+      internalID: 1001331165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_119
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 536
+        width: 56
+        height: 45
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1c367374d000f4419d3b651a486e4c0
+      internalID: -1096359655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_120
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 536
+        width: 60
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7f8abe8bc67dd447b6e1919f9e16940
+      internalID: -1289452612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_121
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 536
+        width: 59
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c6297b247046f343a1b85706802876e
+      internalID: -1502081855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_122
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 488
+        width: 59
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 590ca411749a812429ec79cce0ac62fc
+      internalID: -1239357614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_123
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 488
+        width: 58
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81104e5ea2737304c938f100c60fcda7
+      internalID: 2044295570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_124
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 488
+        width: 55
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6362798bd12f139419d6ae02bb5b3fcf
+      internalID: -1005920539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_125
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 488
+        width: 51
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81bf984dda0484d4d91840787b778802
+      internalID: -1621050197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_126
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 488
+        width: 56
+        height: 45
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36eaad3e01e67004d89014270d263a3f
+      internalID: -629996098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_130
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 441
+        width: 55
+        height: 42
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b41d19315e573c94192b8ca5301f1a28
+      internalID: 316806420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_131
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 441
+        width: 55
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f79c301c4395d7459bef0787c105090
+      internalID: -104682617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_132
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 399
+        width: 58
+        height: 39
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14d1c7a0458525846b3d2ed88ebe65dd
+      internalID: 1690483263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_133
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 399
+        width: 58
+        height: 39
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 263596d66e4af434999005cab9772a91
+      internalID: 1447417962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_134
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 399
+        width: 56
+        height: 38
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bda19049ce79c749b34707c55c6c3f6
+      internalID: 447824888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_135
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 399
+        width: 55
+        height: 37
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f23fdd6b7430ac4cb4251e039fa8d7d
+      internalID: 1670356533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_136
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 364
+        width: 53
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23dca39cbc18e2e47a8b7863825d8dda
+      internalID: 210967114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_137
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 364
+        width: 53
+        height: 27
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49b892d2abc532945a129b69038da2d6
+      internalID: -751708137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_138
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 364
+        width: 52
+        height: 22
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07d7e77ae9617d14aa374575d068c055
+      internalID: 1052613825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_139
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 364
+        width: 41
+        height: 20
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5b4a9e0d4aed4549af8121d990a125b
+      internalID: 844068286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_140
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 364
+        width: 30
+        height: 17
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bccce3793046f8c4b82bbce74f1161dd
+      internalID: 412278943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_141
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 364
+        width: 28
+        height: 13
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc9676525e8b5b74380f68e88513c793
+      internalID: 250647883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_142
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 351
+        width: 22
+        height: 10
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c7ebce2c2c60e948b91dd7bb47d9196
+      internalID: -454880705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_143
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 351
+        width: 21
+        height: 7
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e31a24fd5099f048bc52a95285f356c
+      internalID: -694200558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_144
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 351
+        width: 7
+        height: 5
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a41bdf3ea757d254b98a2eee220c3687
+      internalID: 2137098565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_127
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 441
+        width: 54
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79ea60297825899498e1dbdd01971e31
+      internalID: -1159213791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_128
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 441
+        width: 52
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39ac98a7a3a33d04d9a988fc1b4c4a15
+      internalID: -795987627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_129
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 441
+        width: 53
+        height: 42
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6e4002fe8869114a824726664de1539
+      internalID: -1103213896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_145
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 299
+        width: 66
+        height: 53
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a104f79ebf6e6a46bb1910e7a086059
+      internalID: -845405213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_146
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 299
+        width: 67
+        height: 55
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d2b93df9ee2f2040943b45910eab9b9
+      internalID: -376847100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_147
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 299
+        width: 56
+        height: 44
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3880476c0558c9342b2cdbd3ff8e41df
+      internalID: 1732383898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_148
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 287
+        width: 63
+        height: 61
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd4cc888036185b408014fc820b2eb2e
+      internalID: 987612933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_149
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 341
+        width: 6
+        height: 4
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c96697dfe99e96c47a77371ed2be0718
+      internalID: 459162916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_150
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 338
+        width: 7
+        height: 6
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d9fc763cb7fbab42b3d8d864dc2d6ac
+      internalID: 949507775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_151
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 338
+        width: 12
+        height: 8
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ce3c0dab06bd714ba885f2811182b18
+      internalID: 265567469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_152
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 239
+        width: 70
+        height: 46
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51d564a94dd41674dbd1c0de32942d07
+      internalID: -270162769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_153
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 284
+        width: 8
+        height: 11
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 840b23c829ee6f240adef03833e917bd
+      internalID: -953262055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_154
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 279
+        width: 11
+        height: 7
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 030e483a2a2c7274e9a97429551276ff
+      internalID: 1590418161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_155
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 239
+        width: 69
+        height: 47
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f313334438f6e86458f6039c6c9c2f39
+      internalID: -1684911561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_156
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 239
+        width: 77
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ca15300671300a4b818aed62a736a71
+      internalID: 1664323526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_157
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 161
+        width: 68
+        height: 70
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1d892feaa809c04c93df5d3354c2163
+      internalID: 1647304956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_158
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 168
+        width: 70
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec924bdb97ac2334fa241c72c1ef9de5
+      internalID: -383926560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_159
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 152
+        width: 77
+        height: 82
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8014cec4d4778f94da1d8379aa21c5c8
+      internalID: 862163190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_160
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 229
+        width: 7
+        height: 7
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 513bb96123b8c3541886dc3366e2cd2b
+      internalID: 2058904296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_161
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 225
+        width: 9
+        height: 8
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0842838045afea441af9cad1bd94766d
+      internalID: 1225469562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_162
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 221
+        width: 34
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fc13428e9e9c2e42ac9bbf8de4abd82
+      internalID: -352277126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_163
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 180
+        width: 68
+        height: 46
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7db046a71128d7b418bf5b02f26535e7
+      internalID: -180749384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_164
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 164
+        width: 4
+        height: 6
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0056d6bd831a5c94ea729dee5b99fd9f
+      internalID: -1513395637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_165
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 168
+        width: 7
+        height: 5
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92e09e51a8c12ff42a9bc7032299904a
+      internalID: -1029798049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_166
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 86
+        width: 74
+        height: 83
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 088e733698036fb4ba055c081f9b13a2
+      internalID: 1273700663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_167
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 167
+        width: 5
+        height: 8
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25d75849ae14f694a9f8cef3c535d9d7
+      internalID: -192631858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_168
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 168
+        width: 8
+        height: 6
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3419814233c715942bb8a40c886ac5b1
+      internalID: 362234742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_169
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 154
+        width: 15
+        height: 12
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7231fd821229d3d46a6a6e84dc8cfd1f
+      internalID: -62972311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_170
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 160
+        width: 13
+        height: 8
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7f7005994b8f40459a76effe8b6b7bc
+      internalID: -1147751048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_171
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 149
+        width: 13
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 790190a5396111d42831ee7d1ea96d93
+      internalID: 1576981298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_172
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 145
+        width: 12
+        height: 23
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 116e5b0751c140a48b8f555c11fd4db2
+      internalID: -719325777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_173
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 26
+        width: 69
+        height: 65
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03dbb6f07010aff48b7848162a663672
+      internalID: 2132272821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_174
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 89
+        width: 73
+        height: 71
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52a4920fc38a71944b780b8aa3be101b
+      internalID: -1927908973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_175
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 89
+        width: 13
+        height: 17
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad82848018304ae46b283dac0919e1be
+      internalID: 570597480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_176
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 83
+        width: 8
+        height: 12
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d5d59cf4c8081f4f8b0a17a171fefd4
+      internalID: -1121414635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_177
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 94
+        width: 9
+        height: 13
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a16c809223dff96488f853a3ba05168a
+      internalID: -363766378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_178
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 83
+        width: 6
+        height: 11
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 954016c9fe449c94f8a8fdd204130e5c
+      internalID: -1403932464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_179
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 62
+        width: 67
+        height: 27
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca0374481000b5844804f46bdf4ea89c
+      internalID: 2044099204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_180
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 86
+        width: 4
+        height: 4
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07efaf5be27c69b47a68b4141a87c2d0
+      internalID: -1224927433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_181
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 92
+        width: 6
+        height: 11
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63bb6cfb5c05c97448bdef6896f528ce
+      internalID: 1515779358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_182
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 89
+        width: 4
+        height: 4
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4241db3f4fbc11f4d92cd48d248eacb6
+      internalID: -1196413139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_183
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 88
+        width: 7
+        height: 13
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0a83734ccddaa945bb8767b3b6f6e64
+      internalID: 92820678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_184
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 84
+        width: 83
+        height: 71
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54c347889a11d4d43ab229dab5ba1f90
+      internalID: 1993190644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_185
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 62
+        width: 65
+        height: 22
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4b57e75fdf61834490a539cfdff6dc1
+      internalID: -188724010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_186
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 2
+        width: 63
+        height: 25
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7a56d2afd39067429bf6af9e1fbb53b
+      internalID: 1563189298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_187
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 8
+        width: 55
+        height: 14
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 569e2f4d73cfe2c449ddacc59e84c15e
+      internalID: 950805355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_188
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 8
+        width: 49
+        height: 11
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 460a17a62af3e9b479ddf39b8c9da584
+      internalID: -1310743331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_189
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 8
+        width: 41
+        height: 8
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65c7a4c6e0e3c81468fc98b54385e4de
+      internalID: -634576726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greencrab2_190
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 8
+        width: 33
+        height: 7
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2646f92d9b3fde94c90e807be7442a05
+      internalID: 1665086913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      greencrab2_0: -1120877330
+      greencrab2_1: -2022677204
+      greencrab2_10: -844244882
+      greencrab2_100: 1451972597
+      greencrab2_101: 36919328
+      greencrab2_102: -243880169
+      greencrab2_103: 1124865830
+      greencrab2_104: 1211011098
+      greencrab2_105: -1696559817
+      greencrab2_106: 901153967
+      greencrab2_107: 871415427
+      greencrab2_108: -923955151
+      greencrab2_109: -182390405
+      greencrab2_11: 840709121
+      greencrab2_110: -346009755
+      greencrab2_111: 105149990
+      greencrab2_112: 907123103
+      greencrab2_113: -610734666
+      greencrab2_114: -2013375574
+      greencrab2_115: 2122016718
+      greencrab2_116: 1696519618
+      greencrab2_117: 614392530
+      greencrab2_118: 1001331165
+      greencrab2_119: -1096359655
+      greencrab2_12: -32779090
+      greencrab2_120: -1289452612
+      greencrab2_121: -1502081855
+      greencrab2_122: -1239357614
+      greencrab2_123: 2044295570
+      greencrab2_124: -1005920539
+      greencrab2_125: -1621050197
+      greencrab2_126: -629996098
+      greencrab2_127: -1159213791
+      greencrab2_128: -795987627
+      greencrab2_129: -1103213896
+      greencrab2_13: -99227040
+      greencrab2_130: 316806420
+      greencrab2_131: -104682617
+      greencrab2_132: 1690483263
+      greencrab2_133: 1447417962
+      greencrab2_134: 447824888
+      greencrab2_135: 1670356533
+      greencrab2_136: 210967114
+      greencrab2_137: -751708137
+      greencrab2_138: 1052613825
+      greencrab2_139: 844068286
+      greencrab2_14: -1693536597
+      greencrab2_140: 412278943
+      greencrab2_141: 250647883
+      greencrab2_142: -454880705
+      greencrab2_143: -694200558
+      greencrab2_144: 2137098565
+      greencrab2_145: -845405213
+      greencrab2_146: -376847100
+      greencrab2_147: 1732383898
+      greencrab2_148: 987612933
+      greencrab2_149: 459162916
+      greencrab2_15: 1115064002
+      greencrab2_150: 949507775
+      greencrab2_151: 265567469
+      greencrab2_152: -270162769
+      greencrab2_153: -953262055
+      greencrab2_154: 1590418161
+      greencrab2_155: -1684911561
+      greencrab2_156: 1664323526
+      greencrab2_157: 1647304956
+      greencrab2_158: -383926560
+      greencrab2_159: 862163190
+      greencrab2_16: -1235935601
+      greencrab2_160: 2058904296
+      greencrab2_161: 1225469562
+      greencrab2_162: -352277126
+      greencrab2_163: -180749384
+      greencrab2_164: -1513395637
+      greencrab2_165: -1029798049
+      greencrab2_166: 1273700663
+      greencrab2_167: -192631858
+      greencrab2_168: 362234742
+      greencrab2_169: -62972311
+      greencrab2_17: 1398796853
+      greencrab2_170: -1147751048
+      greencrab2_171: 1576981298
+      greencrab2_172: -719325777
+      greencrab2_173: 2132272821
+      greencrab2_174: -1927908973
+      greencrab2_175: 570597480
+      greencrab2_176: -1121414635
+      greencrab2_177: -363766378
+      greencrab2_178: -1403932464
+      greencrab2_179: 2044099204
+      greencrab2_18: -2100744866
+      greencrab2_180: -1224927433
+      greencrab2_181: 1515779358
+      greencrab2_182: -1196413139
+      greencrab2_183: 92820678
+      greencrab2_184: 1993190644
+      greencrab2_185: -188724010
+      greencrab2_186: 1563189298
+      greencrab2_187: 950805355
+      greencrab2_188: -1310743331
+      greencrab2_189: -634576726
+      greencrab2_19: 81839730
+      greencrab2_190: 1665086913
+      greencrab2_2: -1281268111
+      greencrab2_20: -295497301
+      greencrab2_21: 1362406632
+      greencrab2_22: 247793694
+      greencrab2_23: -1239973555
+      greencrab2_24: 786905343
+      greencrab2_25: -1817813772
+      greencrab2_26: 1620308791
+      greencrab2_27: 645923836
+      greencrab2_28: -1735998524
+      greencrab2_29: 1462413997
+      greencrab2_3: 428045432
+      greencrab2_30: -1841189416
+      greencrab2_31: 617565270
+      greencrab2_32: -2010015524
+      greencrab2_33: 1497208619
+      greencrab2_34: -1421838578
+      greencrab2_35: 1930986763
+      greencrab2_36: 1074260118
+      greencrab2_37: 704941954
+      greencrab2_38: 1957610920
+      greencrab2_39: -2090816030
+      greencrab2_4: 137810680
+      greencrab2_40: 743033208
+      greencrab2_41: 497287664
+      greencrab2_42: 1960481036
+      greencrab2_43: 633514173
+      greencrab2_44: -1979357636
+      greencrab2_45: -868589934
+      greencrab2_46: 979128442
+      greencrab2_47: 2067375091
+      greencrab2_48: -1463138677
+      greencrab2_49: 799438480
+      greencrab2_5: 1861389804
+      greencrab2_50: -719459028
+      greencrab2_51: -1675171900
+      greencrab2_52: 997788708
+      greencrab2_53: -832728233
+      greencrab2_54: -2074341463
+      greencrab2_55: 2136337318
+      greencrab2_56: 357543129
+      greencrab2_57: 1679880605
+      greencrab2_58: 2068402476
+      greencrab2_59: -815786890
+      greencrab2_6: 179707110
+      greencrab2_60: 1119081797
+      greencrab2_61: 2060992303
+      greencrab2_62: -1075627277
+      greencrab2_63: 1202364563
+      greencrab2_64: -1765011822
+      greencrab2_65: 1263583439
+      greencrab2_66: -885802899
+      greencrab2_67: 1911707093
+      greencrab2_68: -660292162
+      greencrab2_69: -2136178557
+      greencrab2_7: -1925558526
+      greencrab2_70: 1287974264
+      greencrab2_71: 1342936058
+      greencrab2_72: -1403179373
+      greencrab2_73: 1266506387
+      greencrab2_74: -1982138048
+      greencrab2_75: -1446823652
+      greencrab2_76: 1584085999
+      greencrab2_77: -1976700054
+      greencrab2_78: 1173733314
+      greencrab2_79: 1196181250
+      greencrab2_8: 1835216252
+      greencrab2_80: -213049212
+      greencrab2_81: 41036996
+      greencrab2_82: -1992091631
+      greencrab2_83: 502588298
+      greencrab2_84: -1577040274
+      greencrab2_85: -1939869048
+      greencrab2_86: 339930493
+      greencrab2_87: 223574491
+      greencrab2_88: -657812411
+      greencrab2_89: -184347081
+      greencrab2_9: -2069576291
+      greencrab2_90: 1779197916
+      greencrab2_91: -824992545
+      greencrab2_92: 1104817915
+      greencrab2_93: 857684384
+      greencrab2_94: 619074509
+      greencrab2_95: 1352943194
+      greencrab2_96: 294693518
+      greencrab2_97: 1559663740
+      greencrab2_98: -937280935
+      greencrab2_99: -670031860
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
