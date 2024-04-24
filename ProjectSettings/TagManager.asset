@@ -21,6 +21,7 @@ TagManager:
   - Terrain
   - Marco Boat
   - Collectible
+  - enemy
   layers:
   - Default
   - TransparentFX
@@ -81,6 +82,9 @@ TagManager:
     locked: 0
   - name: Pow
     uniqueID: 755307227
+    locked: 0
+  - name: Boss
+    uniqueID: 3882366193
     locked: 0
   - name: Player
     uniqueID: 2153674355
