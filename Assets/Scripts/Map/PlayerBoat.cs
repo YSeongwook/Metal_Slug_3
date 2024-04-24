@@ -1,6 +1,8 @@
 using System.Collections;
 using UnityEngine;
 
+// Refactoring 필요
+
 public class PlayerBoat : MonoBehaviour
 {
     public GameObject boat;

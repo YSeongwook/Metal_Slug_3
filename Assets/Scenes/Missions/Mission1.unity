@@ -7498,6 +7498,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyBoat
       objectReference: {fileID: 0}
+    - target: {fileID: 1870971872517960135, guid: 160ebd2e195bd084b8049c85c47b1e5f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2235623956542390517, guid: 160ebd2e195bd084b8049c85c47b1e5f, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -10915,11 +10919,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7172163603368778981, guid: 5a042bc72e1f5a84b9945acd8d01bcf3, type: 3}
       propertyPath: m_SortingLayer
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7172163603368778981, guid: 5a042bc72e1f5a84b9945acd8d01bcf3, type: 3}
       propertyPath: m_SortingLayerID
-      value: 755307227
+      value: 348302749
       objectReference: {fileID: 0}
     - target: {fileID: 7172163603368778981, guid: 5a042bc72e1f5a84b9945acd8d01bcf3, type: 3}
       propertyPath: m_WasSpriteAssigned
@@ -10928,6 +10932,14 @@ PrefabInstance:
     - target: {fileID: 7172163603368778982, guid: 5a042bc72e1f5a84b9945acd8d01bcf3, type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172163603368778982, guid: 5a042bc72e1f5a84b9945acd8d01bcf3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172163603368778982, guid: 5a042bc72e1f5a84b9945acd8d01bcf3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7172163603368778982, guid: 5a042bc72e1f5a84b9945acd8d01bcf3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11412,7 +11424,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1536486863}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
