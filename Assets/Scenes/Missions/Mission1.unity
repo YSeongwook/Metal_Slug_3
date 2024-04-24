@@ -14062,6 +14062,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1838754107}
   - component: {fileID: 1838754108}
+  - component: {fileID: 1838754110}
+  - component: {fileID: 1838754109}
   m_Layer: 0
   m_Name: BoatTrigger
   m_TagString: Untagged
@@ -14106,6 +14108,39 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &1838754109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838754106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 698ad9a28d6e03141ae90d6b0df32623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 1622775180087630572, guid: b65003e34ff0093489a5091111ee8cf7, type: 3}
+  enemyPrefabRandom0: {fileID: 0}
+  enemyPrefabRandom1: {fileID: 0}
+  enemyPrefabRandom2: {fileID: 0}
+  enemyPrefabRandom3: {fileID: 0}
+  spawnPoints: {fileID: 1671533900}
+  spawnDelay: 3
+  startDelay: 1
+--- !u!114 &1838754110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838754106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29e7ded878554124f8726b209c6a964c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  random: 0
 --- !u!1 &1851547859
 GameObject:
   m_ObjectHideFlags: 0
