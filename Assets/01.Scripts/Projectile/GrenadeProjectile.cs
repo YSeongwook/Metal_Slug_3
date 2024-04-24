@@ -86,8 +86,6 @@ public class GrenadeProjectile : MonoBehaviour, IProjectile
             // Explode(collider);
             if (bounceCount >= bouncesToExplode) Explode(collider);
         }
-
-        Debug.Log(col.gameObject.layer);
     }
 
     public void OnTriggerEnter2D(Collider2D col)
@@ -103,8 +101,6 @@ public class GrenadeProjectile : MonoBehaviour, IProjectile
             // Explode(col);
             if (bounceCount >= bouncesToExplode) Explode(col);
         }
-
-        Debug.Log(col.gameObject.layer);
     }
 
     private void Bounce()
@@ -127,6 +123,4 @@ public class GrenadeProjectile : MonoBehaviour, IProjectile
         gameObject.SetActive(false);
         launched = false;
     }
-
-
 }

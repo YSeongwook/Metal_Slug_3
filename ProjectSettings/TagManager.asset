@@ -74,6 +74,9 @@ TagManager:
   - name: Foreground3
     uniqueID: 3981695713
     locked: 0
+  - name: Item
+    uniqueID: 913400991
+    locked: 0
   - name: Explosion
     uniqueID: 348302749
     locked: 0

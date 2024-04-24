@@ -1,11 +1,9 @@
 using UnityEngine;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 
 public class ObjectPool : MonoBehaviour
 {
     public GameObject pooledObject;
-
     public int pooledAmount = 100;
 
     // 풀이 꽉 찼을 때 새로운 오브젝트 생성 여부
@@ -66,7 +64,6 @@ public class ObjectPool : MonoBehaviour
         }
 
         // 꽉 찼고, 새로 생성할 수 없도록 설정되어 있다면 null 반환
-        Debug.Log("탄창이 비었습니다.");
         return null;
     }
 }
