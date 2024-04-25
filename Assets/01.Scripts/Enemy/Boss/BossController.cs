@@ -13,7 +13,7 @@ public class BossController : MonoBehaviour
     // private BlinkingSprite blinkingSprite;
     public Transform bossSpawner;
     public GameObject projSpawner;
-    private float spawnOffsetUp = 0.05f;
+    private float spawnOffsetUp = 0.1f;
 
     public GameObject boat;
     private bool isSpawned = false;
@@ -158,7 +158,7 @@ public class BossController : MonoBehaviour
 
     private IEnumerator Spawn()
     {
-        yield return new WaitForSeconds(7f);
+        yield return new WaitForSeconds(5f);
 
         while (this.transform.position.y < -.1f)
         {

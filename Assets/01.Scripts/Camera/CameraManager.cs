@@ -89,6 +89,40 @@ public class CameraManager : Singleton<CameraManager>
         if (cam2 != null) cam2.gameObject.SetActive(true);
     }
 
+    public void SwitchToZ3ACamera()
+    {
+        // 현재 활성화된 카메라 찾기
+        CinemachineVirtualCamera currentActiveCamera = FindActiveCamera();
+
+        // 현재 활성화된 카메라를 비활성화하고, Z3A 카메라를 활성화
+        if (currentActiveCamera != null) currentActiveCamera.gameObject.SetActive(false);
+
+        vcamZ3A.gameObject.SetActive(true);
+    }
+
+    private CinemachineVirtualCamera FindActiveCamera()
+    {
+        // Zone 1 카메라 검사
+        if (vcamZ1A.gameObject.activeSelf) return vcamZ1A;
+        if (vcamZ1B.gameObject.activeSelf) return vcamZ1B;
+        if (vcamZ1C.gameObject.activeSelf) return vcamZ1C;
+        if (vcamZ1D.gameObject.activeSelf) return vcamZ1D;
+        if (vcamZ1E.gameObject.activeSelf) return vcamZ1E;
+
+        // Zone 2 카메라 검사
+        if (vcamZ2A.gameObject.activeSelf) return vcamZ2A;
+        if (vcamZ2B.gameObject.activeSelf) return vcamZ2B;
+        if (vcamZ2C.gameObject.activeSelf) return vcamZ2C;
+        if (vcamZ2D.gameObject.activeSelf) return vcamZ2D;
+        if (vcamZ2E.gameObject.activeSelf) return vcamZ2E;
+
+        // Zone 3 카메라 검사
+        if (vcamZ3A.gameObject.activeSelf) return vcamZ3A;
+
+        // 활성화된 카메라가 없으면 null 반환
+        return null;
+    }
+
     //public static void EnableParallax(bool flag)
     //{
     //    if (Instance) Instance.enableParallax = flag;
@@ -103,11 +137,6 @@ public class CameraManager : Singleton<CameraManager>
     public void AfterSunkBoat()
     {
         Instance.SwitchZ1BtoZ1C();
-    }
-
-    public void AfterBossSpawn()
-    {
-        Instance.SwitchZ2CtoZ3A();
     }
 
     public void AfterSunkSignPost()
@@ -134,6 +163,13 @@ public class CameraManager : Singleton<CameraManager>
     {
         Instance.SwitchZ2BtoZ2C();
     }
+
+    public void AfterBossSpawn()
+    {
+        // Instance.SwitchZ2CtoZ3A();
+        Instance.SwitchToZ3ACamera();
+    }
+
     #endregion
 
     #region Mission 2 Switches
