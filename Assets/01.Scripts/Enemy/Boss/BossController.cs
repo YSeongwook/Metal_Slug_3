@@ -10,7 +10,6 @@ public class BossController : MonoBehaviour
     public AudioClip deathClip;
     private HealthManager healthManager;
     private float maxHP;
-    // private BlinkingSprite blinkingSprite;
     public Transform bossSpawner;
     public GameObject projSpawner;
     private float spawnOffsetUp = 0.5f;
@@ -23,7 +22,7 @@ public class BossController : MonoBehaviour
     private float chargingSpeed = 0f;
     private float restSpeed = 0.10f;
     private float sprintSpeed = 2f;
-    private float initialSpeed = 0.7f;
+    private float initialSpeed = 1f;
 
     [Header("Throwable")]
     public GameObject normalFire;
@@ -51,14 +50,16 @@ public class BossController : MonoBehaviour
     [Header("Water Wave")]
     public GameObject waterWave;
 
-    void OnEnable()
+    private SpriteRenderer spriteRenderer;
+
+    void Awake()
     {
         animator = GetComponent<Animator>();
         followPlayer = GameManager.Instance.GetPlayer();
         registerHealth();
         maxHP = healthManager.MaxHP;
         rb = GetComponent<Rigidbody2D>();
-        // blinkingSprite = GetComponent<BlinkingSprite>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void FixedUpdate()
@@ -67,10 +68,9 @@ public class BossController : MonoBehaviour
 
         if (!isSpawned && followPlayer.transform.position.x >= bossSpawner.position.x)
         {
-            Debug.Log("spawn");
             isSpawned = true;
-            parallax.setActive(false);
             SoundManager.Instance.StartBossAudio();
+            parallax.setActive(false);
             StartCoroutine(Spawn());
         }
 
@@ -89,7 +89,9 @@ public class BossController : MonoBehaviour
                 if (rb && isMovable)
                 {
                     Debug.Log("이동중");
-                    transform.position = new Vector2(transform.position.x + speed * Time.deltaTime * 10, transform.position.y);
+                    rb.MovePosition(rb.position + new Vector2(1 * speed, 0) * Time.deltaTime);
+                    // Vector2 movementDirection = new Vector2(CHANGE_SIGN * Mathf.Sign(playerDistance), 0f);
+                    // rb.velocity = movementDirection * speed * 50 * Time.deltaTime;
                 }
 
                 if (canSprint && Random.Range(0, 100) < 30) // 30% chance of sprint
@@ -98,7 +100,7 @@ public class BossController : MonoBehaviour
                     StartCoroutine(Sprint());
                 }
 
-                if (!(healthManager.CurrentHP <= maxHP / 2) && this.transform.position.y >= -.9f)
+                if (!(healthManager.CurrentHP <= maxHP / 2))
                 {
                     shotTime = shotTime + Time.deltaTime;
 
@@ -112,7 +114,7 @@ public class BossController : MonoBehaviour
                         shotTime = 0.0f;
                     }
                 }
-                else if (this.transform.position.y >= -.9f && healthManager.CurrentHP <= maxHP / 2)
+                else if (healthManager.CurrentHP <= maxHP / 2)
                 {
                     shotTime = shotTime + Time.deltaTime;
 
@@ -163,10 +165,6 @@ public class BossController : MonoBehaviour
 
     private IEnumerator Spawn()
     {
-        // yield return new WaitForSeconds(2.5f);
-
-        // 코드로 제어하지 말고 애니메이션으로 재생?
-        // waterWave 게임 오브젝트의 자식 오브젝트들을 찾아서 Animator 컴포넌트가 있는지 확인
         foreach (Transform child in waterWave.transform)
         {
             Animator animator = child.GetComponent<Animator>();
@@ -177,7 +175,11 @@ public class BossController : MonoBehaviour
             }
         }
 
-        CameraManager.Instance.AfterBossSpawn();
+        yield return new WaitForSeconds(4f);
+
+        spriteRenderer.enabled = true;
+
+        // CameraManager.Instance.AfterBossSpawn();
         runningTarget.SetRunning(true);
 
         rb.simulated = true;
@@ -193,30 +195,42 @@ public class BossController : MonoBehaviour
         yield return new WaitForSeconds(1f);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D col)
     {
-        if (collision.collider != null)
+        if (col.collider != null)
         {
-            if (GameManager.Instance.IsPlayer(collision))
+            if (GameManager.Instance.IsPlayer(col))
             {
                 // followPlayer.GetComponent<HealthManager>().Hit(attackDamage);   // 플레이어는 1대만 맞아도 죽기 때문에 필요없음
                 followPlayer.GetComponent<Rigidbody2D>().AddForce(new Vector2(3f, 0f), ForceMode2D.Impulse);
             }
-            else if (collision.collider.CompareTag("Enemy"))
+            else if (col.collider.CompareTag("Enemy"))
             {
                 // collision.collider.gameObject.GetComponent<HealthManager>().onHit(attackDamage);
-                collision.collider.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(2f, 0f), ForceMode2D.Impulse);
+                col.collider.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(2f, 0f), ForceMode2D.Impulse);
             }
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collider)
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        if (collider.gameObject != null)
+        if (col.gameObject != null)
         {
-            if (collider.CompareTag("Walkable") || collider.CompareTag("World"))
+            if (col.CompareTag("Walkable") || col.CompareTag("World"))
             {
-                GameObject bridge = collider.gameObject;
+                GameObject bridge = col.gameObject;
+                StartCoroutine(DestroyBridge(bridge));
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.gameObject != null)
+        {
+            if (col.CompareTag("Walkable") || col.CompareTag("World"))
+            {
+                GameObject bridge = col.gameObject;
                 StartCoroutine(DestroyBridge(bridge));
             }
         }
@@ -237,12 +251,11 @@ public class BossController : MonoBehaviour
             yield return new WaitForSeconds(0.2f);
 
             if (bridge) bridge.GetComponent<Collider2D>().enabled = false;
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.5f);
 
             if (bridge) bridge.GetComponent<Animator>().SetBool("onDestroy", false);
             Destroy(bridge);
         }
-
     }
 
     private void OnDead()
