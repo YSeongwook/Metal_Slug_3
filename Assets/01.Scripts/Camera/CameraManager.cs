@@ -123,11 +123,6 @@ public class CameraManager : Singleton<CameraManager>
         return null;
     }
 
-    //public static void EnableParallax(bool flag)
-    //{
-    //    if (Instance) Instance.enableParallax = flag;
-    //}
-
     #region Mission 1 Switches
     public void AfterCrabTower()
     {

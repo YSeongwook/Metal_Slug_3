@@ -432,7 +432,7 @@ GameObject:
   - component: {fileID: 1268712062035649851}
   m_Layer: 0
   m_Name: BossRoom
-  m_TagString: Water Dead
+  m_TagString: World
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -446,7 +446,7 @@ Transform:
   m_GameObject: {fileID: 1268712062035649852}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7728386164108708907}
@@ -887,9 +887,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1268712062784690712}
-  m_Layer: 0
+  - component: {fileID: 9144734001164597731}
+  m_Layer: 9
   m_Name: Bridges
-  m_TagString: Untagged
+  m_TagString: World
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -926,6 +927,32 @@ Transform:
   m_Father: {fileID: 1268712062035649851}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &9144734001164597731
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268712062784690713}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 2.6325, y: -0.04}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.1, y: 0.25}
+  m_EdgeRadius: 0
 --- !u!1 &1268712063103090030
 GameObject:
   m_ObjectHideFlags: 0
@@ -1036,7 +1063,7 @@ Transform:
   m_GameObject: {fileID: 1268712063133708644}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.629, y: 0.76, z: 0}
-  m_LocalScale: {x: 0.99500006, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6955043888038597608}
@@ -1693,13 +1720,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1268712064012097500}
   - component: {fileID: 1558426915915958215}
+  - component: {fileID: 1266180916}
   m_Layer: 0
   m_Name: Seas
   m_TagString: Water Dead
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1268712064012097500
 Transform:
   m_ObjectHideFlags: 0
@@ -1708,7 +1736,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1268712064012097501}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -40.67553, y: 0.83304393, z: 0}
+  m_LocalPosition: {x: 0, y: -0.8, z: 0}
   m_LocalScale: {x: 0.9997, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1737,7 +1765,7 @@ EdgeCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1268712064012097501}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -1753,6 +1781,32 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!61 &1266180916
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268712064012097501}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 7, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 20, y: 0.5}
+  m_EdgeRadius: 0
 --- !u!1 &1399807098094743377
 GameObject:
   m_ObjectHideFlags: 0
@@ -1862,7 +1916,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1572682713540158222}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.9306514, y: -1.2102848, z: 0}
+  m_LocalPosition: {x: 1.918, y: -1.2102848, z: 0}
   m_LocalScale: {x: 1.005025, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2751,7 +2805,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8118368185653870851}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.8538, y: -0.97035, z: 0}
+  m_LocalPosition: {x: 1.84, y: -0.97035, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2882,7 +2936,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8207093182898791077}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.9306514, y: -1.3702847, z: 0}
+  m_LocalPosition: {x: 1.918, y: -1.3702847, z: 0}
   m_LocalScale: {x: 1.005025, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2956,6 +3010,14 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: -313271583
       objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528009, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528009, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.03
+      objectReference: {fileID: 0}
     - target: {fileID: 3035517403463528054, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -3005,8 +3067,16 @@ PrefabInstance:
       value: Bridge1a (14)
       objectReference: {fileID: 0}
     - target: {fileID: 3035517403463528055, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528055, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528055, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_TagString
+      value: World
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
@@ -3029,6 +3099,14 @@ PrefabInstance:
     - target: {fileID: 3035517403463528008, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
       propertyPath: m_SortingLayerID
       value: -313271583
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528009, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528009, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 3035517403463528054, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
       propertyPath: m_RootOrder
@@ -3078,6 +3156,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bridge1a (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528055, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528055, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_TagString
+      value: World
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
 --- !u!4 &2977394953166321574 stripped
@@ -3099,6 +3185,14 @@ PrefabInstance:
     - target: {fileID: 3035517403463528008, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
       propertyPath: m_SortingLayerID
       value: -313271583
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528009, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528009, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 3035517403463528054, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
       propertyPath: m_RootOrder
@@ -3148,6 +3242,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bridge1a (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528055, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528055, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_TagString
+      value: World
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
 --- !u!4 &2682897032034676703 stripped
@@ -3169,6 +3271,14 @@ PrefabInstance:
     - target: {fileID: 3035517403463528008, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
       propertyPath: m_SortingLayerID
       value: -313271583
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528009, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528009, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 3035517403463528054, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
       propertyPath: m_RootOrder
@@ -3218,6 +3328,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bridge1a (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528055, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528055, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_TagString
+      value: World
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
 --- !u!4 &4609843363930332885 stripped
@@ -3239,6 +3357,14 @@ PrefabInstance:
     - target: {fileID: 3035517403463528008, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
       propertyPath: m_SortingLayerID
       value: -313271583
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528009, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528009, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 3035517403463528054, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
       propertyPath: m_RootOrder
@@ -3288,6 +3414,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bridge1a (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528055, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528055, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_TagString
+      value: World
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
 --- !u!4 &4362723597925193367 stripped
@@ -3309,6 +3443,14 @@ PrefabInstance:
     - target: {fileID: 3035517403463528008, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
       propertyPath: m_SortingLayerID
       value: -313271583
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528009, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528009, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 3035517403463528054, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
       propertyPath: m_RootOrder
@@ -3357,6 +3499,14 @@ PrefabInstance:
     - target: {fileID: 3035517403463528055, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
       propertyPath: m_Name
       value: Bridge1a (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528055, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528055, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_TagString
+      value: World
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
@@ -3442,6 +3592,14 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: -313271583
       objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528009, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528009, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.03
+      objectReference: {fileID: 0}
     - target: {fileID: 3035517403463528054, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -3490,6 +3648,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bridge1a (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528055, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528055, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_TagString
+      value: World
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
 --- !u!4 &867958121900399391 stripped
@@ -3511,6 +3677,14 @@ PrefabInstance:
     - target: {fileID: 3035517403463528008, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
       propertyPath: m_SortingLayerID
       value: -313271583
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528009, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528009, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 3035517403463528054, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
       propertyPath: m_RootOrder
@@ -3560,6 +3734,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bridge1a (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528055, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528055, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_TagString
+      value: World
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
 --- !u!4 &9144034903750052985 stripped
@@ -3581,6 +3763,14 @@ PrefabInstance:
     - target: {fileID: 3035517403463528008, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
       propertyPath: m_SortingLayerID
       value: -313271583
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528009, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528009, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 3035517403463528054, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
       propertyPath: m_RootOrder
@@ -3630,6 +3820,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bridge1a (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528055, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528055, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_TagString
+      value: World
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
 --- !u!4 &9017700040058255179 stripped
@@ -3659,6 +3857,14 @@ PrefabInstance:
     - target: {fileID: 3035517403463528008, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
       propertyPath: m_SortingLayerID
       value: -313271583
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528009, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528009, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 3035517403463528054, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
       propertyPath: m_RootOrder
@@ -3708,6 +3914,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bridge1a (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528055, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528055, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_TagString
+      value: World
+      objectReference: {fileID: 0}
+    - target: {fileID: 8339569217525212213, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8339569217525212213, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 0.64
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
 --- !u!4 &8104180722910651280 stripped
@@ -3722,13 +3944,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1268712062784690712}
     m_Modifications:
-    - target: {fileID: 3035517403463528008, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
-      propertyPath: m_SortingLayer
-      value: 5
+    - target: {fileID: 3035517403463528009, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3035517403463528008, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -313271583
+    - target: {fileID: 3035517403463528009, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 3035517403463528054, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
       propertyPath: m_RootOrder
@@ -3778,6 +4000,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bridge1a
       objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528055, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528055, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_TagString
+      value: World
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
 --- !u!4 &8576452075139964099 stripped
@@ -3799,6 +4029,14 @@ PrefabInstance:
     - target: {fileID: 3035517403463528008, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
       propertyPath: m_SortingLayerID
       value: -313271583
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528009, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528009, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 3035517403463528054, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
       propertyPath: m_RootOrder
@@ -3848,6 +4086,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bridge1a (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528055, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528055, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_TagString
+      value: World
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
 --- !u!4 &5350617506248242206 stripped
@@ -3869,6 +4115,14 @@ PrefabInstance:
     - target: {fileID: 3035517403463528008, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
       propertyPath: m_SortingLayerID
       value: -313271583
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528009, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528009, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 3035517403463528054, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
       propertyPath: m_RootOrder
@@ -3918,6 +4172,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bridge1a (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528055, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528055, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_TagString
+      value: World
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
 --- !u!4 &5652100406653560052 stripped
@@ -3939,6 +4201,14 @@ PrefabInstance:
     - target: {fileID: 3035517403463528008, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
       propertyPath: m_SortingLayerID
       value: -313271583
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528009, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528009, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 3035517403463528054, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
       propertyPath: m_RootOrder
@@ -3988,6 +4258,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bridge1a
       objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528055, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528055, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_TagString
+      value: World
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
 --- !u!4 &4726558149911115199 stripped
@@ -4009,6 +4287,14 @@ PrefabInstance:
     - target: {fileID: 3035517403463528008, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
       propertyPath: m_SortingLayerID
       value: -313271583
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528009, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528009, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 3035517403463528054, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
       propertyPath: m_RootOrder
@@ -4058,6 +4344,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bridge1a (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528055, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528055, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_TagString
+      value: World
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
 --- !u!4 &6796513045392233124 stripped
@@ -4079,6 +4373,14 @@ PrefabInstance:
     - target: {fileID: 3035517403463528008, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
       propertyPath: m_SortingLayerID
       value: -313271583
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528009, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528009, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 3035517403463528054, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
       propertyPath: m_RootOrder
@@ -4127,6 +4429,14 @@ PrefabInstance:
     - target: {fileID: 3035517403463528055, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
       propertyPath: m_Name
       value: Bridge1a (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528055, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035517403463528055, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}
+      propertyPath: m_TagString
+      value: World
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d917e3588dbca2245a6f72b935e2c2d6, type: 3}

@@ -38,53 +38,6 @@ public class GameManager : Singleton<GameManager>
         totalGameTime += Time.deltaTime;
     }
 
-    /*
-    private void SaveSettings()
-    {
-        Settings settings = SaveManager.GetSettings();
-        if (settings == null)
-            settings = new Settings();
-        settings.bgmVolume = GetBgmAudio();
-        settings.sfxVolume = GetSfxAudio();
-        SaveManager.SetSettings(settings);
-    }
-    
-
-    private void LoadSettings()
-    {
-        Settings settings = SaveManager.GetSettings();
-        if (settings != null)
-        {
-            SetBgmAudio(settings.bgmVolume);
-            SetSfxAudio(settings.sfxVolume);
-            AudioManager.RefreshAudioVolume();
-        }
-    }
-
-    private void SaveRecords()
-    {
-        Records records = SaveManager.GetRecords();
-        if (records == null)
-            records = new Records();
-        records.mission1Points = GetMission1Points();
-        records.mission2Points = GetMission2Points();
-        records.mission3Points = GetMission3Points();
-        SaveManager.SetRecords(records);
-    }
-
-    private void LoadRecords()
-    {
-        Records records = SaveManager.GetRecords();
-        if (records != null)
-        {
-            SetMission1Points(records.mission1Points);
-            SetMission2Points(records.mission2Points);
-            SetMission3Points(records.mission3Points);
-            AudioManager.RefreshAudioVolume();
-        }
-    }
-    */
-
     public bool ToggleGodMode()
     {
         var player = GetPlayer();
@@ -154,11 +107,8 @@ public class GameManager : Singleton<GameManager>
 
     public void PlayerDied()
     {
-        //The game is now over
         Instance.isGameOver = true;
 
-        //Tell UI Manager to show the game over text and tell the Audio Manager to play
-        //game over audio
         // UIManager.DisplayGameOverText();
         SoundManager.Instance.PlayGameOverAudio();
 
@@ -174,25 +124,6 @@ public class GameManager : Singleton<GameManager>
         Instance.isGameOver = true;
 
         Instance.InstanceMission = (Missions)SceneManager.GetActiveScene().buildIndex;
-
-        /*
-        // Update json score
-        if (Instance.InstanceMission == Missions.Mission1 && Instance.score > GetMission1Points())
-        {
-            SetMission1Points(Instance.score);
-            SaveManager.SetRecords(new Records(Instance.score, GetMission2Points(), GetMission3Points()));
-        }
-        else if (Instance.InstanceMission == Missions.Mission2 && Instance.score > GetMission2Points())
-        {
-            SetMission2Points(Instance.score);
-            SaveManager.SetRecords(new Records(GetMission1Points(), Instance.score, GetMission3Points()));
-        }
-        else if (Instance.InstanceMission == Missions.Mission3Boss && Instance.score > GetMission3Points())
-        {
-            SetMission3Points(Instance.score);
-            SaveManager.SetRecords(new Records(GetMission1Points(), GetMission2Points(), Instance.score));
-        }
-        */
 
         if (Instance.InstanceMission >= Missions.Mission3Boss)
         {
@@ -348,11 +279,6 @@ public class GameManager : Singleton<GameManager>
         bombs = initialBombs;
         powCount = 0;
     }
-
-    // GameStart, GameOver 만들어야함
-    // PlayerDead도 필요, EventManager를 이용해야할듯
-    // 게임 이어서하는 기능도 필요
-    // 플레이어 상태 초기화, 총알, 수류탄 초기화, 시간초 초기화, 포로 수 초기화 등
 
     public void PauseExit()
     {

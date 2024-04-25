@@ -37,8 +37,6 @@ namespace EnumTypes
         BossBomb,
         BossHeavyBomb,
         EnemyGrenade,
-        Vomit,
-        Bubble
     };
 
     public class EnumTypes : MonoBehaviour { }

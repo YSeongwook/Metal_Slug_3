@@ -21,7 +21,7 @@ public class RunningTarget : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!GameManager.Instance.IsGameOver() && _running /*&& _target*/)
+        if (!GameManager.Instance.IsGameOver() && _running)
         {
             transform.position = new Vector2(transform.position.x + _speedX * Time.deltaTime, transform.position.y + _speedY * Time.deltaTime);
         }

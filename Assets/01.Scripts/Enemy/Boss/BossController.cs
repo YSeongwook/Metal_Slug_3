@@ -48,7 +48,10 @@ public class BossController : MonoBehaviour
     public Parallaxing parallax;
     public RunningTarget runningTarget;
 
-    void Start()
+    [Header("Water Wave")]
+    public GameObject waterWave;
+
+    void OnEnable()
     {
         animator = GetComponent<Animator>();
         followPlayer = GameManager.Instance.GetPlayer();
@@ -64,6 +67,7 @@ public class BossController : MonoBehaviour
 
         if (!isSpawned && followPlayer.transform.position.x >= bossSpawner.position.x)
         {
+            Debug.Log("spawn");
             isSpawned = true;
             parallax.setActive(false);
             SoundManager.Instance.StartBossAudio();
@@ -74,17 +78,18 @@ public class BossController : MonoBehaviour
         {
             if (healthManager.IsAlive())
             {
-                /*Check health*/
+                // Check health
                 if (healthManager.CurrentHP <= maxHP / 2)
                 {
                     StartCoroutine(HalfHealth());
                 }
 
-                /*Run and attacks*/
+                // Run and attack
                 float playerDistance = transform.position.x - followPlayer.transform.position.x;
                 if (rb && isMovable)
                 {
-                    rb.MovePosition(rb.position + new Vector2(1 * speed, 0) * Time.deltaTime);
+                    Debug.Log("이동중");
+                    transform.position = new Vector2(transform.position.x + speed * Time.deltaTime * 10, transform.position.y);
                 }
 
                 if (canSprint && Random.Range(0, 100) < 30) // 30% chance of sprint
@@ -158,13 +163,18 @@ public class BossController : MonoBehaviour
 
     private IEnumerator Spawn()
     {
-        yield return new WaitForSeconds(2.5f);
+        // yield return new WaitForSeconds(2.5f);
 
         // 코드로 제어하지 말고 애니메이션으로 재생?
-        while (this.transform.position.y < -0.4f)
+        // waterWave 게임 오브젝트의 자식 오브젝트들을 찾아서 Animator 컴포넌트가 있는지 확인
+        foreach (Transform child in waterWave.transform)
         {
-            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + spawnOffsetUp, this.transform.position.z);
-            yield return new WaitForSeconds(.1f);
+            Animator animator = child.GetComponent<Animator>();
+            if (animator != null)
+            {
+                // Animator 컴포넌트가 있다면 원하는 애니메이션 재생 등의 작업 수행
+                animator.SetTrigger("Spawn");
+            }
         }
 
         CameraManager.Instance.AfterBossSpawn();
@@ -204,7 +214,7 @@ public class BossController : MonoBehaviour
     {
         if (collider.gameObject != null)
         {
-            if (collider.CompareTag("Walkable"))
+            if (collider.CompareTag("Walkable") || collider.CompareTag("World"))
             {
                 GameObject bridge = collider.gameObject;
                 StartCoroutine(DestroyBridge(bridge));
