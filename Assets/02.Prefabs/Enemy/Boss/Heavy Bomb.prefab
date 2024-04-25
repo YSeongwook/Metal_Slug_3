@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 102049846840235844}
   - component: {fileID: 374780835628627050}
   - component: {fileID: 6353603296338892159}
+  - component: {fileID: -2534122081145480339}
   m_Layer: 0
-  m_Name: HeavyBomb
+  m_Name: Heavy Bomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -155,3 +156,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-2534122081145480339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7341324662454442780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80c144f28719bb340aaf3ba2a0971b3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  throwableForce: 2.5
+  launcher: 1
+  throwable: 2
+  canExplode: 1

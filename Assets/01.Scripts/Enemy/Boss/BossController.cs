@@ -46,7 +46,7 @@ public class BossController : MonoBehaviour
 
     [Header("Camera")]
     public Parallaxing parallax;
-    // public RunningTarget runningTarget;
+    public RunningTarget runningTarget;
 
     void Start()
     {
@@ -87,7 +87,7 @@ public class BossController : MonoBehaviour
                     rb.MovePosition(rb.position + new Vector2(1 * speed, 0) * Time.deltaTime);
                 }
 
-                if (canSprint && Random.Range(0, 100) < 10) // 10% chance of sprint
+                if (canSprint && Random.Range(0, 100) < 30) // 30% chance of sprint
                 {
                     canSprint = false;
                     StartCoroutine(Sprint());
@@ -128,8 +128,6 @@ public class BossController : MonoBehaviour
     private void registerHealth()
     {
         healthManager = GetComponent<HealthManager>();
-
-        // register health delegate
         healthManager.onDead += OnDead;
     }
 
@@ -169,12 +167,12 @@ public class BossController : MonoBehaviour
         }
 
         CameraManager.Instance.AfterBossSpawn();
-        // runningTarget.SetRunning(true);
+        runningTarget.SetRunning(true);
 
         rb.simulated = true;
-        yield return new WaitForSeconds(1.75f);
+        yield return new WaitForSeconds(1.0f);
 
-        // runningTarget.SetSpeed(initialSpeed);
+        runningTarget.SetSpeed(initialSpeed);
     }
 
     private IEnumerator HalfHealth()
@@ -255,7 +253,7 @@ public class BossController : MonoBehaviour
     {
         speed = chargingSpeed;
         yield return new WaitForSeconds(1.5f);
-        // runningTarget.SetRunning(true);
+        runningTarget.SetRunning(true);
         speed = sprintSpeed;
         yield return new WaitForSeconds(1.2f);
         speed = restSpeed;
