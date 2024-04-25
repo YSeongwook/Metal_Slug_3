@@ -13,7 +13,7 @@ public class BossController : MonoBehaviour
     // private BlinkingSprite blinkingSprite;
     public Transform bossSpawner;
     public GameObject projSpawner;
-    private float spawnOffsetUp = 0.1f;
+    private float spawnOffsetUp = 0.5f;
 
     public GameObject boat;
     private bool isSpawned = false;
@@ -158,9 +158,10 @@ public class BossController : MonoBehaviour
 
     private IEnumerator Spawn()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2.5f);
 
-        while (this.transform.position.y < -.1f)
+        // 코드로 제어하지 말고 애니메이션으로 재생?
+        while (this.transform.position.y < -0.4f)
         {
             this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + spawnOffsetUp, this.transform.position.z);
             yield return new WaitForSeconds(.1f);

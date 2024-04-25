@@ -113,8 +113,8 @@ public class CameraManager : Singleton<CameraManager>
         if (vcamZ2A.gameObject.activeSelf) return vcamZ2A;
         if (vcamZ2B.gameObject.activeSelf) return vcamZ2B;
         if (vcamZ2C.gameObject.activeSelf) return vcamZ2C;
-        if (vcamZ2D.gameObject.activeSelf) return vcamZ2D;
-        if (vcamZ2E.gameObject.activeSelf) return vcamZ2E;
+        // if (vcamZ2D.gameObject.activeSelf) return vcamZ2D;
+        // if (vcamZ2E.gameObject.activeSelf) return vcamZ2E;
 
         // Zone 3 카메라 검사
         if (vcamZ3A.gameObject.activeSelf) return vcamZ3A;
