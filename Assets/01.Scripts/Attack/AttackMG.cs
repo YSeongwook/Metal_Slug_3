@@ -46,7 +46,6 @@ public class AttackMG : MonoBehaviour, IAttack
         bulletGameObject.transform.position = initTransform.position;
         bulletGameObject.transform.rotation = initTransform.rotation;
 
-        // 이렇게 수정했더니 앞을 보고 있어도 아래키를 누르면 총알이 바로 아래로 나감
         if (lookingDirection == Vector2.down) bulletGameObject.transform.rotation = new Quaternion(0f, 0f, -0.70711f, 0.70711f);
 
         // offsetIndex에 따라서 총알의 높이를 조절

@@ -8,16 +8,15 @@ public class GrenadeProjectile : MonoBehaviour, IProjectile
     public int bouncesToExplode = 2;
     private bool launched;
     private AreaOfEffectProjectile explosionWave;
+    private Rigidbody2D rb;
 
     public float throwableForce = 6f;
 
     public LauncherType launcher = LauncherType.Player;
     public ThrowableType throwable = ThrowableType.Grenade;
 
-    private Rigidbody2D rb;
-
-    Vector2 playerDirection;
-    Vector3 throwableDirection;
+    private Vector2 playerDirection;
+    private Vector3 throwableDirection;
 
     void Awake()
     {

@@ -90,7 +90,6 @@ public class AttackManager : MonoBehaviour
     public void RestoreGrenade()
     {
         grenadeCount = 10;
-        // To refresh UI 
         EventManager.TriggerEvent(GlobalEvents.GrenadeUsed, grenadeCount);
     }
 
@@ -108,7 +107,6 @@ public class AttackManager : MonoBehaviour
         {
             SetDefaultAttack();
         }
-        // To refresh UI
         EventManager.TriggerEvent(GlobalEvents.GunUsed, bulletCount);
     }
 
