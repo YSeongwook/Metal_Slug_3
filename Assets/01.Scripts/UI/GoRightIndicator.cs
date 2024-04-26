@@ -1,5 +1,6 @@
 using UnityEngine;
 using EventLibrary;
+using EnumTypes;
 
 public class GoRightIndicator : MonoBehaviour
 {

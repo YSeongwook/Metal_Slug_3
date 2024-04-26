@@ -6758,9 +6758,9 @@ AnimatorStateMachine:
     second: []
   - first: {fileID: 110703348}
     second: []
-  - first: {fileID: 110711672}
-    second: []
   - first: {fileID: 110764620}
+    second: []
+  - first: {fileID: 110711672}
     second: []
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: -1170, y: 420, z: 0}
@@ -6791,7 +6791,7 @@ AnimatorStateMachine:
   m_AnyStatePosition: {x: -204, y: 108, z: 0}
   m_EntryPosition: {x: 50, y: -160, z: 0}
   m_ExitPosition: {x: 264, y: 120, z: 0}
-  m_ParentStateMachinePosition: {x: 30, y: 110, z: 0}
+  m_ParentStateMachinePosition: {x: 20, y: 110, z: 0}
   m_DefaultState: {fileID: 110201170}
 --- !u!1109 &110900030
 AnimatorTransition:

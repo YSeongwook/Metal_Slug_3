@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using DG.Tweening;
 using DG.Tweening.Core.Easing;
 using EventLibrary;
+using EnumTypes;
 
 public class HUDManager : Singleton<HUDManager>
 {

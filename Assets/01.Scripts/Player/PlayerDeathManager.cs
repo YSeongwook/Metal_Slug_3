@@ -2,6 +2,7 @@ using EventLibrary;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using EnumTypes;
 
 public class PlayerDeathManager : MonoBehaviour, IDamaged
 {

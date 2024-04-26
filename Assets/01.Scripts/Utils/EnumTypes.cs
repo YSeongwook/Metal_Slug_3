@@ -39,5 +39,37 @@ namespace EnumTypes
         EnemyGrenade,
     };
 
+    public enum GlobalEvents
+    {
+        PlayerDead,
+        PlayerSpawned,
+        PlayerStabbed,
+        PlayerInactive,
+        PlayerDamaged,
+
+        BossStart,
+        BossDead,
+        SoldierDead,
+        BerserkerDead,
+
+        PointsEarned,
+        KnifeUsed,
+        GunUsed,
+        GrenadeUsed,
+        WaveEventEnd,
+
+        MissionStartRequest,
+        MissionStart,
+        MissionEnd,
+        MissionSuccess,
+
+        GameOver,
+        Restart,
+        ItemPickedUp,
+        Home,
+
+        ShowRecordingUI
+    }
+
     public class EnumTypes : MonoBehaviour { }
 }

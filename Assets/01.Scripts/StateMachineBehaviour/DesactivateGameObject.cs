@@ -16,9 +16,6 @@ public class DesactivateGameObject : StateMachineBehaviour
 
     private void Desactivate(Transform t)
     {
-        //while (t.parent != null && t.parent.tag == "enemy") {
-        //    t = t.parent;
-        //}
         t.gameObject.SetActive(false);
     }
 }

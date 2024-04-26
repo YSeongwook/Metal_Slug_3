@@ -2,41 +2,10 @@ using UnityEngine;
 using UnityEngine.Events;
 using System.Collections.Generic;
 using System;
+using EnumTypes;
 
 namespace EventLibrary
 {
-    public enum GlobalEvents
-    {
-        PlayerDead,
-        PlayerSpawned,
-        PlayerStabbed,
-        PlayerInactive,
-        PlayerDamaged,
-
-        BossStart,
-        BossDead,
-        SoldierDead,
-        BerserkerDead,
-
-        PointsEarned,
-        KnifeUsed,
-        GunUsed,
-        GrenadeUsed,
-        WaveEventEnd,
-
-        MissionStartRequest,
-        MissionStart,
-        MissionEnd,
-        MissionSuccess,
-
-        GameOver,
-        Restart,
-        ItemPickedUp,
-        Home,
-
-        ShowRecordingUI
-    }
-
     [Serializable]
     public class TransformEvent : UnityEvent<Transform> { }
 
