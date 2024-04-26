@@ -6758,9 +6758,9 @@ AnimatorStateMachine:
     second: []
   - first: {fileID: 110703348}
     second: []
-  - first: {fileID: 110764620}
-    second: []
   - first: {fileID: 110711672}
+    second: []
+  - first: {fileID: 110764620}
     second: []
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: -1170, y: 420, z: 0}

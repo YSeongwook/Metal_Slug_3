@@ -23,7 +23,7 @@ public class ProjectileProperties
     public AudioClip explosionSound;                    // 폭발 사운드
 
     [HideInInspector]
-    public string victimTag = "Enemy";              // 피격 대상 태그
+    public string victimTag = "Enemy";                  // 피격 대상 태그
 }
 
 // 투사체 유틸리티 클래스
