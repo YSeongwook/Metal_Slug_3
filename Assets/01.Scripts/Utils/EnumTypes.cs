@@ -50,7 +50,6 @@ namespace EnumTypes
         BossStart,
         BossDead,
         SoldierDead,
-        BerserkerDead,
 
         PointsEarned,
         KnifeUsed,

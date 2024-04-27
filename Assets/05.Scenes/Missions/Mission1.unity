@@ -7524,7 +7524,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1000082918
 Transform:
   m_ObjectHideFlags: 0
@@ -10100,7 +10100,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1358260818
 Transform:
   m_ObjectHideFlags: 0
@@ -11189,6 +11189,10 @@ PrefabInstance:
     - target: {fileID: 1885967285, guid: 9f57cf08d62360f4c8e50e2db83ac9a2, type: 3}
       propertyPath: grenadeCount
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2131946959, guid: 9f57cf08d62360f4c8e50e2db83ac9a2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f57cf08d62360f4c8e50e2db83ac9a2, type: 3}
