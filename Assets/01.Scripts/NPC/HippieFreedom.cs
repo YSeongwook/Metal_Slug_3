@@ -11,8 +11,6 @@ public class HippieFreedom : MonoBehaviour, IDamaged, IObserver, ICheckCollision
     private delegate void VoidNullFunction();
     private VoidNullFunction HippiesBrain;
     private VoidNullFunction HippiesBrainBackup;
-    private float hippieSpeedWalkingFactor;
-    private float hippieSpeedRunningFactor;
     private float rayDistance = 0.4f;
     private HippieMove hippieMove;
 
@@ -22,8 +20,6 @@ public class HippieFreedom : MonoBehaviour, IDamaged, IObserver, ICheckCollision
         animManager = GetComponent<HippieAnimationManager>();
         hippieMove = GetComponent<HippieMove>();
         HippiesBrain = HippieTiedUp;
-        hippieSpeedWalkingFactor = 0.25f;
-        hippieSpeedRunningFactor = 2;
     }
 
     void Update()
@@ -39,9 +35,11 @@ public class HippieFreedom : MonoBehaviour, IDamaged, IObserver, ICheckCollision
 
         // 왼쪽 방향으로 레이캐스트를 쏨
         RaycastHit2D hitLeft = Physics2D.Raycast(colliderCenter, Vector2.left, rayDistance, LayerMask.GetMask("Player"));
+        Debug.DrawRay(colliderCenter, Vector2.left * rayDistance, Color.red);
 
         // 오른쪽 방향으로 레이캐스트를 쏨
         RaycastHit2D hitRight = Physics2D.Raycast(colliderCenter, Vector2.right, rayDistance, LayerMask.GetMask("Player"));
+        Debug.DrawRay(colliderCenter, Vector2.right * rayDistance, Color.red);
 
         // 왼쪽이나 오른쪽 방향으로 플레이어를 검출한 경우
         if (hitLeft.collider != null || hitRight.collider != null)
@@ -70,10 +68,7 @@ public class HippieFreedom : MonoBehaviour, IDamaged, IObserver, ICheckCollision
         }
     }
 
-    private void HippieTiedUp()
-    {
-
-    }
+    private void HippieTiedUp() { }
 
     public void OnDamageReceived(ProjectileProperties projectileProp, int newHP)
     {
@@ -88,23 +83,12 @@ public class HippieFreedom : MonoBehaviour, IDamaged, IObserver, ICheckCollision
         animManager.PlayWalkingAnim(EndOfHippieWalkAnim);
     }
 
-    private void HippieWalkAround()
-    {
-        
-    }
+    private void HippieWalkAround() { }
 
     private void EndOfHippieWalkAnim()
     {
         // 방향 전환
         transform.right = -transform.right;
-    }
-
-    public void OnCollisionEnter2D(Collision2D col)
-    {
-        if (col.gameObject.tag == "Player" && HippiesBrain == HippieWalkAround)
-        {
-            HippiesBrain = HippieOfferItem;
-        }
     }
 
     private void HippieOfferItem()
@@ -117,11 +101,13 @@ public class HippieFreedom : MonoBehaviour, IDamaged, IObserver, ICheckCollision
 
         itemOffered = true;
     }
+
     public void HippieOfferItemAnimEvent()
     {
         giftToPlayer.gameObject.SetActive(true);
         giftToPlayer.transform.parent = transform.parent;
     }
+
     private void EndOfHippieSalutAnim()
     {
         HippiesBrain = HippieRunAway;
