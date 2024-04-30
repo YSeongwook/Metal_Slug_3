@@ -8247,7 +8247,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1622775180087630583, guid: b65003e34ff0093489a5091111ee8cf7, type: 3}
       propertyPath: m_SortingLayer
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1622775180087630583, guid: b65003e34ff0093489a5091111ee8cf7, type: 3}
       propertyPath: m_SortingLayerID
@@ -9478,6 +9478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 20
+  currentHP: 0
   lifeCount: 2
   interestedInDamagesCount: 0
 --- !u!1 &1236051719
@@ -11172,6 +11173,10 @@ PrefabInstance:
     - target: {fileID: 462962, guid: 9f57cf08d62360f4c8e50e2db83ac9a2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885967285, guid: 9f57cf08d62360f4c8e50e2db83ac9a2, type: 3}
+      propertyPath: grenadeCount
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2131946959, guid: 9f57cf08d62360f4c8e50e2db83ac9a2, type: 3}
       propertyPath: m_IsActive

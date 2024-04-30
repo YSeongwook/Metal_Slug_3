@@ -4,6 +4,7 @@ using UnityEngine;
 public class HealthManager : MonoBehaviour
 {
     public int maxHP = 100; // 최대 체력
+    public int currentHP = 0;
     public int lifeCount = 2;
     private IDamaged[] componInterestedInDamages;   // 데미지를 받는 컴포넌트들의 배열
     public int interestedInDamagesCount = 0;        // 데미지를 받는 컴포넌트의 개수
@@ -25,6 +26,7 @@ public class HealthManager : MonoBehaviour
         componInterestedInDamages = GetComponents<IDamaged>();
         interestedInDamagesCount = componInterestedInDamages.Length;
         CurrentHP = maxHP;
+        currentHP = CurrentHP;
     }
 
     void OnEnable()
@@ -51,6 +53,7 @@ public class HealthManager : MonoBehaviour
         else
         {
             CurrentHP -= projectile.strength; // 투사체의 강도만큼 체력 감소
+            currentHP = CurrentHP;
             NotifyDamageWasTaken(projectile); // 데미지를 받았음을 관련 컴포넌트들에게 알림
 
             if(CurrentHP <= 0) onDead?.Invoke();

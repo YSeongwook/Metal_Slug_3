@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   properties:
-    strength: 5
+    strength: 50
     speedInUnityUnitPerSec: 5
     type: 2
     explosionAnimator: {fileID: 9100000, guid: 248f716882d15dc419b21ffe1fe96513, type: 2}

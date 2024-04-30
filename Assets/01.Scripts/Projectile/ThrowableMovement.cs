@@ -5,11 +5,6 @@ using EnumTypes;
 public class ThrowableMovement : MonoBehaviour
 {
     [Header("Throwable Details")]
-    private float throwableDamagePlayer = 300f;
-    private float throwableDamageEnemy = 10f;
-    private float throwableDamageBoss = 25f;
-    private float throwableDamageHeavybomb = 50f;
-    private float throwableDamageVomit = 25f;
     public float throwableForce = 2.5f;
 
     public LauncherType launcher = LauncherType.Enemy;
@@ -53,7 +48,7 @@ public class ThrowableMovement : MonoBehaviour
                 break;
         }
 
-        rb.gravityScale = .5f;
+        // rb.gravityScale = .5f;
         rb.rotation = 0;
         rb.AddForce(throwableDirection * throwableForce, ForceMode2D.Impulse);
         hasHit = false;
