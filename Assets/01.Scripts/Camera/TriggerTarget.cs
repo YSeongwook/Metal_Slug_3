@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class TriggerTarget : MonoBehaviour
@@ -6,12 +5,6 @@ public class TriggerTarget : MonoBehaviour
     bool isActive = true;
     Transform target;
     public GameObject prefabRoom;
-
-    void SetActive(bool flag)
-    {
-        isActive = flag;
-        target = GameManager.Instance.GetRunningTarget().transform;
-    }
 
     void Start()
     {
@@ -25,8 +18,9 @@ public class TriggerTarget : MonoBehaviour
         {
             if (Mathf.Abs(transform.position.x - target.position.x) < 6.64f)
             {
-                Instantiate(prefabRoom, transform.position, transform.rotation);
+                GameObject room = Instantiate(prefabRoom, transform.position, transform.rotation);
                 isActive = false;
+                prefabRoom = null; // 생성 후 프리팹을 null로 설정하여 다시 복제되지 않도록 함
             }
         }
     }

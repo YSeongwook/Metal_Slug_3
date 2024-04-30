@@ -81,11 +81,11 @@ public class ThrowableMovement : MonoBehaviour
         Despawn();
     }
 
-    private void OnTriggerEnter2D(Collider2D collider)
+    private void OnTriggerEnter2D(Collider2D col)
     {
         if (hasHit) return;
 
-        if (GameManager.Instance.CanTriggerThrowable(collider) && !(launcher == LauncherType.Player && GameManager.Instance.IsPlayer(collider)) && !(launcher == LauncherType.Enemy && (collider.CompareTag("Enemy") || collider.CompareTag("EnemyBomb"))))
+        if (GameManager.Instance.CanTriggerThrowable(col) && launcher == LauncherType.Enemy && !col.CompareTag("Enemy"))
         {
             hasHit = true;
 
@@ -93,17 +93,17 @@ public class ThrowableMovement : MonoBehaviour
             {
                 if (throwable == ThrowableType.BossHeavyBomb)
                 {
-                    if (collider.CompareTag("Walkable"))
+                    if (col.CompareTag("Walkable") || col.CompareTag("World"))
                     {
-                        GameObject hittenTerrain = collider.gameObject;
+                        GameObject hittenTerrain = col.gameObject;
                         StartCoroutine(DestroyHitten(hittenTerrain));
                     }
                 }
-                StartCoroutine(Explosion(collider));
+                StartCoroutine(Explosion(col));
             }
             else
             {
-                ResetMovement(collider);
+                ResetMovement(col);
                 Despawn();
             }
         }

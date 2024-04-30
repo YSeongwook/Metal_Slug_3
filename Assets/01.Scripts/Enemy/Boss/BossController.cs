@@ -18,10 +18,10 @@ public class BossController : MonoBehaviour
     private bool isSpawned = false;
 
     [Header("Speeds")]
-    public float speed = 0.7f;
+    public float speed = 1f;
     private float chargingSpeed = 0f;
     private float restSpeed = 0.10f;
-    private float sprintSpeed = 2f;
+    private float sprintSpeed = 4f;
     private float initialSpeed = 1f;
 
     [Header("Throwable")]
@@ -55,11 +55,13 @@ public class BossController : MonoBehaviour
     void Awake()
     {
         animator = GetComponent<Animator>();
-        followPlayer = GameManager.Instance.GetPlayer();
-        registerHealth();
-        maxHP = healthManager.MaxHP;
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        followPlayer = GameManager.Instance.GetPlayer();
+
+        registerHealth();
+        maxHP = healthManager.MaxHP;
+        canSprint = false;
     }
 
     void FixedUpdate()
@@ -88,7 +90,6 @@ public class BossController : MonoBehaviour
                 float playerDistance = transform.position.x - followPlayer.transform.position.x;
                 if (rb && isMovable)
                 {
-                    Debug.Log("이동중");
                     rb.MovePosition(rb.position + new Vector2(1 * speed, 0) * Time.deltaTime);
                     // Vector2 movementDirection = new Vector2(CHANGE_SIGN * Mathf.Sign(playerDistance), 0f);
                     // rb.velocity = movementDirection * speed * 50 * Time.deltaTime;
@@ -175,15 +176,13 @@ public class BossController : MonoBehaviour
             }
         }
 
-        yield return new WaitForSeconds(4f);
-
-        spriteRenderer.enabled = true;
-
-        // CameraManager.Instance.AfterBossSpawn();
-        runningTarget.SetRunning(true);
+        yield return new WaitForSeconds(2f);
 
         rb.simulated = true;
-        yield return new WaitForSeconds(1.0f);
+
+        runningTarget.SetRunning(true);
+
+        yield return new WaitForSeconds(1f);
 
         runningTarget.SetSpeed(initialSpeed);
     }
@@ -276,13 +275,17 @@ public class BossController : MonoBehaviour
     private IEnumerator Sprint()
     {
         speed = chargingSpeed;
+        runningTarget.SetSpeed(speed);
         yield return new WaitForSeconds(1.5f);
         runningTarget.SetRunning(true);
         speed = sprintSpeed;
+        runningTarget.SetSpeed(speed);
         yield return new WaitForSeconds(1.2f);
         speed = restSpeed;
+        runningTarget.SetSpeed(speed);
         yield return new WaitForSeconds(1f);
         speed = initialSpeed;
+        runningTarget.SetSpeed(speed);
         yield return new WaitForSeconds(5f); // wait until next possible sprint
         canSprint = true;
     }
