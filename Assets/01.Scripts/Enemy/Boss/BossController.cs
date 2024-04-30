@@ -11,7 +11,8 @@ public class BossController : MonoBehaviour
     private HealthManager healthManager;
     private float maxHP;
     public Transform bossSpawner;
-    public GameObject projSpawner;
+    public GameObject normalBombSpawner;
+    public GameObject heavyBombSpawner;
     private float spawnOffsetUp = 0.5f;
 
     public GameObject boat;
@@ -190,7 +191,8 @@ public class BossController : MonoBehaviour
     private IEnumerator HalfHealth()
     {
         animator.SetBool("isHalfHealth", true);
-        projSpawner.transform.position.Set(-0.63f, -0.21f, 0);
+        heavyBombSpawner.transform.position.Set(0.55f, 0.3f, 0);  // 이 부분 수정해서 Heavy Bomb 위치 수정해야함
+
         yield return new WaitForSeconds(1f);
     }
 
@@ -238,7 +240,14 @@ public class BossController : MonoBehaviour
     private IEnumerator WaitFire(GameObject throwableObj)
     {
         yield return new WaitForSeconds(0.1f);
-        Instantiate(throwableObj, projSpawner.transform.position, projSpawner.transform.rotation);
+        if(healthManager.CurrentHP <= maxHP / 2)
+        {
+            Instantiate(throwableObj, heavyBombSpawner.transform.position, heavyBombSpawner.transform.rotation);
+        } else
+        {
+            Instantiate(throwableObj, normalBombSpawner.transform.position, normalBombSpawner.transform.rotation);
+        }
+
         yield return new WaitForSeconds(0.15f);
     }
 

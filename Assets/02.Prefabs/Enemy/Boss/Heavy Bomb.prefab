@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80c144f28719bb340aaf3ba2a0971b3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwableForce: 8
+  throwableForce: 6
   launcher: 1
   throwable: 2
   canExplode: 1

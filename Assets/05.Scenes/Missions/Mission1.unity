@@ -8901,6 +8901,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1317732851, guid: 520b49f14e64d1f4ab10f08330ca0706, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 1317732851, guid: 520b49f14e64d1f4ab10f08330ca0706, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.78
+      objectReference: {fileID: 0}
     - target: {fileID: 1859705039169141558, guid: 520b49f14e64d1f4ab10f08330ca0706, type: 3}
       propertyPath: m_BodyType
       value: 1
@@ -8937,6 +8945,14 @@ PrefabInstance:
       propertyPath: runningTarget
       value: 
       objectReference: {fileID: 983695425}
+    - target: {fileID: 3497762559238943487, guid: 520b49f14e64d1f4ab10f08330ca0706, type: 3}
+      propertyPath: heavyBombSpawner
+      value: 
+      objectReference: {fileID: 1149908799}
+    - target: {fileID: 3497762559238943487, guid: 520b49f14e64d1f4ab10f08330ca0706, type: 3}
+      propertyPath: normalBombSpawner
+      value: 
+      objectReference: {fileID: 2103220703}
     - target: {fileID: 4921628371596366543, guid: 520b49f14e64d1f4ab10f08330ca0706, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -9010,6 +9026,11 @@ PrefabInstance:
 --- !u!4 &1149908798 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7144580459191694077, guid: 520b49f14e64d1f4ab10f08330ca0706, type: 3}
+  m_PrefabInstance: {fileID: 1149908797}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1149908799 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1791747517621793850, guid: 520b49f14e64d1f4ab10f08330ca0706, type: 3}
   m_PrefabInstance: {fileID: 1149908797}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1150679277
@@ -14789,6 +14810,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2103220703 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1317732850, guid: 520b49f14e64d1f4ab10f08330ca0706, type: 3}
+  m_PrefabInstance: {fileID: 1149908797}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2106871462 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6565219500553693618, guid: 23a62deb9afc6e349b51583912d4ba6a, type: 3}
