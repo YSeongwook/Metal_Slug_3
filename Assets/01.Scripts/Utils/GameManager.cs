@@ -184,7 +184,7 @@ public class GameManager : Singleton<GameManager>
 
     public bool CanTriggerThrowable(Collider2D collider)
     {
-        string[] triggerableTags = { "Enemy", "Building", "Walkable", "Roof", "Bridge", "EnemyBomb" };
+        string[] triggerableTags = { "Enemy", "Building", "Walkable", "Roof", "Bridge", "EnemyBomb", "World" };
         string tag = collider.tag;
 
         return IsPlayer(collider) || triggerableTags.Contains(tag);

@@ -83,6 +83,7 @@ public class ThrowableMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
+        Debug.Log("트리거");
         if (hasHit) return;
 
         if (GameManager.Instance.CanTriggerThrowable(col) && launcher == LauncherType.Enemy && !col.CompareTag("Enemy"))
