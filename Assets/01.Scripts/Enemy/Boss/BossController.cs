@@ -1,5 +1,7 @@
+using EventLibrary;
 using System.Collections;
 using UnityEngine;
+using EnumTypes;
 
 public class BossController : MonoBehaviour
 {
@@ -167,6 +169,8 @@ public class BossController : MonoBehaviour
 
     private IEnumerator Spawn()
     {
+        EventManager.TriggerEvent(GlobalEvents.BossSpawn);
+
         foreach (Transform child in waterWave.transform)
         {
             Animator animator = child.GetComponent<Animator>();

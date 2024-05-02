@@ -47,7 +47,7 @@ namespace EnumTypes
         PlayerInactive,
         PlayerDamaged,
 
-        BossStart,
+        BossSpawn,
         BossDead,
         SoldierDead,
 

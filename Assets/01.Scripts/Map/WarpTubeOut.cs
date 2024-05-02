@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections;
+using EnumTypes;
+using EventLibrary;
 
 public class WarpTubeOut : MonoBehaviour
 {
@@ -19,6 +21,8 @@ public class WarpTubeOut : MonoBehaviour
         animator = GetComponent<Animator>();
         marcoWarp = transform.GetChild(0).gameObject.GetComponent<Animator>();
         warpTubeCover = transform.GetChild(1).gameObject;
+
+        EventManager.StartListening(GlobalEvents.BossSpawn, DisableGameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -79,5 +83,16 @@ public class WarpTubeOut : MonoBehaviour
         top.gameObject.SetActive(isActive);
         bottom.enabled = isActive;
         top.enabled = isActive;
+    }
+
+    void DisableGameObject()
+    {
+        // 5초 후에 gameObject를 비활성화합니다.
+        Invoke("Deactivate", 5f);
+    }
+
+    void Deactivate()
+    {
+        gameObject.SetActive(false);
     }
 }

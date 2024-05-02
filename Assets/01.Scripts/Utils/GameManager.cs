@@ -8,6 +8,7 @@ using EventLibrary;
 public class GameManager : Singleton<GameManager>
 {
     float totalGameTime;
+    bool isBossSpawn;
     bool isGameOver;
     int score = 0;
     int initialBombs = 10;
@@ -101,6 +102,17 @@ public class GameManager : Singleton<GameManager>
     {
         //Return the state of the game
         return Instance.isGameOver;
+    }
+
+    public void SetBossSpawn()
+    {
+        isBossSpawn = true;
+        EventManager.TriggerEvent(GlobalEvents.BossSpawn);
+    }
+
+    public bool IsBossSpawn()
+    {
+        return Instance.isBossSpawn;
     }
 
     // 게임 재시작 메서드 필요
