@@ -78,7 +78,6 @@ public class ThrowableMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("트리거");
         if (hasHit) return;
 
         if (GameManager.Instance.CanTriggerThrowable(col) && launcher == LauncherType.Enemy && !col.CompareTag("Enemy"))
@@ -132,8 +131,8 @@ public class ThrowableMovement : MonoBehaviour
         yield return new WaitForSeconds(0.25f);
         hittenTerrain.GetComponent<Collider2D>().enabled = false;
         hittenTerrain.GetComponent<Animator>().SetBool("onDestroy", true);
-        yield return new WaitForSeconds(1.2f);
-        hittenTerrain.GetComponent<Animator>().SetBool("onDestroy", false);
+        yield return new WaitForSeconds(0.8f);
+        // hittenTerrain.GetComponent<Animator>().SetBool("onDestroy", false);
         Destroy(hittenTerrain);
     }
 }

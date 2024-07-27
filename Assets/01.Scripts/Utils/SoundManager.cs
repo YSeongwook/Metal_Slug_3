@@ -10,7 +10,7 @@ public class SoundManager : Singleton<SoundManager>
     public AudioClip bossClip;          // the bgm of the boss fight
 
     [Header("Player")]
-    public AudioClip marcoDeathClip;    //Marco Death Sound
+    public AudioClip marcoDeathClip;    // Marco Death Sound
 
     [Header("Effects")]
     public AudioClip normalShotClip;
@@ -34,10 +34,10 @@ public class SoundManager : Singleton<SoundManager>
 
     [Header("Menu")]
     public AudioClip insertCoin;
-    public AudioClip marco;         // marco chosen
-    public AudioClip menuSound;     // menu sound
-    public AudioClip preselect;     // any button
-    public AudioClip select;        // press start
+    public AudioClip marco;             // marco chosen
+    public AudioClip menuSound;         // menu sound
+    public AudioClip preselect;         // any button
+    public AudioClip select;            // press start
 
     [Header("Mixer Groups")]
     public AudioMixerGroup musicGroup;  // The music mixer group
