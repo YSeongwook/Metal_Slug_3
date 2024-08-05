@@ -66,6 +66,7 @@ namespace EnumTypes
         Restart,
         ItemPickedUp,
         Home,
+        GameReset,
 
         ShowRecordingUI
     }

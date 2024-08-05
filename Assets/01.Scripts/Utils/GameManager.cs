@@ -29,12 +29,12 @@ public class GameManager : Singleton<GameManager>
         // SaveRecords
     }
 
-    void Start()
+    private void Start()
     {
         GameReset();
     }
 
-    void Update()
+    private void Update()
     {
         totalGameTime += Time.deltaTime;
     }
@@ -290,6 +290,8 @@ public class GameManager : Singleton<GameManager>
         totalGameTime = 0;
         bombs = initialBombs;
         powCount = 0;
+        
+        
     }
 
     public void PauseExit()
@@ -329,6 +331,7 @@ public class GameManager : Singleton<GameManager>
     {
         if (!skipReset) GameReset();
 
+        if(isGameOver) EventManager.TriggerEvent(GlobalEvents.GameReset);
         SceneManager.LoadScene(id);
     }
 }

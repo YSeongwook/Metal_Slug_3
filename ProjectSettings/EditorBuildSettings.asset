@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/05.Scenes/Missions/Mission1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/05.Scenes/Intro/Intro 1.unity
+    guid: e5e63e1735bd61f4092f59a4b82b45bd
   m_configObjects: {}

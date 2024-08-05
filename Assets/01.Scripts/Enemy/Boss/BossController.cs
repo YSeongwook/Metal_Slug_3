@@ -19,6 +19,7 @@ public class BossController : MonoBehaviour
 
     public GameObject boat;
     private bool isSpawned = false;
+    private bool isDie;
 
     [Header("Speeds")]
     public float speed = 1f;
@@ -272,12 +273,17 @@ public class BossController : MonoBehaviour
 
     private void OnDead()
     {
+        if (isDie) return;
+        
         this.GetComponent<Animator>().SetBool("isDying", true);
+        isDie = true;
 
         StopCoroutine("Sprint");
         StopCoroutine("WaitFire");
         GameManager.Instance.PlayerWin();
         StopBossCoroutines();
+        
+        EventManager.TriggerEvent(GlobalEvents.MissionSuccess);
     }
 
     private void StopBossCoroutines()

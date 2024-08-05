@@ -840,7 +840,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5907615165617999827, guid: ec94fa3a8b4f73443b4dd9fd063efbec, type: 3}
       propertyPath: pooledAmount
-      value: 15
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 134228, guid: ec94fa3a8b4f73443b4dd9fd063efbec, type: 3}
       propertyPath: m_Name

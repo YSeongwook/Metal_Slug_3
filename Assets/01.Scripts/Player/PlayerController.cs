@@ -1,51 +1,56 @@
+using EnumTypes;
+using EventLibrary;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.Input;
-using EnumTypes;
-using EventLibrary;
 
 public class PlayerController : Singleton<PlayerController>
 {
     private IObserver[] observers;
 
-    private AttackManager attackManager;        // 공격 매니저
-    private AnimationManager animManager;       // 애니메이션 매니저
+    private AttackManager attackManager; // 공격 매니저
+    private AnimationManager animManager; // 애니메이션 매니저
     private Blink blink;
 
-    [SerializeField] Animator topAnimator;      // 사용할 top 애니메이터 컴포넌트
-    [SerializeField] Animator bottomAnimator;   // 사용할 bottom 애니메이터 컴포넌트
+    [SerializeField] Animator topAnimator; // 사용할 top 애니메이터 컴포넌트
+    [SerializeField] Animator bottomAnimator; // 사용할 bottom 애니메이터 컴포넌트
 
-    [Space(10)]
-    public GameObject waterStep;
+    [Space(10)] public GameObject waterStep;
     public Parachute parachute;
 
-    [Space(10)]
-    public BodyPosture body;
+    [Space(10)] public BodyPosture body;
     private TimeUtils timeUtils;
 
-    [SerializeField] float moveSpeed = 3.5f;    // 이동 속도           
-    [SerializeField] float jumpForce = 70f;     // 점프 힘
-    [SerializeField] int maxJumps = 1;          // 최대 점프 횟수
+    [SerializeField] float moveSpeed = 3.5f; // 이동 속도           
+    [SerializeField] float jumpForce = 70f; // 점프 힘
+    [SerializeField] int maxJumps = 1; // 최대 점프 횟수
 
     private Vector2 inputMovement = Vector2.zero;
-    private bool isGrounded = false;            // 바닥에 닿았는지 나타냄
-    private int jumpCount = 0;                  // 현재 점프 회수를 추적
+    private bool isGrounded = false; // 바닥에 닿았는지 나타냄
+    private int jumpCount = 0; // 현재 점프 회수를 추적
 
-    public float fixedZ = 0f;                   // 고정할 z축 값
-    float rotationY = 0;                        // transform.rotation.eulerAngles.y;
+    public float fixedZ = 0f; // 고정할 z축 값
+    float rotationY = 0; // transform.rotation.eulerAngles.y;
 
-    public bool IsRunning { get; set; }         // 움직이고 있는지 확인
-    public bool IsCrouched { get; set; }        // 웅크리고 있는지 확인
-    public bool IsLookUp { get; set; }          // 위를 보고 있는지 확인
-    public bool InTheAir { get; set; }          // 공중에 떠 있는지 확인
+    public bool IsRunning { get; set; } // 움직이고 있는지 확인
+    public bool IsCrouched { get; set; } // 웅크리고 있는지 확인
+    public bool IsLookUp { get; set; } // 위를 보고 있는지 확인
+    public bool InTheAir { get; set; } // 공중에 떠 있는지 확인
     public Vector2 LookingDirection { get; set; }
 
-    private Rigidbody2D playerRigidbody;        // 사용할 리지드바디 컴포넌트
-    private BoxCollider2D collider;             // 사용할 콜라이더 커포넌트
+    private Rigidbody2D playerRigidbody; // 사용할 리지드바디 컴포넌트
+    private BoxCollider2D collider; // 사용할 콜라이더 커포넌트
 
     private bool parachuteActive = true;
 
     public ProjectileProperties projectile;
+
+    private new void Awake()
+    {
+        base.Awake();
+
+        EventManager.StartListening(GlobalEvents.GameReset, GameReset);
+    }
 
     private void Start()
     {
@@ -67,7 +72,7 @@ public class PlayerController : Singleton<PlayerController>
         playerRigidbody.gravityScale = 0.2f;
     }
 
-    void Update()
+    private void Update()
     {
         rotationY = transform.rotation.eulerAngles.y;
 
@@ -85,6 +90,7 @@ public class PlayerController : Singleton<PlayerController>
 
             CheckLeftRightDirection();
         }
+
         if (GetKeyUp(KeyCode.DownArrow))
         {
             topAnimator.SetBool("down_pressed", false);
@@ -115,10 +121,15 @@ public class PlayerController : Singleton<PlayerController>
         playerRigidbody.velocity = new Vector2(moveVelocity.x, playerRigidbody.velocity.y);
     }
 
-    void LateUpdate()
+    private void LateUpdate()
     {
         // 오브젝트의 위치 값을 직접 조절하여 z축 값을 고정
         transform.position = new Vector3(transform.position.x, transform.position.y, fixedZ);
+    }
+
+    private void OnDestroy()
+    {
+        EventManager.StopListening(GlobalEvents.GameReset, GameReset);
     }
 
     private void OnMove(InputValue inputValue)
@@ -192,7 +203,7 @@ public class PlayerController : Singleton<PlayerController>
 
                 if (body == BodyPosture.Crouch) LookDown();
 
-                if (IsRunning)  // 플레이어가 좌우로 움직이고 있다면
+                if (IsRunning) // 플레이어가 좌우로 움직이고 있다면
                 {
                     timeUtils.FrameDelay(animManager.StartHighVelJumpAnim);
                 }
@@ -200,6 +211,7 @@ public class PlayerController : Singleton<PlayerController>
                 {
                     timeUtils.FrameDelay(animManager.StartLowVelJumpAnim);
                 }
+
                 AdaptColliderStanding();
             }
         }
@@ -222,7 +234,10 @@ public class PlayerController : Singleton<PlayerController>
 
     private void OnGrenade(InputValue inputValue)
     {
-        if (!parachute.gameObject.activeSelf || !parachuteActive) { if (inputValue.isPressed) attackManager.SecondaryAttack(); }
+        if (!parachute.gameObject.activeSelf || !parachuteActive)
+        {
+            if (inputValue.isPressed) attackManager.SecondaryAttack();
+        }
     }
 
     public void DefaultBodyPosition()
@@ -282,16 +297,18 @@ public class PlayerController : Singleton<PlayerController>
     }
 
     private bool waterHitHandled = false;
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == (int)Layers.World || collision.gameObject.layer == (int)Layers.Enemy || collision.gameObject.CompareTag("Walkable"))
+        if (collision.gameObject.layer == (int)Layers.World || collision.gameObject.layer == (int)Layers.Enemy ||
+            collision.gameObject.CompareTag("Walkable"))
         {
             // 낙하산이 활성화 되어 있다면 낙하산 해제
-            if (parachute.gameObject.activeSelf) 
+            if (parachute.gameObject.activeSelf)
             {
                 parachuteActive = false;
                 parachute.GroundedParachute();
-            } 
+            }
 
             NotifyObservers(SlugEvents.HitGround);
             body = BodyPosture.Stand;
@@ -310,7 +327,8 @@ public class PlayerController : Singleton<PlayerController>
         }
 
         // 바닥에 닿으면 점프 회수 초기화
-        if (collision.gameObject.layer == (int)Layers.World || collision.gameObject.layer == (int)Layers.Walkable) jumpCount = 0;
+        if (collision.gameObject.layer == (int)Layers.World ||
+            collision.gameObject.layer == (int)Layers.Walkable) jumpCount = 0;
 
         playerRigidbody.gravityScale = 2f;
 
@@ -367,6 +385,7 @@ public class PlayerController : Singleton<PlayerController>
         {
             observers = GetComponents<IObserver>();
         }
+
         foreach (IObserver obs in observers)
         {
             obs.Observe(ev);
@@ -389,8 +408,10 @@ public class PlayerController : Singleton<PlayerController>
 
     private void CheckLookingDirection()
     {
-        if (Keyboard.current.upArrowKey.isPressed && Keyboard.current.leftArrowKey.isPressed) LookingDirection = Vector2.up;
-        if (Keyboard.current.upArrowKey.isPressed && Keyboard.current.rightArrowKey.isPressed) LookingDirection = Vector2.up;
+        if (Keyboard.current.upArrowKey.isPressed && Keyboard.current.leftArrowKey.isPressed)
+            LookingDirection = Vector2.up;
+        if (Keyboard.current.upArrowKey.isPressed && Keyboard.current.rightArrowKey.isPressed)
+            LookingDirection = Vector2.up;
 
         if (InTheAir && Keyboard.current.downArrowKey.isPressed) LookingDirection = Vector2.down;
 
@@ -406,5 +427,10 @@ public class PlayerController : Singleton<PlayerController>
     private void CheckLeftRightDirection()
     {
         LookingDirection = rotationY == 0 ? Vector2.right : Vector2.left;
+    }
+
+    private void GameReset()
+    {
+        this.gameObject.transform.parent.gameObject.SetActive(false);
     }
 }
