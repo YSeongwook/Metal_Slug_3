@@ -9,7 +9,6 @@ public class BossController : MonoBehaviour
     GameObject followPlayer;
     public float attackDamage = 25f;
     public bool isMovable = true;
-    public AudioClip deathClip;
     private HealthManager healthManager;
     private float maxHP;
     public Transform bossSpawner;
@@ -23,29 +22,27 @@ public class BossController : MonoBehaviour
 
     [Header("Speeds")]
     public float speed = 1f;
-    private float chargingSpeed = 0f;
-    private float restSpeed = 0.10f;
-    private float sprintSpeed = 4f;
-    private float initialSpeed = 1f;
+
+    private const float ChargingSpeed = 0f;
+    private const float RestSpeed = 0.10f;
+    private const float SprintSpeed = 4f;
+    private const float InitialSpeed = 1f;
 
     [Header("Throwable")]
     public GameObject normalFire;
     public GameObject heavyBomb;
-    public bool canThrow = true;
 
     [Header("Enemy activation")]
-    public const float CHANGE_SIGN = -1;
-
-    private Rigidbody2D rb;
-    private Animator animator;
+    private Rigidbody2D _rb;
+    private Animator _animator;
 
     [Header("Time shoot")]
-    private float shotTime = 0.0f;
     public float fireDelta = 0.5f;
-    private float nextFire = 2f;
+    private float _shotTime = 0.0f;
+    private float _nextFire = 2f;
 
     [Header("Time sprint")]
-    private bool canSprint = true;
+    private bool _canSprint = true;
 
     [Header("Camera")]
     public Parallaxing parallax;
@@ -54,21 +51,18 @@ public class BossController : MonoBehaviour
     [Header("Water Wave")]
     public GameObject waterWave;
 
-    private SpriteRenderer spriteRenderer;
-
-    void Awake()
+    private void Awake()
     {
-        animator = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        _animator = GetComponent<Animator>();
+        _rb = GetComponent<Rigidbody2D>();
         followPlayer = GameManager.Instance.GetPlayer();
 
         registerHealth();
         maxHP = healthManager.MaxHP;
-        canSprint = false;
+        _canSprint = false;
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         if (GameManager.Instance.IsGameOver()) return;
 
@@ -91,46 +85,45 @@ public class BossController : MonoBehaviour
                 }
 
                 // Run and attack
-                float playerDistance = transform.position.x - followPlayer.transform.position.x;
-                if (rb && isMovable)
+                if (_rb && isMovable)
                 {
-                    rb.MovePosition(rb.position + new Vector2(1 * speed, 0) * Time.deltaTime);
+                    _rb.MovePosition(_rb.position + new Vector2(1 * speed, 0) * Time.deltaTime);
                     // Vector2 movementDirection = new Vector2(CHANGE_SIGN * Mathf.Sign(playerDistance), 0f);
                     // rb.velocity = movementDirection * speed * 50 * Time.deltaTime;
                 }
 
-                if (canSprint && Random.Range(0, 100) < 30) // 30% chance of sprint
+                if (_canSprint && Random.Range(0, 100) < 30) // 30% chance of sprint
                 {
-                    canSprint = false;
+                    _canSprint = false;
                     StartCoroutine(Sprint());
                 }
 
                 if (!(healthManager.CurrentHP <= maxHP / 2))
                 {
-                    shotTime = shotTime + Time.deltaTime;
+                    _shotTime = _shotTime + Time.deltaTime;
 
-                    if (shotTime > nextFire)
+                    if (_shotTime > _nextFire)
                     {
-                        nextFire = shotTime + fireDelta;
+                        _nextFire = _shotTime + fireDelta;
 
                         StartCoroutine(WaitFire(normalFire));
 
-                        nextFire = nextFire - shotTime;
-                        shotTime = 0.0f;
+                        _nextFire = _nextFire - _shotTime;
+                        _shotTime = 0.0f;
                     }
                 }
                 else if (healthManager.CurrentHP <= maxHP / 2)
                 {
-                    shotTime = shotTime + Time.deltaTime;
+                    _shotTime = _shotTime + Time.deltaTime;
 
-                    if (shotTime > nextFire)
+                    if (_shotTime > _nextFire)
                     {
-                        nextFire = shotTime + fireDelta;
+                        _nextFire = _shotTime + fireDelta;
 
                         StartCoroutine(WaitFire(heavyBomb));
 
-                        nextFire = nextFire - shotTime;
-                        shotTime = 0.0f;
+                        _nextFire = _nextFire - _shotTime;
+                        _shotTime = 0.0f;
                     }
                 }
             }
@@ -141,31 +134,6 @@ public class BossController : MonoBehaviour
     {
         healthManager = GetComponent<HealthManager>();
         healthManager.onDead += OnDead;
-    }
-
-    private IEnumerator Die()
-    {
-        SoundManager.Instance.PlayMetalSlugDestroy3();
-        animator.SetBool("isDying", true);
-        if (rb) rb.isKinematic = true;
-
-        if (GetComponent<BoxCollider2D>())
-        {
-            GetComponent<BoxCollider2D>().enabled = false;
-        }
-        else if (GetComponent<CapsuleCollider2D>())
-        {
-            GetComponent<CapsuleCollider2D>().enabled = false;
-        }
-
-        yield return new WaitForSeconds(1.8f);
-        SoundManager.Instance.PlayMetalSlugDestroy1();
-        Destroy(gameObject);
-    }
-
-    public void setFollow(GameObject follow)
-    {
-        followPlayer = follow;
     }
 
     private IEnumerator Spawn()
@@ -184,18 +152,18 @@ public class BossController : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
 
-        rb.simulated = true;
+        _rb.simulated = true;
 
         runningTarget.SetRunning(true);
 
         yield return new WaitForSeconds(1f);
 
-        runningTarget.SetSpeed(initialSpeed);
+        runningTarget.SetSpeed(InitialSpeed);
     }
 
     private IEnumerator HalfHealth()
     {
-        animator.SetBool("isHalfHealth", true);
+        _animator.SetBool("isHalfHealth", true);
         heavyBombSpawner.transform.position.Set(0.55f, 0.3f, 0);  // 이 부분 수정해서 Heavy Bomb 위치 수정해야함
 
         yield return new WaitForSeconds(1f);
@@ -293,19 +261,19 @@ public class BossController : MonoBehaviour
 
     private IEnumerator Sprint()
     {
-        speed = chargingSpeed;
+        speed = ChargingSpeed;
         runningTarget.SetSpeed(speed);
         yield return new WaitForSeconds(1.5f);
         runningTarget.SetRunning(true);
-        speed = sprintSpeed;
+        speed = SprintSpeed;
         runningTarget.SetSpeed(speed);
         yield return new WaitForSeconds(1.2f);
-        speed = restSpeed;
+        speed = RestSpeed;
         runningTarget.SetSpeed(speed);
         yield return new WaitForSeconds(1f);
-        speed = initialSpeed;
+        speed = InitialSpeed;
         runningTarget.SetSpeed(speed);
         yield return new WaitForSeconds(5f); // wait until next possible sprint
-        canSprint = true;
+        _canSprint = true;
     }
 }

@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class TopAnimationEvent : MonoBehaviour
 {
-
     public AnimationManager animManager;
 
     public void EndOfDeathAnim()

@@ -1,12 +1,11 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerIndicator : MonoBehaviour
 {
     private void OnEnable()
     {
-        StartCoroutine("ActivateAndDeactivateSpawnIndicator", 5f);
+        StartCoroutine(nameof(ActivateAndDeactivateSpawnIndicator), 5f);
     }
 
     private IEnumerator ActivateAndDeactivateSpawnIndicator(float duration)
