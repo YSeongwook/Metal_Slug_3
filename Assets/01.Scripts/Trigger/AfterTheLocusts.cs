@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using _01.Scripts.Camera;
+using _01.Scripts.Utils;
 using UnityEngine;
 
 public class AfterTheLocusts : MonoBehaviour

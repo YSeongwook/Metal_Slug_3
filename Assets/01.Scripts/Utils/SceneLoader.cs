@@ -1,24 +1,26 @@
-using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneLoader : Singleton<SceneLoader>
+namespace _01.Scripts.Utils
 {
-    void Start()
+    public class SceneLoader : Singleton<SceneLoader>
     {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        if (scene.name == "Mission1")
+        private void Start()
         {
-            PlayerMissionStart();
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
-    }
 
-    private void PlayerMissionStart()
-    {
-        SoundManager.Instance.PlayBGM();
-        SoundManager.Instance.PlayLevelStartAudio();
+        private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+        {
+            if (scene.name == "Mission1")
+            {
+                PlayerMissionStart();
+            }
+        }
+
+        private void PlayerMissionStart()
+        {
+            SoundManager.Instance.PlayBGM();
+            SoundManager.Instance.PlayLevelStartAudio();
+        }
     }
 }

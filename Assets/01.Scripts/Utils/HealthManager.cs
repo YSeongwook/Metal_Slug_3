@@ -1,3 +1,5 @@
+using _01.Scripts.UI;
+using _01.Scripts.Utils;
 using UnityEngine;
 
 // 체력을 관리하는 클래스

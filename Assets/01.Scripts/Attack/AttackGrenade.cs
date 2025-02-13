@@ -1,4 +1,5 @@
 using System;
+using _01.Scripts.Player;
 using UnityEngine;
 
 public class AttackGrenade : MonoBehaviour, IAttack

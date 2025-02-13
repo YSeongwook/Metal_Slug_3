@@ -1,4 +1,6 @@
 using System.Collections;
+using _01.Scripts.Camera;
+using _01.Scripts.Utils;
 using UnityEngine;
 
 public class EnemyBoatController : MonoBehaviour

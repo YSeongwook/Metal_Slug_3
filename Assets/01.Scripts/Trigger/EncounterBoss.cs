@@ -1,3 +1,6 @@
+using _01.Scripts.Camera;
+using _01.Scripts.UI;
+using _01.Scripts.Utils;
 using UnityEngine;
 
 public class EncounterBoss : MonoBehaviour

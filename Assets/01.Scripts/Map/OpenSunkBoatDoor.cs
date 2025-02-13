@@ -1,3 +1,4 @@
+using _01.Scripts.Utils;
 using UnityEngine;
 
 public class OpenSunkBoatDoor : MonoBehaviour
