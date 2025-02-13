@@ -1,103 +1,101 @@
 using _01.Scripts.UI;
-using _01.Scripts.Utils;
 using UnityEngine;
 
 // 체력을 관리하는 클래스
-public class HealthManager : MonoBehaviour
+namespace _01.Scripts.Utils
 {
-    public int maxHP = 100; // 최대 체력
-    public int currentHP = 0;
-    public int lifeCount = 2;
-    private IDamaged[] componInterestedInDamages;   // 데미지를 받는 컴포넌트들의 배열
-    public int interestedInDamagesCount = 0;        // 데미지를 받는 컴포넌트의 개수
-
-    public int MaxHP {  get { return maxHP; } }
-    public int CurrentHP { get; set; }      // 현재 체력
-    public bool IgnoreDamages { get; set; } // 데미지를 무시하는지 여부
-
-    public delegate void OnDamageEvent();
-    public OnDamageEvent onDead;
-
-    public delegate void OnDestroyEvent();
-    public OnDestroyEvent OnDestroy;
-
-    private EnemyController enemyController;
-
-    void Start()
+    public class HealthManager : MonoBehaviour
     {
-        componInterestedInDamages = GetComponents<IDamaged>();
-        interestedInDamagesCount = componInterestedInDamages.Length;
-        CurrentHP = maxHP;
-        currentHP = CurrentHP;
-    }
+        public int maxHP = 100; // 최대 체력
+        public int currentHP = 0;
+        public int lifeCount = 2;
+        private IDamaged[] _componInterestedInDamages;   // 데미지를 받는 컴포넌트들의 배열
+        public int interestedInDamagesCount = 0;        // 데미지를 받는 컴포넌트의 개수
 
-    void OnEnable()
-    {
-        CurrentHP = maxHP;
+        public int MaxHp => maxHP;
+        public int CurrentHp { get; set; }      // 현재 체력
+        public bool IgnoreDamages { get; set; } // 데미지를 무시하는지 여부
+ 
+        public delegate void OnDamageEvent();
+        public OnDamageEvent onDead;
 
-        if (gameObject.name.Contains("Crab"))
+        public delegate void OnDestroyEvent();
+        public OnDestroyEvent OnDestroy;
+
+        private EnemyController _enemyController;
+
+        private void Start()
         {
-            enemyController = gameObject.GetComponent<EnemyController>();
+            _componInterestedInDamages = GetComponents<IDamaged>();
+            interestedInDamagesCount = _componInterestedInDamages.Length;
+            CurrentHp = maxHP;
+            currentHP = CurrentHp;
         }
-    }
 
-    // 투사체에 의해 공격을 받은 경우
-    public void OnHitByProjectile(ProjectileProperties projectile)
-    {
-        // 데미지를 무시하거나 현재 체력이 0 이하이면 처리 중단
-        if (IgnoreDamages || CurrentHP <= 0)
+        private void OnEnable()
         {
-            OnDestroy?.Invoke();
-            onDead?.Invoke();
+            CurrentHp = maxHP;
 
-            return;
+            if (gameObject.name.Contains("Crab"))
+            {
+                _enemyController = gameObject.GetComponent<EnemyController>();
+            }
         }
-        else
+
+        // 투사체에 의해 공격을 받은 경우
+        public void OnHitByProjectile(ProjectileProperties projectile)
         {
-            CurrentHP -= projectile.strength; // 투사체의 강도만큼 체력 감소
-            currentHP = CurrentHP;
+            // 데미지를 무시하거나 현재 체력이 0 이하이면 처리 중단
+            if (IgnoreDamages || CurrentHp <= 0)
+            {
+                OnDestroy?.Invoke();
+                onDead?.Invoke();
+
+                return;
+            }
+
+            CurrentHp -= projectile.strength; // 투사체의 강도만큼 체력 감소
+            currentHP = CurrentHp;
             NotifyDamageWasTaken(projectile); // 데미지를 받았음을 관련 컴포넌트들에게 알림
 
-            if(CurrentHP <= 0) onDead?.Invoke();
+            if(CurrentHp <= 0) onDead?.Invoke();
 
             if (GameManager.Instance.IsPlayer(gameObject)) 
             {
                 if (lifeCount >= 0) HUDManager.Instance.SetLifeCount(lifeCount);
-            } 
-        }
+            }
 
-        if(!gameObject.CompareTag("Player"))
-        {
-            // 점수 오르는 메서드
-            GameManager.Instance.AddScore(100);
-        }
-    }
-
-    // 데미지를 받았을 때 관련 컴포넌트들에게 알리는 메서드
-    private void NotifyDamageWasTaken(ProjectileProperties proj)
-    {
-        if (GameManager.Instance.IsPlayer(gameObject))
-        {
-            lifeCount--;
-        } 
-        else
-        {
-            // enemycontroller, soliderController OnHIt()
-
-            if(gameObject.name.Contains("Crab") && enemyController != null)
+            if(!gameObject.CompareTag("Player"))
             {
-                enemyController.OnHit();
+                // 점수 오르는 메서드
+                GameManager.Instance.AddScore(100);
             }
         }
 
-        for (int i = 0; i < componInterestedInDamages.Length; i++)
+        // 데미지를 받았을 때 관련 컴포넌트들에게 알리는 메서드
+        private void NotifyDamageWasTaken(ProjectileProperties proj)
         {
-            componInterestedInDamages[i].OnDamageReceived(proj, lifeCount);
-        }
-    }
+            if (GameManager.Instance.IsPlayer(gameObject))
+            {
+                lifeCount--;
+            } 
+            else
+            {
+                if(gameObject.name.Contains("Crab") && _enemyController != null)
+                {
+                    _enemyController.OnHit();
+                }
+            }
 
-    public bool IsAlive()
-    {
-        return CurrentHP > 0;
+            foreach (var t in _componInterestedInDamages)
+            {
+                t.OnDamageReceived(proj, lifeCount);
+            }
+        }
+
+        public bool IsAlive()
+        {
+            return CurrentHp > 0;
+        }
     }
 }

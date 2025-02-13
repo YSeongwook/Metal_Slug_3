@@ -34,27 +34,27 @@ public class EnemyBoatController : MonoBehaviour
 
     private void Update()
     {
-        if (healthManager.CurrentHP > 60)
+        if (healthManager.CurrentHp > 60)
         {
             spriteRender.sprite = boatSprites[0];
             //Nothing
         }
-        else if (healthManager.CurrentHP > 45)
+        else if (healthManager.CurrentHp > 45)
         {
             spriteRender.sprite = boatSprites[1];
             SoundManager.Instance.PlayMetalSlugDestroy3();
         }
-        else if (healthManager.CurrentHP > 30)
+        else if (healthManager.CurrentHp > 30)
         {
             spriteRender.sprite = boatSprites[2];
             SoundManager.Instance.PlayMetalSlugDestroy1();
         }
-        else if (healthManager.CurrentHP > 15)
+        else if (healthManager.CurrentHp > 15)
         {
             spriteRender.sprite = boatSprites[3];
             SoundManager.Instance.PlayMetalSlugDestroy1();
         }
-        else if (healthManager.CurrentHP > 0)
+        else if (healthManager.CurrentHp > 0)
         {
             // 한 번만 실행하게끔 설정
             if(!destroyHalf) DestroyHalf();

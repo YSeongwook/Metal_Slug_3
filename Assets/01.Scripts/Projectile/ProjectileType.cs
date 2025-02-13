@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using _01.Scripts.Utils;
 using Random = UnityEngine.Random;
 
 // 투사체 종류

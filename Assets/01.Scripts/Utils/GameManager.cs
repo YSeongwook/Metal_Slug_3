@@ -40,7 +40,7 @@ namespace _01.Scripts.Utils
             if (player)
             {
                 var health = player.GetComponent<HealthManager>();
-                health.CurrentHP = 1000;
+                health.CurrentHp = 1000;
                 // SetBombs(200);
                 return true;
             }

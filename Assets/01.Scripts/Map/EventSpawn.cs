@@ -1,4 +1,5 @@
 using System.Collections;
+using _01.Scripts.Utils;
 using UnityEngine;
 
 public class EventSpawn : MonoBehaviour

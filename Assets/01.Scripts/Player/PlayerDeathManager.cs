@@ -99,7 +99,7 @@ public class PlayerDeathManager : MonoBehaviour, IDamaged
         attackManager.RestoreGrenade();
         animManager.PlaySpawnAnim();
         healthManager.IgnoreDamages = true;
-        healthManager.CurrentHP = healthManager.maxHP;
+        healthManager.CurrentHp = healthManager.maxHP;
         flashBright.FlashForDuration(ignoreDamagesDuration);
         timeUtils.TimeDelay(ignoreDamagesDuration - 0.5f, () =>
         {
