@@ -1,6 +1,5 @@
+using _01.Scripts.Utils;
 using UnityEngine;
-using EventLibrary;
-using EnumTypes;
 
 public class AttackKnife : MonoBehaviour, IAttack
 {
@@ -25,7 +24,7 @@ public class AttackKnife : MonoBehaviour, IAttack
         attackSwitch = !attackSwitch;
 
         knife.CastAOE(victimTag, transform.position);
-        EventManager.TriggerEvent(GlobalEvents.KnifeUsed);
+        EventManager<AttackEvents>.TriggerEvent(AttackEvents.KnifeUsed);
         timeUtils.TimeDelay(0.2f, () => { anim.SetBool("knifing", false); });
     }
 

@@ -1,6 +1,4 @@
 using _01.Scripts.Utils;
-using EnumTypes;
-using EventLibrary;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -50,17 +48,18 @@ namespace _01.Scripts.UI
         {
             base.Awake();
         
-            EventManager.StartListening(GlobalEvents.GunUsed, SetBulletCount);
-            EventManager.StartListening(GlobalEvents.PlayerDead, SetBulletCountToInfinity);
-            EventManager.StartListening(GlobalEvents.GrenadeUsed, SetGrenadeCount);
-
-            EventManager.StartListening(GlobalEvents.MissionStart, OnMissionStart);
-            EventManager.StartListening(GlobalEvents.MissionSuccess, OnMissionSuccess);
-            EventManager.StartListening(GlobalEvents.PointsEarned, OnPlayerPointsChanged);
-            EventManager.StartListening(GlobalEvents.PlayerDead, OnPlayerDeath);
-            EventManager.StartListening(GlobalEvents.GameOver, CheckGameOver);
-            EventManager.StartListening(GlobalEvents.Restart, Restart);
-            EventManager.StartListening(GlobalEvents.Home, () => SetVisible(false));
+            EventManager<AttackEvents>.StartListening<float>(AttackEvents.GunUsed, SetBulletCount);
+            EventManager<AttackEvents>.StartListening<float>(AttackEvents.GrenadeUsed, SetGrenadeCount);
+            
+            EventManager<PlayerEvents>.StartListening(PlayerEvents.PlayerDead, SetBulletCountToInfinity);
+            EventManager<PlayerEvents>.StartListening(PlayerEvents.PlayerDead, OnPlayerDeath);
+            
+            EventManager<MissionEvents>.StartListening(MissionEvents.MissionStart, OnMissionStart);
+            EventManager<MissionEvents>.StartListening(MissionEvents.MissionSuccess, OnMissionSuccess);
+            EventManager<GameEvents>.StartListening(GameEvents.PointsEarned, OnPlayerPointsChanged);
+            EventManager<GameEvents>.StartListening(GameEvents.GameOver, CheckGameOver);
+            EventManager<GameEvents>.StartListening(GameEvents.Restart, Restart);
+            EventManager<GameEvents>.StartListening(GameEvents.Home, () => SetVisible(false));
 
             _bulletCountGradient = bulletCountGUI.GetComponent<Gradient>();
             _timeUtils = GetComponent<TimeUtils>();
@@ -78,7 +77,7 @@ namespace _01.Scripts.UI
         private void OnDisable()
         {
             // 게임 오버 상태 변경 이벤트 리스너 제거
-            EventManager.StopListening(GlobalEvents.GameOver, CheckGameOver);
+            EventManager<GameEvents>.StopListening(GameEvents.GameOver, CheckGameOver);
         }
 
         private void Update()
@@ -230,7 +229,7 @@ namespace _01.Scripts.UI
                 SoundManager.Instance.PlayContinueSiren();
 
                 // 게임 오버 상태에서는 이 메서드가 호출되지 않도록 이벤트 리스너를 제거
-                EventManager.StopListening(GlobalEvents.GameOver, CheckGameOver);
+                EventManager<GameEvents>.StopListening(GameEvents.GameOver, CheckGameOver);
             }
         }
 
@@ -244,7 +243,7 @@ namespace _01.Scripts.UI
             SoundManager.Instance.ClearEffectSource();
 
             // 재시작시 게임 오버 이벤트 등록
-            EventManager.StartListening(GlobalEvents.GameOver, CheckGameOver);
+            EventManager<GameEvents>.StartListening(GameEvents.GameOver, CheckGameOver);
         }
 
         public void AddCredit()

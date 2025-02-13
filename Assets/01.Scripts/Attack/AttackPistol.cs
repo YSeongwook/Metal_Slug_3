@@ -1,7 +1,6 @@
 using _01.Scripts.Player;
+using _01.Scripts.Utils;
 using UnityEngine;
-using EnumTypes;
-using EventLibrary;
 
 public class AttackPistol : MonoBehaviour, IAttack
 {
@@ -35,7 +34,7 @@ public class AttackPistol : MonoBehaviour, IAttack
             IProjectile bullet = bulletGameObject.GetComponentInChildren<IProjectile>();
             bullet.Launch(victimTag);
             audioManager.PlaySound(0);
-            EventManager.TriggerEvent(GlobalEvents.GunUsed, 0);
+            EventManager<AttackEvents>.TriggerEvent(AttackEvents.GunUsed, 0);
         } 
     }
 

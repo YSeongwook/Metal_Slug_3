@@ -1,10 +1,8 @@
-using EventLibrary;
 using System.Collections;
 using _01.Scripts.UI;
 using _01.Scripts.Utils;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using EnumTypes;
 
 public class PlayerDeathManager : MonoBehaviour, IDamaged
 {
@@ -61,7 +59,7 @@ public class PlayerDeathManager : MonoBehaviour, IDamaged
         }
         else if (projectileProp.type == ProjectileType.Knife)
         {
-            EventManager.TriggerEvent(GlobalEvents.PlayerStabbed);
+            EventManager<PlayerEvents>.TriggerEvent(PlayerEvents.PlayerStabbed);
         }
 
         if (projectileProp.type == ProjectileType.Water) Invoke("PlayAudioDeathInWater", 0.6f);
@@ -87,7 +85,7 @@ public class PlayerDeathManager : MonoBehaviour, IDamaged
     private void NotifyDeath()
     {
         setPlayerVisible(false);
-        EventManager.TriggerEvent(GlobalEvents.PlayerDead);
+        EventManager<PlayerEvents>.TriggerEvent(PlayerEvents.PlayerDead);
     }
 
     public void SpawnPlayer()
@@ -124,7 +122,7 @@ public class PlayerDeathManager : MonoBehaviour, IDamaged
         HUDManager.Instance.ResetTime();
         HUDManager.Instance.SetLifeCount(healthManager.lifeCount);
 
-        EventManager.TriggerEvent(GlobalEvents.Restart);
+        EventManager<GameEvents>.TriggerEvent(GameEvents.Restart);
     }
 
     private void setPlayerVisible(bool visible)

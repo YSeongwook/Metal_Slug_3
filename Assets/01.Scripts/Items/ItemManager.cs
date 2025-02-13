@@ -1,7 +1,5 @@
 using _01.Scripts.Utils;
 using UnityEngine;
-using EventLibrary;
-using EnumTypes;
 
 public class ItemManager : MonoBehaviour, ICheckCollision
 {
@@ -69,7 +67,7 @@ public class ItemManager : MonoBehaviour, ICheckCollision
     {
         if (item.attackID > 0)
         {
-            EventManager.TriggerEvent(GlobalEvents.ItemPickedUp);
+            EventManager<ItemEvents>.TriggerEvent(ItemEvents.ItemPickedUp);
             attackManager.SetAttack(item.attackID, item.animController);
             attackManager.UpdateBulletCount(item.bulletCount);
         }

@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using _01.Scripts.Player;
-using EnumTypes;
+using _01.Scripts.Utils;
 
 public class AttackMG : MonoBehaviour, IAttack
 {

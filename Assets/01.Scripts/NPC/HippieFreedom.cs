@@ -1,6 +1,4 @@
 using _01.Scripts.Utils;
-using EnumTypes;
-using EventLibrary;
 using UnityEngine;
 
 public class HippieFreedom : MonoBehaviour, IDamaged, IObserver, ICheckCollision
@@ -75,7 +73,7 @@ public class HippieFreedom : MonoBehaviour, IDamaged, IObserver, ICheckCollision
     {
         animManager.PlayFreeAnim(EndOfHippieFreedAnim);
         gameObject.layer = (int)Layers.FreeMan;
-        EventManager.TriggerEvent(GlobalEvents.PointsEarned, 100);
+        EventManager<GameEvents>.TriggerEvent(GameEvents.PointsEarned, 100);
     }
 
     private void EndOfHippieFreedAnim()

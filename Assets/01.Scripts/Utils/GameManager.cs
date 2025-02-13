@@ -2,8 +2,6 @@ using System.Collections;
 using System.Linq;
 using _01.Scripts.Player;
 using _01.Scripts.UI;
-using EnumTypes;
-using EventLibrary;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -94,7 +92,7 @@ namespace _01.Scripts.Utils
         public void SetGameOver()
         {
             isGameOver = true;
-            EventManager.TriggerEvent(GlobalEvents.GameOver);
+            EventManager<GameEvents>.TriggerEvent(GameEvents.GameOver);
         }
 
         public void SetGameOverRespawn()
@@ -111,7 +109,7 @@ namespace _01.Scripts.Utils
         public void SetBossSpawn()
         {
             isBossSpawn = true;
-            EventManager.TriggerEvent(GlobalEvents.BossSpawn);
+            EventManager<BossEvents>.TriggerEvent(BossEvents.BossSpawn);
         }
 
         public bool IsBossSpawn()
@@ -335,7 +333,7 @@ namespace _01.Scripts.Utils
         {
             if (!skipReset) GameReset();
 
-            if(isGameOver) EventManager.TriggerEvent(GlobalEvents.GameReset);
+            if(isGameOver) EventManager<GameEvents>.TriggerEvent(GameEvents.GameReset);
             SceneManager.LoadScene(id);
         }
     }

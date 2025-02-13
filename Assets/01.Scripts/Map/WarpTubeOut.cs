@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections;
-using EnumTypes;
-using EventLibrary;
+using _01.Scripts.Utils;
 
 public class WarpTubeOut : MonoBehaviour
 {
@@ -22,7 +21,7 @@ public class WarpTubeOut : MonoBehaviour
         marcoWarp = transform.GetChild(0).gameObject.GetComponent<Animator>();
         warpTubeCover = transform.GetChild(1).gameObject;
 
-        EventManager.StartListening(GlobalEvents.BossSpawn, DisableGameObject);
+        EventManager<BossEvents>.StartListening(BossEvents.BossSpawn, DisableGameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D col)

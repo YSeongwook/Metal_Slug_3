@@ -1,4 +1,4 @@
-using EnumTypes;
+using _01.Scripts.Utils;
 using UnityEngine;
 
 public class BulletProjectile : MonoBehaviour, IProjectile

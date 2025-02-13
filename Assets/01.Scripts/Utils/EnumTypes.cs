@@ -1,8 +1,7 @@
 using UnityEngine;
 
-namespace EnumTypes
+namespace _01.Scripts.Utils
 {
-    public enum LookDirection { Straight, Up, Down }
     public enum BodyPosture { Stand, Running, InTheAir, Crouch }
     public enum Layers
     {
@@ -41,34 +40,55 @@ namespace EnumTypes
 
     public enum GlobalEvents
     {
+        SoldierDead,
+
+        WaveEventEnd,
+        
+        ShowRecordingUI
+    }
+
+    public enum GameEvents
+    {
+        GameOver,
+        Restart,
+        Home,
+        GameReset,
+        PointsEarned,
+    }
+
+    public enum MissionEvents
+    {
+        MissionStartRequest,
+        MissionStart,
+        MissionEnd,
+        MissionSuccess,
+    }
+
+    public enum PlayerEvents
+    {
         PlayerDead,
         PlayerSpawned,
         PlayerStabbed,
         PlayerInactive,
         PlayerDamaged,
+    }
 
+    public enum ItemEvents
+    {
+        ItemPickedUp,
+    }
+
+    public enum BossEvents
+    {
         BossSpawn,
         BossDead,
-        SoldierDead,
+    }
 
-        PointsEarned,
+    public enum AttackEvents
+    {
         KnifeUsed,
         GunUsed,
         GrenadeUsed,
-        WaveEventEnd,
-
-        MissionStartRequest,
-        MissionStart,
-        MissionEnd,
-        MissionSuccess,
-
-        GameOver,
-        Restart,
-        ItemPickedUp,
-        Home,
-        GameReset,
-
-        ShowRecordingUI
     }
 
     public class EnumTypes : MonoBehaviour { }

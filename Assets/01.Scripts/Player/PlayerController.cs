@@ -1,5 +1,4 @@
-using EnumTypes;
-using EventLibrary;
+using _01.Scripts.Utils;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.Input;
@@ -55,7 +54,7 @@ namespace _01.Scripts.Player
         {
             base.Awake();
 
-            EventManager.StartListening(GlobalEvents.GameReset, GameReset);
+            EventManager<GameEvents>.StartListening(GameEvents.GameReset, GameReset);
         }
 
         private void Start()
@@ -134,7 +133,7 @@ namespace _01.Scripts.Player
 
         private void OnDestroy()
         {
-            EventManager.StopListening(GlobalEvents.GameReset, GameReset);
+            EventManager<GameEvents>.StopListening(GameEvents.GameReset, GameReset);
         }
 
         private void OnMove(InputValue inputValue)
@@ -290,7 +289,7 @@ namespace _01.Scripts.Player
         // 플레이어가 비활성 상태임을 나타내는 이벤트를 발생
         private void SendPlayerInactiveEvent()
         {
-            EventManager.TriggerEvent(GlobalEvents.PlayerInactive);
+            EventManager<PlayerEvents>.TriggerEvent(PlayerEvents.PlayerInactive);
         }
 
         private void NotifyObservers(SlugEvents ev)

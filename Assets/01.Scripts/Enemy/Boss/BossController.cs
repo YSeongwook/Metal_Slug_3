@@ -1,8 +1,6 @@
-using EventLibrary;
 using System.Collections;
 using _01.Scripts.Utils;
 using UnityEngine;
-using EnumTypes;
 
 public class BossController : MonoBehaviour
 {
@@ -139,7 +137,7 @@ public class BossController : MonoBehaviour
 
     private IEnumerator Spawn()
     {
-        EventManager.TriggerEvent(GlobalEvents.BossSpawn);
+        EventManager<BossEvents>.TriggerEvent(BossEvents.BossSpawn);
 
         foreach (Transform child in waterWave.transform)
         {
@@ -252,7 +250,7 @@ public class BossController : MonoBehaviour
         GameManager.Instance.PlayerWin();
         StopBossCoroutines();
         
-        EventManager.TriggerEvent(GlobalEvents.MissionSuccess);
+        EventManager<MissionEvents>.TriggerEvent(MissionEvents.MissionSuccess);
     }
 
     private void StopBossCoroutines()

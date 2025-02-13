@@ -1,6 +1,6 @@
 using _01.Scripts.Player;
+using _01.Scripts.Utils;
 using UnityEngine;
-using EnumTypes;
 
 public class GrenadeProjectile : MonoBehaviour, IProjectile
 {

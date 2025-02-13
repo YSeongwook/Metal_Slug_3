@@ -1,5 +1,5 @@
 using _01.Scripts.Player;
-using EnumTypes;
+using _01.Scripts.Utils;
 using UnityEngine;
 using Utils;
 
