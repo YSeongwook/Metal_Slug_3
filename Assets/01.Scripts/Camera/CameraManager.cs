@@ -23,11 +23,6 @@ namespace _01.Scripts.Camera
         public CinemachineVirtualCamera vcamZ3A;
         public CinemachineVirtualCamera vcamZ3B;
 
-        private void Start()
-        {
-            DontDestroyOnLoad(gameObject);
-        }
-
         #region Editor Switches
 
         private void SwitchZ1AtoZ1B()

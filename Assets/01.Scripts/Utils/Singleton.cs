@@ -25,14 +25,33 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 
     protected virtual void Awake()
     {
-        // DontDestroyOnLoad가 다른 오브젝트의 하위에 있다면 작동 X, 매니저가 부모이거나, 자식일 때 작동
-        if (transform.parent != null && transform.root != null)
+        if (_instance == null)
         {
-            DontDestroyOnLoad(this.transform.root.gameObject);
+            _instance = this as T;
+            // 씬 전환 시 파괴되지 않도록 설정
+            if (transform.parent != null && transform.root != null)
+            {
+                DontDestroyOnLoad(this.transform.root.gameObject);
+            }
+            else
+            {
+                DontDestroyOnLoad(this.gameObject);
+            }
+            Debug.Log("싱글톤 인스턴스 초기화 완료");
         }
-        else
+        else if (_instance != this)
         {
-            DontDestroyOnLoad(this.gameObject); // 씬이 전환되도 오브젝트가 파괴되지 않는다.
+            Debug.Log("중복된 싱글톤 인스턴스 감지되어 제거합니다.");
+            Destroy(this.gameObject);
+        }
+    }
+    
+    protected virtual void OnDestroy()
+    {
+        if (_instance == this)
+        {
+            Debug.Log("싱글톤 인스턴스가 파괴됩니다.");
+            _instance = null;
         }
     }
 }
