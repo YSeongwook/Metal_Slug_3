@@ -7,7 +7,6 @@ public class GrenadeProjectile : MonoBehaviour, IProjectile
     public ProjectileProperties properties;
     private int bounceCount;
     public int bouncesToExplode = 2;
-    private bool launched;
     private AreaOfEffectProjectile explosionWave;
     private Rigidbody2D rb;
 
@@ -64,7 +63,6 @@ public class GrenadeProjectile : MonoBehaviour, IProjectile
 
     public void Launch(string victimsTag, Vector2 destination)
     {
-        launched = true;
         properties.victimTag = victimsTag;
 
         bounceCount = 0;
@@ -118,9 +116,8 @@ public class GrenadeProjectile : MonoBehaviour, IProjectile
         gameObject.SetActive(false);
     }
 
-    void OnBecameInvisible()
+    private void OnBecameInvisible()
     {
         gameObject.SetActive(false);
-        launched = false;
     }
 }

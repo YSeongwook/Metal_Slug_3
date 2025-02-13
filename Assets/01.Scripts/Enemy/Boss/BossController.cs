@@ -13,7 +13,6 @@ public class BossController : MonoBehaviour
     public Transform bossSpawner;
     public GameObject normalBombSpawner;
     public GameObject heavyBombSpawner;
-    private float spawnOffsetUp = 0.5f;
 
     public GameObject boat;
     private bool isSpawned = false;

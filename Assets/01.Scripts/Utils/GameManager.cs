@@ -24,13 +24,6 @@ namespace _01.Scripts.Utils
         float mission2Points = 0f;
         float mission3Points = 0f;
 
-        void Awake()
-        {
-            // LoadSettings();
-            // LoadRecords();
-            // SaveRecords
-        }
-
         private void Start()
         {
             GameReset();

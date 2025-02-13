@@ -16,8 +16,6 @@ public class AreaOfEffectProjectile : MonoBehaviour
     {
         Vector2 center = new Vector2(pos.x - transform.right.x * (boxSize.x / 2) + boxOffset.x * transform.right.x, pos.y - (boxSize.y / 2) + boxOffset.y);
 
-        float duration = 1.5f;
-
         Vector2 centre = new Vector2(pos.x + boxOffset.x * transform.right.x, pos.y + boxOffset.y);
         RaycastHit2D[] hits = Physics2D.BoxCastAll(centre, boxSize, 0, transform.right, rayDistance, layerMask);
 

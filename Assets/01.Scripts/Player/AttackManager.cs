@@ -10,7 +10,6 @@ public class AttackManager : MonoBehaviour
     private IAttack currentFireArmAttack;
     private IAttack grenadeAttack;
     private AttackKnife MeleeAttack;
-    private int currentAttackID = 1;
     public int bulletCount;
     public int grenadeCount = 10;
     private RuntimeAnimatorController gunAnimController;

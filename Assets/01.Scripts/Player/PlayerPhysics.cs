@@ -4,7 +4,7 @@ using Utils;
 
 public class SlugPhysics : MonoBehaviour
 {
-    private Collider2D collider;
+    private Collider2D _collider;
     private IObserver[] observers;
 
     public float groundDrag = 0;     // 땅에서의 드래그
@@ -41,7 +41,7 @@ public class SlugPhysics : MonoBehaviour
 
     void Awake()
     {
-        collider = GetComponent<Collider2D>();
+        _collider = GetComponent<Collider2D>();
         observers = GetComponents<IObserver>();
         velocity = new Vector2();
         InTheAir = false;
@@ -140,8 +140,8 @@ public class SlugPhysics : MonoBehaviour
     // 바닥 아래에 있는 것이 무엇인지 확인
     int WhatIsUnderMyFeet(Vector2 trans)
     {
-        Vector2 endPoint = new Vector2(collider.bounds.center.x + trans.x, collider.bounds.min.y + trans.y - 0.03f);
-        Vector2 startPoint = new Vector2(endPoint.x, collider.bounds.min.y + 0.03f);
+        Vector2 endPoint = new Vector2(_collider.bounds.center.x + trans.x, _collider.bounds.min.y + trans.y - 0.03f);
+        Vector2 startPoint = new Vector2(endPoint.x, _collider.bounds.min.y + 0.03f);
         // 한 번에 하나의 히트만 지원하므로 현재는 더 필요하지 않음
         int hitCount = Physics2D.LinecastNonAlloc(startPoint, endPoint, rayCastHit, linecastLayerMask);
         // Debug.DrawLine(startPoint, endPoint);
@@ -151,7 +151,7 @@ public class SlugPhysics : MonoBehaviour
     // 앞에 있는 것이 무엇인지 확인
     int WhatIsInFrontOfMe(Vector2 trans)
     {
-        Bounds bounds = collider.bounds;
+        Bounds bounds = _collider.bounds;
         float startX = bounds.center.x;
 
         Vector2 startPoint = new Vector2(startX, bounds.min.y);
@@ -173,18 +173,18 @@ public class SlugPhysics : MonoBehaviour
     {
         if (transform.right == Vector3.left)
         {
-            return rayCastHit[0].point.x - collider.bounds.center.x + 0.03f;
+            return rayCastHit[0].point.x - _collider.bounds.center.x + 0.03f;
         }
         else
         {
-            return rayCastHit[0].point.x - collider.bounds.center.x - 0.03f;
+            return rayCastHit[0].point.x - _collider.bounds.center.x - 0.03f;
         }
     }
 
     // Y 변위 조정
     float FixYTrans(RaycastHit2D hit)
     {
-        return hit.point.y - collider.bounds.min.y + 0.005f;
+        return hit.point.y - _collider.bounds.min.y + 0.005f;
     }
 
     // 레이캐스트 히트로부터 경사 구하기

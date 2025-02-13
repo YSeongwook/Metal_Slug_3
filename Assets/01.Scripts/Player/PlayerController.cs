@@ -26,7 +26,6 @@ namespace _01.Scripts.Player
         [SerializeField] int maxJumps = 1; // 최대 점프 횟수
 
         private Vector2 _inputMovement = Vector2.zero;
-        private bool _isGrounded = false; // 바닥에 닿았는지 나타냄
         private int _jumpCount = 0; // 현재 점프 회수를 추적
 
         public float fixedZ = 0f; // 고정할 z축 값
@@ -131,8 +130,10 @@ namespace _01.Scripts.Player
             transform.position = new Vector3(transform.position.x, transform.position.y, fixedZ);
         }
 
-        private void OnDestroy()
+        protected override void OnDestroy()
         {
+            base.OnDestroy();
+            
             EventManager<GameEvents>.StopListening(GameEvents.GameReset, GameReset);
         }
 
@@ -251,7 +252,6 @@ namespace _01.Scripts.Player
                 NotifyObservers(SlugEvents.HitGround);
                 body = BodyPosture.Stand;
 
-                _isGrounded = true;
                 InTheAir = false;
 
                 if (LookingDirection == Vector2.down)
@@ -281,7 +281,6 @@ namespace _01.Scripts.Player
         {
             if (collision.gameObject.layer == (int)Layers.World)
             {
-                _isGrounded = false;
                 InTheAir = true;
             }
         }

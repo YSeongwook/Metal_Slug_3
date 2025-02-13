@@ -5,9 +5,10 @@ public class GlobalAudioPool : Singleton<GlobalAudioPool>
     [SerializeField] GameObject soundPrefab;
     private ObjectPool audioSourcePool;
 
-    void Awake()
+    protected override void Awake()
     {
-        DontDestroyOnLoad(this);
+        base.Awake();
+        
         audioSourcePool = gameObject.AddComponent<ObjectPool>();
         if (soundPrefab != null)
         {
