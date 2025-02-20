@@ -48,7 +48,7 @@ namespace _01.Scripts.Player
         // 애니메이터 파라미터 캐싱
         private static readonly int UpPressed = Animator.StringToHash("up_pressed");
         private static readonly int DownPressed = Animator.StringToHash("down_pressed");
-    
+
         protected override void Awake()
         {
             base.Awake();
@@ -82,7 +82,11 @@ namespace _01.Scripts.Player
             // 캐릭터의 움직임 여부를 확인하여 isRun 파라미터를 설정
             _animManager.StartRunningAnim(IsRunning);
 
-            if (GetKeyDown(KeyCode.UpArrow) && !IsCrouched) LookingDirection = Vector2.up;
+            if (GetKeyDown(KeyCode.UpArrow) && !IsCrouched)
+            {
+                LookingDirection = Vector2.up;
+                DebugLogger.Log("위쪽 키 눌리고 있음"); // 현재 위쪽 방향키 누르고 있어도 캐릭터가 위를 바라보지 않음
+            }
 
             CheckLookingDirection();
 
@@ -133,7 +137,7 @@ namespace _01.Scripts.Player
         protected override void OnDestroy()
         {
             base.OnDestroy();
-            
+
             EventManager<GameEvents>.StopListening(GameEvents.GameReset, GameReset);
         }
 

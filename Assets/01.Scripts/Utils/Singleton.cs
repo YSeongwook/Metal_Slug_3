@@ -37,7 +37,6 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
             {
                 DontDestroyOnLoad(this.gameObject);
             }
-            Debug.Log("싱글톤 인스턴스 초기화 완료");
         }
         else if (_instance != this)
         {
@@ -50,7 +49,6 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     {
         if (_instance == this)
         {
-            Debug.Log("싱글톤 인스턴스가 파괴됩니다.");
             _instance = null;
         }
     }
