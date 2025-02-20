@@ -1,21 +1,20 @@
 using System.Collections;
-using _01.Scripts.Sound;
 using _01.Scripts.Utils;
 using UnityEngine;
 
 public class SoldierController : MonoBehaviour
 {
-    [Header("Enemy information")]
+    [Header("Enemy Information")]
     public float speed = 1f;
     public bool isMovable = true;
     public bool canMelee = true;
+    // 기존 AudioClip 배열은 사운드 이벤트로 대체할 예정이므로 삭제 가능
     public AudioClip[] deathClip;
-    public AudioClip meleeAttackClip;
-    public AudioClip rangeAttackClip;
-    
+
     private GameObject _followPlayer;
     private HealthManager _healthManager;
     private Blink _enemyBlink;
+    private HealthManager _playerHealthManager;
 
     [Space(10)]
     public ProjectileProperties projectile;
@@ -25,20 +24,20 @@ public class SoldierController : MonoBehaviour
     public GameObject throwableObj;
     public bool canThrow = false;
 
-    [Header("Enemy activation")]
+    [Header("Enemy Activation")]
     public float activationDistance = 1.8f;
-    public float attackDistance = 1f;         //Far attack
-    public float meleeDistance = 1f;          //Near attack
+    public float attackDistance = 1f; // Far attack
+    public float meleeDistance = 1f;  // Near attack
     public bool facingRight = false;
     
     private const float ChangeSign = -1;
     private Rigidbody2D _rb;
     private Animator _animator;
 
-    //Enemy gravity
+    // Enemy gravity
     public bool collidingDown = false;
 
-    [Header("Time shoot")]
+    [Header("Attack Timing")]
     public float rangedDelta = 2f;
     public float fireDelta = 0.5f;
     private float _shotTime = 0.0f;
@@ -46,10 +45,10 @@ public class SoldierController : MonoBehaviour
 
     private bool _canFall = false;
 
-    // 충돌 시 플레이어를 넉백할 힘의 크기
+    // Knockback force when colliding with the player
     public float knockbackForce = 5f;
     
-    // 애니메이터 파라미터 캐시 처리
+    // Animator parameter caching
     private static readonly int IsFalling = Animator.StringToHash("isFalling");
     private static readonly int IsWalking = Animator.StringToHash("isWalking");
     private static readonly int Knifing = Animator.StringToHash("Knifing");
@@ -59,83 +58,75 @@ public class SoldierController : MonoBehaviour
     private void Start()
     {
         Initialize();
-        registerHealth();
-        checkCanFall();
+        RegisterHealth();
+        CheckCanFall();
         _enemyBlink = GetComponent<Blink>();
     }
 
     private void Initialize()
     {
         _followPlayer = GameManager.Instance.GetPlayer();
+        _playerHealthManager = _followPlayer.GetComponent<HealthManager>();
         _animator = GetComponent<Animator>();
         _rb = GetComponent<Rigidbody2D>();
     }
 
-    private void registerHealth()
+    private void RegisterHealth()
     {
         _healthManager = GetComponent<HealthManager>();
         _healthManager.onDead += OnDead;
     }
 
-    private void checkCanFall()
+    private void CheckCanFall()
     {
         foreach (var parameter in _animator.parameters)
         {
-            if (parameter.name != "isFalling") continue;
-            
-            _canFall = true;
-            break;
+            if (parameter.name == "isFalling")
+            {
+                _canFall = true;
+                break;
+            }
         }
     }
 
     private void FixedUpdate()
     {
-        if (_healthManager.IsAlive())
+        FlipShoot();
+        if (_canFall) _animator.SetBool(IsFalling, !collidingDown);
+
+        float playerDistance = GetPlayerDistance();
+        if (_playerHealthManager.IsAlive())
         {
-            FlipShoot();
-            if (_canFall) _animator.SetBool(IsFalling, !collidingDown);
-
-            float playerDistance = GetPlayerDistance();
-
-            // 플레이어가 살아있다면 추적 및 공격
-            if (_followPlayer.GetComponent<HealthManager>().IsAlive())
-            {
-                if (playerDistance < activationDistance && collidingDown)
-                {
-                    if (Mathf.Abs(playerDistance) <= meleeDistance && canMelee)
-                    {
-                        MeleeAttack();
-                    }
-                    else if (Mathf.Abs(playerDistance) <= attackDistance && canThrow)
-                    {
-                        if(Mathf.Abs(playerDistance) >= meleeDistance && canMelee)
-                        {
-                            RangedAttack();
-                        } 
-                        else
-                        {
-                            MeleeAttack();
-                        }
-
-                    }
-                    else
-                    {
-                        MoveToPlayer(playerDistance);
-                    }
-                }
-            }
-            else
-            {
-                _animator.SetBool(IsWalking, false);
-                _animator.SetBool(Knifing, false);
-                _animator.SetBool(ThrowingGrenade, false);
-            }
-
-            FlipEnemy(playerDistance);
+            ProcessEnemyBehavior(playerDistance);
         }
         else
         {
-            _rb.velocity = Vector2.zero;
+            StopMove();
+        }
+        FlipEnemy(playerDistance);
+    }
+    
+    // 적 행동 처리
+    private void ProcessEnemyBehavior(float playerDistance)
+    {
+        if (playerDistance < activationDistance && collidingDown)
+        {
+            float absDistance = Mathf.Abs(playerDistance);
+            if (absDistance <= meleeDistance && canMelee)
+            {
+                MeleeAttack();
+            }
+            else if (absDistance <= attackDistance && canThrow)
+            {
+                if (absDistance >= meleeDistance && canMelee)
+                    RangedAttack();
+                else
+                    MeleeAttack();
+            }
+            else
+            {
+                MoveToPlayer(playerDistance);
+            }
         }
     }
 
@@ -146,7 +137,21 @@ public class SoldierController : MonoBehaviour
 
     private void FlipEnemy(float playerDistance)
     {
-        if ((playerDistance < 0 && !facingRight) || (playerDistance > 0 && facingRight)) Flip();
+        if ((playerDistance < 0 && !facingRight) || (playerDistance > 0 && facingRight))
+            Flip();
+    }
+
+    // 공격 관련 타이밍 로직을 별도 메서드로 분리하여 재사용성을 높임
+    private bool IsAttackReady()
+    {
+        _shotTime += Time.deltaTime;
+        if (_shotTime > _nextFire)
+        {
+            _nextFire = _shotTime; // _nextFire 업데이트 (상대적 시간 계산)
+            _shotTime = 0.0f;
+            return true;
+        }
+        return false;
     }
 
     private void MeleeAttack()
@@ -156,21 +161,14 @@ public class SoldierController : MonoBehaviour
 
         _rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
 
-        _shotTime += Time.deltaTime;
-
-        if (_shotTime <= _nextFire) return;
+        if (!IsAttackReady()) return;
         
-        _nextFire = _shotTime + fireDelta;
-
         if (Mathf.Abs(GetComponent<SpriteRenderer>().bounds.SqrDistance(_followPlayer.transform.position)) <= meleeDistance)
         {
             _followPlayer.GetComponent<HealthManager>().OnHitByProjectile(projectile);
-
-            if (meleeAttackClip) SoundManager.Instance.PlayEnemyAttackAudio(meleeAttackClip);
+            // 기존 직접 사운드 호출 대신 이벤트 발생
+            EventManager<SoundEventType>.TriggerEvent<string>(SoundEventType.EnemyAttack, "soldier_melee");
         }
-
-        _nextFire -= _shotTime;
-        _shotTime = 0.0f;
     }
 
     private void RangedAttack()
@@ -183,16 +181,9 @@ public class SoldierController : MonoBehaviour
         else
             _rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
-        _shotTime += Time.deltaTime;
-
-        if (_shotTime <= _nextFire) return;
+        if (!IsAttackReady()) return;
         
-        _nextFire = _shotTime + rangedDelta;
-
         StartCoroutine(WaitSecondaryAttack());
-
-        _nextFire -= _shotTime;
-        _shotTime = 0.0f;
     }
 
     private void MoveToPlayer(float playerDistance)
@@ -203,7 +194,6 @@ public class SoldierController : MonoBehaviour
         if (collidingDown)
         {
             Vector2 movementDirection = new Vector2(ChangeSign * Mathf.Sign(playerDistance), 0f);
-
             _rb.velocity = movementDirection * (speed * 100 * Time.deltaTime);
         }
 
@@ -217,101 +207,82 @@ public class SoldierController : MonoBehaviour
         Vector3 scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;
-
         facingRight = !facingRight;
     }
 
     private void FlipShoot()
     {
         if (projSpawner == null) return;
+        projSpawner.transform.rotation = facingRight ? Quaternion.Euler(0, 0, 0) : Quaternion.Euler(0, 0, -180);
+    }
 
-        if (facingRight)
-        {
-            //Fire right
-            projSpawner.transform.rotation = Quaternion.Euler(0, 0, 0);
-        }
-        else
-        {
-            //Fire left
-            projSpawner.transform.rotation = Quaternion.Euler(0, 0, -180);
-        }
+    private void StopMove()
+    {
+        _animator.SetBool(IsWalking, false);
+        _animator.SetBool(Knifing, false);
+        _animator.SetBool(ThrowingGrenade, false);
     }
 
     private void OnDead()
     {
+        // 적 사망 시 직접 SoundManager 호출 대신 이벤트 발생
+        EventManager<SoundEventType>.TriggerEvent(SoundEventType.EnemyDeath, "soldier");
         StartCoroutine(Die());
     }
 
     private IEnumerator Die()
     {
-        PlayDeathAudio();
         _animator.SetTrigger(IsDying);
         _rb.velocity = Vector2.zero;
-
         if (_rb) _rb.isKinematic = true;
-        if (GetComponent<BoxCollider2D>())
-        {
-            GetComponent<BoxCollider2D>().enabled = false;
-        }
-        else if (GetComponent<CapsuleCollider2D>())
-        {
-            GetComponent<CapsuleCollider2D>().enabled = false;
-        }
-
+        DisableColliders();
         yield return new WaitForSeconds(0.6f);
-
         _enemyBlink.BlinkPlease(SoldierDeath);
-
         yield return new WaitForSeconds(1.2f);
-
         Destroy(gameObject);
     }
 
+    private void DisableColliders()
+    {
+        Collider2D col = GetComponent<BoxCollider2D>() as Collider2D ?? GetComponent<CapsuleCollider2D>();
+        if (col != null)
+            col.enabled = false;
+    }
+
+    // 빈 메서드; Blink 이후 추가 처리 가능
     private void SoldierDeath() { }
 
-    private void PlayDeathAudio()
-    {
-        if (deathClip != null && deathClip.Length > 0)
-        {
-            // 랜덤한 인덱스를 선택합니다.
-            int randomIndex = Random.Range(0, deathClip.Length);
+    // 기존 PlayDeathAudio는 이벤트 기반으로 대체할 계획이므로 제거하거나 간략화 가능
 
-            // 선택된 인덱스에 해당하는 클립을 재생합니다.
-            AudioClip clipToPlay = deathClip[randomIndex];
-            if (clipToPlay != null)
-            {
-                SoundManager.Instance.PlayEnemyDeathAudio(clipToPlay);
-            }
-        }
+    private IEnumerator WaitSecondaryAttack()
+    {
+        yield return new WaitForSeconds(0.1f);
+        // 공격 사운드 이벤트 발생 (원거리 공격)
+        EventManager<SoundEventType>.TriggerEvent(SoundEventType.EnemyAttack, "soldier_ranged");
+        Instantiate(throwableObj, projSpawner.transform.position, projSpawner.transform.rotation);
+        yield return new WaitForSeconds(0.2f);
     }
 
     private void OnCollisionEnter2D(Collision2D col)
     {
         _rb.velocity = Vector2.zero;
 
-        if (col.collider.CompareTag("Walkable") || col.collider.CompareTag("Marco Boat") || col.collider.CompareTag("Water Dead") || col.collider.CompareTag("World"))
+        if (col.collider.CompareTag("Walkable") || col.collider.CompareTag("Marco Boat") ||
+            col.collider.CompareTag("Water Dead") || col.collider.CompareTag("World"))
         {
             collidingDown = true;
             _animator.SetBool(IsFalling, false);
         }
-
         if (col.collider.CompareTag("Player") && col.collider.gameObject.GetComponent<HealthManager>().IsAlive())
         {
-            // 플레이어 오브젝트 가져오기
             GameObject playerObject = col.gameObject;
-
-            // 플레이어 오브젝트에 Rigidbody2D 컴포넌트가 있는지 확인
             Rigidbody2D playerRigidbody = playerObject.GetComponent<Rigidbody2D>();
             if (playerRigidbody != null)
             {
-                // 플레이어 오브젝트의 방향을 구함
                 Vector2 knockbackDirection = playerObject.transform.position - transform.position;
-
-                // 플레이어 오브젝트를 넉백시키는 힘을 가함
                 playerRigidbody.AddForce(knockbackDirection.normalized * knockbackForce, ForceMode2D.Impulse);
             }
         }
-
         else if (col.collider.CompareTag("Water Dead"))
         {
             _healthManager.onDead();
@@ -320,18 +291,11 @@ public class SoldierController : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D col)
     {
-        if (col.collider.CompareTag("Walkable") || col.collider.CompareTag("Marco Boat") || col.collider.CompareTag("World"))
+        if (col.collider.CompareTag("Walkable") || col.collider.CompareTag("Marco Boat") ||
+            col.collider.CompareTag("World"))
         {
             collidingDown = false;
             _animator.SetBool(IsFalling, true);
         }
-    }
-
-    private IEnumerator WaitSecondaryAttack()
-    {
-        yield return new WaitForSeconds(0.1f);
-        if (rangeAttackClip) SoundManager.Instance.PlayEnemyAttackAudio(rangeAttackClip);
-        Instantiate(throwableObj, projSpawner.transform.position, projSpawner.transform.rotation);
-        yield return new WaitForSeconds(0.2f);
     }
 }

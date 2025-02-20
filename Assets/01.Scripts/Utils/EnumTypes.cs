@@ -38,6 +38,12 @@ namespace _01.Scripts.Utils
         EnemyGrenade,
     };
 
+    public enum SoundEventType
+    {
+        EnemyAttack,
+        EnemyDeath
+    }
+
     public enum GlobalEvents
     {
         SoldierDead,
