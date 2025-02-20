@@ -1,0 +1,43 @@
+﻿{
+  "EnemySounds": [
+    {
+      "enemyType": "crab",
+      "deathClips": [
+        "CrabDeath1",
+        "CrabDeath2"
+      ],
+      "attackClips": [
+        "CrabMeleeAttack",
+        "CrabRangedAttack"
+      ]
+    },
+    {
+      "enemyType": "soldier",
+      "deathClips": [
+        "SoldierDeath1",
+        "SoldierDeath2",
+        "SoldierDeath3",
+        "SoldierDeath4",
+        "SoldierDeath5",
+        "SoldierDeath6",
+        "SoldierDeath7"
+      ],
+      "attackClips": [
+        "SoldierMeleeAttack",
+        "SoldierRangedAttack"
+      ]
+    },
+    {
+      "enemyType": "boss",
+      "deathClips": [
+        "BossDeath1",
+        "BossDeath2",
+        "BossDeath3"
+      ],
+      "attackClips": [
+        "BossMeleeAttack",
+        "BossRangedAttack"
+      ]
+    }
+  ]
+}

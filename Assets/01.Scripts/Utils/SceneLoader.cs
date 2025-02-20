@@ -1,3 +1,4 @@
+using _01.Scripts.Sound;
 using UnityEngine.SceneManagement;
 
 namespace _01.Scripts.Utils

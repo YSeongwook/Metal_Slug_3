@@ -1,7 +1,8 @@
+using _01.Scripts.Utils;
 using UnityEngine;
 using UnityEngine.Audio;
 
-namespace _01.Scripts.Utils
+namespace _01.Scripts.Sound
 {
     public class SoundManager : Singleton<SoundManager>
     {

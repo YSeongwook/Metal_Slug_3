@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Linq;
 using _01.Scripts.Player;
+using _01.Scripts.Sound;
 using _01.Scripts.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
