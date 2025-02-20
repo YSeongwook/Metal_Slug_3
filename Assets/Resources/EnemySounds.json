@@ -3,8 +3,7 @@
     {
       "enemyType": "crab",
       "deathClips": [
-        "CrabDeath1",
-        "CrabDeath2"
+        "CrabDeath1"
       ],
       "attackClips": [
         "CrabMeleeAttack",

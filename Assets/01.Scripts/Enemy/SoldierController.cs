@@ -6,20 +6,19 @@ using UnityEngine;
 public class SoldierController : MonoBehaviour
 {
     [Header("Enemy information")]
-    GameObject followPlayer;
     public float speed = 1f;
-    public float attackDamage = 10f;
     public bool isMovable = true;
     public bool canMelee = true;
     public AudioClip[] deathClip;
     public AudioClip meleeAttackClip;
     public AudioClip rangeAttackClip;
-    private HealthManager healthManager;
-    private Blink enemyBlink;
+    
+    private GameObject _followPlayer;
+    private HealthManager _healthManager;
+    private Blink _enemyBlink;
 
     [Space(10)]
     public ProjectileProperties projectile;
-
 
     [Header("Throwable")]
     public GameObject projSpawner;
@@ -30,82 +29,76 @@ public class SoldierController : MonoBehaviour
     public float activationDistance = 1.8f;
     public float attackDistance = 1f;         //Far attack
     public float meleeDistance = 1f;          //Near attack
-    public const float CHANGE_SIGN = -1;
-    private Rigidbody2D rb;
-    private Animator animator;
     public bool facingRight = false;
+    
+    private const float ChangeSign = -1;
+    private Rigidbody2D _rb;
+    private Animator _animator;
 
     //Enemy gravity
     public bool collidingDown = false;
-    Vector2 velocity = Vector2.zero;
 
     [Header("Time shoot")]
-    private float shotTime = 0.0f;
-    public float fireDelta = 0.5f;
-    private float nextFire = 0.8f;  // 공격 쿨타임
     public float rangedDelta = 2f;
+    public float fireDelta = 0.5f;
+    private float _shotTime = 0.0f;
+    private float _nextFire = 0.8f;  // 공격 쿨타임
 
-    private bool canFall = false;
+    private bool _canFall = false;
 
     // 충돌 시 플레이어를 넉백할 힘의 크기
     public float knockbackForce = 5f;
+    
+    // 애니메이터 파라미터 캐시 처리
+    private static readonly int IsFalling = Animator.StringToHash("isFalling");
+    private static readonly int IsWalking = Animator.StringToHash("isWalking");
+    private static readonly int Knifing = Animator.StringToHash("Knifing");
+    private static readonly int ThrowingGrenade = Animator.StringToHash("ThrowingGrenade");
+    private static readonly int IsDying = Animator.StringToHash("isDying");
 
     private void Start()
     {
         Initialize();
         registerHealth();
         checkCanFall();
-        enemyBlink = GetComponent<Blink>();
+        _enemyBlink = GetComponent<Blink>();
     }
 
     private void Initialize()
     {
-        followPlayer = GameManager.Instance.GetPlayer();
-        animator = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
+        _followPlayer = GameManager.Instance.GetPlayer();
+        _animator = GetComponent<Animator>();
+        _rb = GetComponent<Rigidbody2D>();
     }
 
     private void registerHealth()
     {
-        healthManager = GetComponent<HealthManager>();
-        healthManager.onDead += OnDead;
+        _healthManager = GetComponent<HealthManager>();
+        _healthManager.onDead += OnDead;
     }
 
     private void checkCanFall()
     {
-        foreach (var parameter in animator.parameters)
+        foreach (var parameter in _animator.parameters)
         {
-            if (parameter.name == "isFalling")
-            {
-                canFall = true;
-                break;
-            }
+            if (parameter.name != "isFalling") continue;
+            
+            _canFall = true;
+            break;
         }
     }
 
-    public void setFollow(GameObject follow)
+    private void FixedUpdate()
     {
-        followPlayer = follow;
-    }
-
-    private void Update()
-    {
-        if (GameManager.Instance.IsGameOver()) return;
-    }
-
-    void FixedUpdate()
-    {
-        if (GameManager.Instance.IsGameOver()) return;
-
-        if (healthManager.IsAlive())
+        if (_healthManager.IsAlive())
         {
             FlipShoot();
-            if (canFall) animator.SetBool("isFalling", !collidingDown);
+            if (_canFall) _animator.SetBool(IsFalling, !collidingDown);
 
             float playerDistance = GetPlayerDistance();
 
             // 플레이어가 살아있다면 추적 및 공격
-            if (followPlayer.GetComponent<HealthManager>().IsAlive() && !GameManager.Instance.IsGameOver())
+            if (_followPlayer.GetComponent<HealthManager>().IsAlive())
             {
                 if (playerDistance < activationDistance && collidingDown)
                 {
@@ -133,29 +126,22 @@ public class SoldierController : MonoBehaviour
             }
             else
             {
-                animator.SetBool("isWalking", false);
-                animator.SetBool("Knifing", false);
-                animator.SetBool("ThrowingGrenade", false);
+                _animator.SetBool(IsWalking, false);
+                _animator.SetBool(Knifing, false);
+                _animator.SetBool(ThrowingGrenade, false);
             }
 
             FlipEnemy(playerDistance);
         }
         else
         {
-            rb.velocity = Vector2.zero;
-        }
-
-        if (GameManager.Instance.IsGameOver())
-        {
-            animator.SetBool("isWalking", false);
-            animator.SetBool("Knifing", false);
-            animator.SetBool("ThrowingGrenade", false);
+            _rb.velocity = Vector2.zero;
         }
     }
 
     private float GetPlayerDistance()
     {
-        return transform.position.x - followPlayer.transform.position.x;
+        return transform.position.x - _followPlayer.transform.position.x;
     }
 
     private void FlipEnemy(float playerDistance)
@@ -163,74 +149,70 @@ public class SoldierController : MonoBehaviour
         if ((playerDistance < 0 && !facingRight) || (playerDistance > 0 && facingRight)) Flip();
     }
 
-    void MeleeAttack()
+    private void MeleeAttack()
     {
-        animator.SetBool("Knifing", true);
-        animator.SetBool("ThrowingGrenade", false);
+        _animator.SetBool(Knifing, true);
+        _animator.SetBool(ThrowingGrenade, false);
 
-        rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+        _rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
 
-        shotTime += Time.deltaTime;
+        _shotTime += Time.deltaTime;
 
-        if (shotTime > nextFire)
+        if (_shotTime <= _nextFire) return;
+        
+        _nextFire = _shotTime + fireDelta;
+
+        if (Mathf.Abs(GetComponent<SpriteRenderer>().bounds.SqrDistance(_followPlayer.transform.position)) <= meleeDistance)
         {
-            nextFire = shotTime + fireDelta;
+            _followPlayer.GetComponent<HealthManager>().OnHitByProjectile(projectile);
 
-            if (Mathf.Abs(GetComponent<SpriteRenderer>().bounds.SqrDistance(followPlayer.transform.position)) <= meleeDistance)
-            {
-                followPlayer.GetComponent<HealthManager>().OnHitByProjectile(projectile);
-
-                if (meleeAttackClip) SoundManager.Instance.PlayEnemyAttackAudio(meleeAttackClip);
-            }
-
-            nextFire -= shotTime;
-            shotTime = 0.0f;
+            if (meleeAttackClip) SoundManager.Instance.PlayEnemyAttackAudio(meleeAttackClip);
         }
+
+        _nextFire -= _shotTime;
+        _shotTime = 0.0f;
     }
 
-    void RangedAttack()
+    private void RangedAttack()
     {
-        animator.SetBool("ThrowingGrenade", true);
-        animator.SetBool("Knifing", false);
+        _animator.SetBool(ThrowingGrenade, true);
+        _animator.SetBool(Knifing, false);
 
-        if (rb && !canMelee)
-            rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+        if (_rb && !canMelee)
+            _rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
         else
-            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+            _rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
-        shotTime += Time.deltaTime;
+        _shotTime += Time.deltaTime;
 
-        if (shotTime > nextFire)
-        {
-            nextFire = shotTime + rangedDelta;
+        if (_shotTime <= _nextFire) return;
+        
+        _nextFire = _shotTime + rangedDelta;
 
-            StartCoroutine(WaitSecondaryAttack());
+        StartCoroutine(WaitSecondaryAttack());
 
-            nextFire -= shotTime;
-            shotTime = 0.0f;
-        }
+        _nextFire -= _shotTime;
+        _shotTime = 0.0f;
     }
 
-    void MoveToPlayer(float playerDistance)
+    private void MoveToPlayer(float playerDistance)
     {
-        if (rb && isMovable)
+        if (!_rb || !isMovable) return;
+        
+        _rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        if (collidingDown)
         {
-            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-            if (collidingDown)
-            {
-                // rb.MovePosition(rb.position + new Vector2(CHANGE_SIGN * Mathf.Sign(playerDistance) * speed, rb.position.y) * Time.deltaTime);
-                Vector2 movementDirection = new Vector2(CHANGE_SIGN * Mathf.Sign(playerDistance), 0f);
+            Vector2 movementDirection = new Vector2(ChangeSign * Mathf.Sign(playerDistance), 0f);
 
-                rb.velocity = movementDirection * speed * 100 * Time.deltaTime;
-            }
-
-            animator.SetBool("isWalking", true);
-            animator.SetBool("Knifing", false);
-            animator.SetBool("ThrowingGrenade", false);
+            _rb.velocity = movementDirection * (speed * 100 * Time.deltaTime);
         }
+
+        _animator.SetBool(IsWalking, true);
+        _animator.SetBool(Knifing, false);
+        _animator.SetBool(ThrowingGrenade, false);
     }
 
-    void Flip()
+    private void Flip()
     {
         Vector3 scale = transform.localScale;
         scale.x *= -1;
@@ -239,7 +221,7 @@ public class SoldierController : MonoBehaviour
         facingRight = !facingRight;
     }
 
-    void FlipShoot()
+    private void FlipShoot()
     {
         if (projSpawner == null) return;
 
@@ -255,11 +237,6 @@ public class SoldierController : MonoBehaviour
         }
     }
 
-    public void OnHit()
-    {
-        // StartCoroutine(Die());
-    }
-
     private void OnDead()
     {
         StartCoroutine(Die());
@@ -268,10 +245,10 @@ public class SoldierController : MonoBehaviour
     private IEnumerator Die()
     {
         PlayDeathAudio();
-        animator.SetTrigger("isDying");
-        rb.velocity = Vector2.zero;
+        _animator.SetTrigger(IsDying);
+        _rb.velocity = Vector2.zero;
 
-        if (rb) rb.isKinematic = true;
+        if (_rb) _rb.isKinematic = true;
         if (GetComponent<BoxCollider2D>())
         {
             GetComponent<BoxCollider2D>().enabled = false;
@@ -283,7 +260,7 @@ public class SoldierController : MonoBehaviour
 
         yield return new WaitForSeconds(0.6f);
 
-        enemyBlink.BlinkPlease(SoldierDeath);
+        _enemyBlink.BlinkPlease(SoldierDeath);
 
         yield return new WaitForSeconds(1.2f);
 
@@ -310,12 +287,12 @@ public class SoldierController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        rb.velocity = Vector2.zero;
+        _rb.velocity = Vector2.zero;
 
         if (col.collider.CompareTag("Walkable") || col.collider.CompareTag("Marco Boat") || col.collider.CompareTag("Water Dead") || col.collider.CompareTag("World"))
         {
             collidingDown = true;
-            animator.SetBool("isFalling", false);
+            _animator.SetBool(IsFalling, false);
         }
 
         if (col.collider.CompareTag("Player") && col.collider.gameObject.GetComponent<HealthManager>().IsAlive())
@@ -337,7 +314,7 @@ public class SoldierController : MonoBehaviour
 
         else if (col.collider.CompareTag("Water Dead"))
         {
-            healthManager.onDead();
+            _healthManager.onDead();
         }
     }
 
@@ -346,7 +323,7 @@ public class SoldierController : MonoBehaviour
         if (col.collider.CompareTag("Walkable") || col.collider.CompareTag("Marco Boat") || col.collider.CompareTag("World"))
         {
             collidingDown = false;
-            animator.SetBool("isFalling", true);
+            _animator.SetBool(IsFalling, true);
         }
     }
 
