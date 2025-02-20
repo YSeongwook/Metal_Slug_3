@@ -57,8 +57,6 @@ namespace _01.Scripts.Sound
 
         private void Start()
         {
-            DontDestroyOnLoad(gameObject);
-
             _musicSource = gameObject.AddComponent<AudioSource>();
             _effectSource = gameObject.AddComponent<AudioSource>();
             _enemySource = gameObject.AddComponent<AudioSource>();

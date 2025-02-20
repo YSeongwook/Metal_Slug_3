@@ -92,7 +92,6 @@ namespace _01.Scripts.Utils
             {
                 GenericEvent<T> genericEvent = GetOrCreateEvent<GenericEvent<T>>(eventName);
                 genericEvent.AddListener(listener);
-                DebugLogger.Log($"이벤트 {eventName}에 매개변수 있는 리스너가 추가되었습니다.");
             }
         }
 
@@ -103,7 +102,6 @@ namespace _01.Scripts.Utils
             {
                 UnityEvent unityEvent = GetOrCreateEvent<UnityEvent>(eventName);
                 unityEvent.AddListener(listener);
-                DebugLogger.Log($"이벤트 {eventName}에 리스너가 추가되었습니다.");
             }
         }
 
@@ -115,7 +113,6 @@ namespace _01.Scripts.Utils
                 if (EventDictionary.TryGetValue(eventName, out var thisEvent) && thisEvent is GenericEvent<T> genericEvent)
                 {
                     genericEvent.RemoveListener(listener);
-                    DebugLogger.Log($"이벤트 {eventName}에서 매개변수 있는 리스너가 제거되었습니다.");
                     // 자동 삭제 로직 제거: 런타임 리스너 수 확인이 불가능하여 위험할 수 있음.
                 }
             }
@@ -129,7 +126,6 @@ namespace _01.Scripts.Utils
                 if (EventDictionary.TryGetValue(eventName, out var thisEvent) && thisEvent is UnityEvent unityEvent)
                 {
                     unityEvent.RemoveListener(listener);
-                    DebugLogger.Log($"이벤트 {eventName}에서 리스너가 제거되었습니다.");
                     // 자동 삭제 로직 제거: 런타임 리스너 수 확인이 불가능하여 위험할 수 있음.
                 }
             }
@@ -145,7 +141,6 @@ namespace _01.Scripts.Utils
                     if (EventDictionary.TryGetValue(eventName, out var thisEvent) && thisEvent is GenericEvent<T> genericEvent)
                     {
                         genericEvent.Invoke(parameter);
-                        DebugLogger.Log($"이벤트 {eventName}가 매개변수 ({parameter})와 함께 호출되었습니다.");
                     }
                     else
                     {
@@ -169,7 +164,6 @@ namespace _01.Scripts.Utils
                     if (EventDictionary.TryGetValue(eventName, out var thisEvent) && thisEvent is UnityEvent unityEvent)
                     {
                         unityEvent.Invoke();
-                        DebugLogger.Log($"이벤트 {eventName}가 호출되었습니다.");
                     }
                     else
                     {

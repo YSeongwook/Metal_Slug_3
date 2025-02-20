@@ -82,19 +82,30 @@ namespace _01.Scripts.Player
             // 캐릭터의 움직임 여부를 확인하여 isRun 파라미터를 설정
             _animManager.StartRunningAnim(IsRunning);
 
+            // 위쪽 방향키 입력 처리: 눌리는 순간 topAnimator에 up_pressed를 true로 설정
             if (GetKeyDown(KeyCode.UpArrow) && !IsCrouched)
             {
+                topAnimator.SetBool(UpPressed, true);
                 LookingDirection = Vector2.up;
-                DebugLogger.Log("위쪽 키 눌리고 있음"); // 현재 위쪽 방향키 누르고 있어도 캐릭터가 위를 바라보지 않음
+            }
+
+            // 아래쪽 방향키 입력 처리: 눌리는 순간 topAnimator와 bottomAnimator에 down_pressed를 true로 설정
+            if (GetKeyDown(KeyCode.DownArrow))
+            {
+                topAnimator.SetBool(DownPressed, true);
+                bottomAnimator.SetBool(DownPressed, true);
+                body = BodyPosture.Crouch;
+                IsCrouched = true;
+                // AdaptColliderCrouch(); // 앉은 상태에 맞게 콜라이더를 조정하는 메서드 (구현 필요)
             }
 
             CheckLookingDirection();
 
+            // 키를 뗄 때 애니메이터 파라미터를 false로 전환
             if (GetKeyUp(KeyCode.UpArrow))
             {
                 topAnimator.SetBool(UpPressed, false);
                 body = BodyPosture.Stand;
-
                 CheckLeftRightDirection();
             }
 
@@ -106,7 +117,6 @@ namespace _01.Scripts.Player
                 IsCrouched = false;
                 AdaptColliderStanding();
                 moveSpeed = 3.5f; // 일어나면 이동속도 초기화
-
                 CheckLeftRightDirection();
             }
 
@@ -154,7 +164,7 @@ namespace _01.Scripts.Player
                 if (_inputMovement.x > 0)
                 {
                     transform.rotation = Quaternion.Euler(0, 0, 0);
-                    // 왼쪽으로 움직이면 transform.positon.z값이 변경됨
+                    // 왼쪽으로 움직이면 transform.position.z값이 변경됨
                     transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
                     LookingDirection = Vector2.right;
                 }
@@ -162,7 +172,6 @@ namespace _01.Scripts.Player
                 {
                     transform.rotation = Quaternion.Euler(0, -180, 0);
                     // 좌우 반전한 후 이동하면 반대로 이동되기에 이동값도 반전
-                    // inputMovement *= -1;
                     transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
                     LookingDirection = Vector2.left;
                 }
