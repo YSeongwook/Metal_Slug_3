@@ -49,8 +49,8 @@ namespace _01.Scripts.UI
         {
             base.Awake();
         
-            EventManager<AttackEvents>.StartListening<float>(AttackEvents.GunUsed, SetBulletCount);
-            EventManager<AttackEvents>.StartListening<float>(AttackEvents.GrenadeUsed, SetGrenadeCount);
+            EventManager<AttackEvents>.StartListening<int>(AttackEvents.GunUsed, SetBulletCount);
+            EventManager<AttackEvents>.StartListening<int>(AttackEvents.GrenadeUsed, SetGrenadeCount);
             
             EventManager<PlayerEvents>.StartListening(PlayerEvents.PlayerDead, SetBulletCountToInfinity);
             EventManager<PlayerEvents>.StartListening(PlayerEvents.PlayerDead, OnPlayerDeath);
@@ -104,12 +104,12 @@ namespace _01.Scripts.UI
             scoreGUI.text = score.ToString();
         }
 
-        private void SetGrenadeCount(float grenadeCount)
+        private void SetGrenadeCount(int grenadeCount)
         {
             grenadeCountGUI.text = grenadeCount.ToString();
         }
 
-        private void SetBulletCount(float bulletCount)
+        private void SetBulletCount(int bulletCount)
         {
             if (bulletCount > 0)
             {

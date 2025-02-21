@@ -1,3 +1,4 @@
+using _01.Scripts.Attack;
 using _01.Scripts.Player;
 using _01.Scripts.Utils;
 using UnityEngine;
@@ -136,9 +137,9 @@ public class AttackManager : MonoBehaviour
 
         RaycastHit2D[] hits = Physics2D.RaycastAll(new Vector2(transform.position.x, transform.position.y + 0.1f), rayDirection, 0.7f, enemyLayer);
 
-        for (int i = 0; i < hits.Length; i++)
+        foreach (var h in hits)
         {
-            if (hits[i].collider.tag == victimsTag || hits[i].collider.gameObject.layer == enemyLayer)
+            if (h.collider.CompareTag(victimsTag) || h.collider.gameObject.layer == enemyLayer)
             {
                 return true;
             }

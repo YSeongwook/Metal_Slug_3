@@ -1,35 +1,42 @@
-using _01.Scripts.Utils;
 using UnityEngine;
 
-public class AttackKnife : MonoBehaviour, IAttack
+namespace _01.Scripts.Attack
 {
-    public Animator anim;
-    public AreaOfEffectProjectile knife;
-    public AudioManager audioManager;
-    private bool attackSwitch;
-    public TimeUtils timeUtils;
-
-    public void Execute(string victimTag, Vector3 unused, Vector3 unused2)
+    public class AttackKnife : MonoBehaviour, IAttack
     {
-        if (attackSwitch)
-        {
-            anim.SetTrigger("knife2");
-            audioManager.PlaySound(4);
-        }
-        else
-        {
-            anim.SetTrigger("knife");
-            audioManager.PlaySound(5);
-        }
-        attackSwitch = !attackSwitch;
+        public Animator anim;
+        public AreaOfEffectProjectile knife;
+        public AudioManager audioManager;
+        public TimeUtils timeUtils;
+    
+        private bool _attackSwitch;
+    
+        // 애니메이터 파라미터 캐시 처리
+        private static readonly int Knifing = Animator.StringToHash("knifing");
+        private static readonly int Knife = Animator.StringToHash("knife");
+        private static readonly int Knife2 = Animator.StringToHash("knife2");
 
-        knife.CastAOE(victimTag, transform.position);
-        EventManager<AttackEvents>.TriggerEvent(AttackEvents.KnifeUsed);
-        timeUtils.TimeDelay(0.2f, () => { anim.SetBool("knifing", false); });
-    }
+        public void Execute(string victimTag, Vector3 unused, Vector3 unused2)
+        {
+            if (_attackSwitch)
+            {
+                anim.SetTrigger(Knife2);
+                audioManager.PlaySound(4);
+            }
+            else
+            {
+                anim.SetTrigger(Knife);
+                audioManager.PlaySound(5);
+            }
+            _attackSwitch = !_attackSwitch;
 
-    public bool InProgress()
-    {
-        return anim.GetBool("knifing");
+            knife.CastAOE(victimTag, transform.position);
+            timeUtils.TimeDelay(0.2f, () => { anim.SetBool(Knifing, false); });
+        }
+
+        public bool InProgress()
+        {
+            return anim.GetBool(Knifing);
+        }
     }
 }
