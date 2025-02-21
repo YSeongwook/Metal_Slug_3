@@ -41,7 +41,12 @@ namespace _01.Scripts.Utils
     public enum SoundEventType
     {
         EnemyAttack,
-        EnemyDeath
+        EnemyDeath,
+        PlayEffect,
+        PlayMusic,
+        PlayVoice,
+        ContinueSiren,
+        ClearAllSounds
     }
 
     public enum GlobalEvents

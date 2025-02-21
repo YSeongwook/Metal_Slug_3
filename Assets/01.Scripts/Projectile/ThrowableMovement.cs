@@ -107,7 +107,7 @@ public class ThrowableMovement : MonoBehaviour
 
     private IEnumerator Explosion(Collider2D collision)
     {
-        SoundManager.Instance.PlayGrenadeHitAudio();
+        EventManager<SoundEventType>.TriggerEvent(SoundEventType.PlayEffect, "grenadeHitClip");
         throwableAnimator.SetBool("hasHittenSth", true);
 
         ResetMovement(collision);

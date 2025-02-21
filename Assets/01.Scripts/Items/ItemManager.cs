@@ -74,8 +74,7 @@ public class ItemManager : MonoBehaviour, ICheckCollision
         }
 
         flashBlue.FlashForDuration(0.18f);
-        // audioManager.PlaySoundByClip(item.weaponNameAudio);
-        SoundManager.Instance.PlayHeavyMachineGunVoice();
+        EventManager<SoundEventType>.TriggerEvent(SoundEventType.PlayVoice, "heavyMachineGunGrab");
 
         if(!bottomSpriteRenderer.enabled)
         {

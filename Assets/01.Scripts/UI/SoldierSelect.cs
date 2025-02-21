@@ -55,9 +55,9 @@ public class SoldierSelect : MonoBehaviour
             }
             else if (Input.GetKeyDown(KeyCode.A))
             {
-                SoundManager.Instance.PlayPreSelect();
+                EventManager<SoundEventType>.TriggerEvent(SoundEventType.PlayEffect, "preselect");
                 SelectSoldier(currentIndex);
-                SoundManager.Instance.PlaySelectMarco();
+                EventManager<SoundEventType>.TriggerEvent(SoundEventType.PlayVoice, "marco");
 
                 // 입력을 받을 수 없도록 플래그 설정
                 isInputEnabled = false;

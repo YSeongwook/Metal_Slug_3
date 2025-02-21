@@ -169,7 +169,7 @@ public class EnemyController : MonoBehaviour
             {
                 followPlayer.GetComponent<HealthManager>().OnHitByProjectile(projectile);
 
-                if (meleeAttackClip) SoundManager.Instance.PlayEnemyAttackAudio(meleeAttackClip);
+                if (meleeAttackClip) EventManager<SoundEventType>.TriggerEvent(SoundEventType.EnemyAttack, "enemyMeleeAttack");
             }
 
             nextFire -= shotTime;
@@ -276,7 +276,7 @@ public class EnemyController : MonoBehaviour
 
     private void PlayDeathAudio()
     {
-        if (deathClip) SoundManager.Instance.PlayEnemyDeathAudio(deathClip);
+        if (deathClip) EventManager<SoundEventType>.TriggerEvent(SoundEventType.EnemyDeath, "enemyDeath");
     }
 
     private void OnCollisionEnter2D(Collision2D col)
@@ -323,7 +323,7 @@ public class EnemyController : MonoBehaviour
     private IEnumerator WaitSecondaryAttack()
     {
         yield return new WaitForSeconds(0.1f);
-        if (rangeAttackClip) SoundManager.Instance.PlayEnemyAttackAudio(rangeAttackClip);
+        if (rangeAttackClip) EventManager<SoundEventType>.TriggerEvent(SoundEventType.EnemyAttack, "enemyRangeAttack");
         Instantiate(throwableObj, projSpawner.transform.position, projSpawner.transform.rotation);
         yield return new WaitForSeconds(0.2f);
     }

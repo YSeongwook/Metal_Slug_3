@@ -126,7 +126,7 @@ namespace _01.Scripts.Utils
         public void PlayerWin()
         {
             // UIManager.DisplayWinText();
-            SoundManager.Instance.PlayLevelCompleteAudio();
+            EventManager<SoundEventType>.TriggerEvent(SoundEventType.PlayVoice, "levelComplete");
             SoundManager.Instance.PlayGameOverAudio();
 
             Instance.isGameOver = true;

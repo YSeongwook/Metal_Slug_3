@@ -43,17 +43,17 @@ public class EnemyBoatController : MonoBehaviour
         else if (healthManager.CurrentHp > 45)
         {
             spriteRender.sprite = boatSprites[1];
-            SoundManager.Instance.PlayMetalSlugDestroy3();
+            EventManager<SoundEventType>.TriggerEvent(SoundEventType.PlayEffect, "metalSlugDestroy3");
         }
         else if (healthManager.CurrentHp > 30)
         {
             spriteRender.sprite = boatSprites[2];
-            SoundManager.Instance.PlayMetalSlugDestroy1();
+            EventManager<SoundEventType>.TriggerEvent(SoundEventType.PlayEffect, "metalSlugDestroy1");
         }
         else if (healthManager.CurrentHp > 15)
         {
             spriteRender.sprite = boatSprites[3];
-            SoundManager.Instance.PlayMetalSlugDestroy1();
+            EventManager<SoundEventType>.TriggerEvent(SoundEventType.PlayEffect, "metalSlugDestroy1");
         }
         else if (healthManager.CurrentHp > 0)
         {
@@ -108,7 +108,7 @@ public class EnemyBoatController : MonoBehaviour
     {
         explosion.SetActive(true);
         explosion.GetComponent<Animator>().SetBool("Destroy", true);
-        SoundManager.Instance.PlayMetalSlugDestroy2();
+        EventManager<SoundEventType>.TriggerEvent(SoundEventType.PlayEffect, "metalSlugDestroy2");
 
         destroyHalf = true;
     }

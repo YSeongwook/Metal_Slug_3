@@ -29,7 +29,7 @@ public class MenuManager : MonoBehaviour
         if(isTitleActivated && Input.anyKeyDown)
         {
             isTitleActivated = false; // 한 번만 실행되도록 플래그 설정
-            SoundManager.Instance.PlayInsertCoin();
+            EventManager<SoundEventType>.TriggerEvent(SoundEventType.PlayEffect, "insertCoin");
 
             // 페이드 아웃 실행 후 title을 비활성화
             fadeInOut.FadeOut(() =>
@@ -51,7 +51,7 @@ public class MenuManager : MonoBehaviour
 
     void PlayCharSelectSound()
     {
-        SoundManager.Instance.PlayCharSelect();
+        EventManager<SoundEventType>.TriggerEvent(SoundEventType.PlayMusic, "charSelect");
     }
 
     void OpenM3()

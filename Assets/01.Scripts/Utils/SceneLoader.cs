@@ -21,7 +21,7 @@ namespace _01.Scripts.Utils
         private void PlayerMissionStart()
         {
             SoundManager.Instance.PlayBGM();
-            SoundManager.Instance.PlayLevelStartAudio();
+            EventManager<SoundEventType>.TriggerEvent(SoundEventType.PlayVoice, "levelStart");
         }
     }
 }

@@ -227,8 +227,8 @@ namespace _01.Scripts.UI
                 munitionsGroup.SetActive(false);
                 topContinue.SetActive(true);
                 centerContinue.SetActive(true);
-                SoundManager.Instance.PlayContinueSiren();
-
+                
+                EventManager<SoundEventType>.TriggerEvent(SoundEventType.ContinueSiren, "continueSiren");
                 // 게임 오버 상태에서는 이 메서드가 호출되지 않도록 이벤트 리스너를 제거
                 EventManager<GameEvents>.StopListening(GameEvents.GameOver, CheckGameOver);
             }
@@ -241,7 +241,7 @@ namespace _01.Scripts.UI
             lifeScoreBar.SetActive(true);
             munitionsGroup.SetActive(true);
 
-            SoundManager.Instance.ClearEffectSource();
+            EventManager<SoundEventType>.TriggerEvent(SoundEventType.ClearAllSounds);
 
             // 재시작시 게임 오버 이벤트 등록
             EventManager<GameEvents>.StartListening(GameEvents.GameOver, CheckGameOver);

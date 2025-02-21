@@ -29,8 +29,7 @@ public class SunkBoatController : MonoBehaviour
         {
             anim.SetBool("isExploding", true);
         }
-        // explosion.SetBool("isExploding", true);
-        SoundManager.Instance.PlayMetalSlugDestroy2();
+        EventManager<SoundEventType>.TriggerEvent(SoundEventType.PlayEffect, "metalSlugDestroy2");
         yield return new WaitForSeconds(1.6f);
         this.gameObject.SetActive(false);
         CameraManager.Instance.AfterSunkBoat();

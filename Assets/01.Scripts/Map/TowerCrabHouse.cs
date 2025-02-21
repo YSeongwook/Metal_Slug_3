@@ -16,7 +16,7 @@ public class TowerCrabHouse : MonoBehaviour
     void OnDestroy()
     {
         CameraManager.Instance.AfterCrabTower();
-        SoundManager.Instance.PlayMetalSlugDestroy2();
+        EventManager<SoundEventType>.TriggerEvent(SoundEventType.PlayEffect, "metalSlugDestroy2");
         bgBoat.sprite = null;
     }
 }

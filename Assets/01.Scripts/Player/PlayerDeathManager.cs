@@ -117,7 +117,7 @@ public class PlayerDeathManager : MonoBehaviour, IDamaged
         Debug.Log("continue후 리스폰");
 
         healthManager.lifeCount = 2;
-        SoundManager.Instance.PlayInsertCoin();
+        EventManager<SoundEventType>.TriggerEvent(SoundEventType.PlayEffect, "insertCoin");
         GameManager.Instance.SetGameOverRespawn();  // GameManager의 isGameOver를 false로 변경
         HUDManager.Instance.AddCredit();
         HUDManager.Instance.ResetTime();

@@ -1,19 +1,30 @@
+using System.Collections.Generic;
 using _01.Scripts.Utils;
 using UnityEngine;
 using UnityEngine.Audio;
 
 namespace _01.Scripts.Sound
 {
+    public enum AudioChannel
+    {
+        Music,
+        Effect,
+        Enemy,
+        Player,
+        Voice,
+        Siren
+    }
+
     public class SoundManager : Singleton<SoundManager>
     {
         [Header("Music")]
-        public AudioClip charSelect;        // char selection
-        public AudioClip musicClip;         // The background music
-        public AudioClip gameOverClip;      // Played once on game over
-        public AudioClip bossClip;          // the bgm of the boss fight
+        public AudioClip charSelect;
+        public AudioClip musicClip;
+        public AudioClip gameOverClip;
+        public AudioClip bossClip;
 
         [Header("Player")]
-        public AudioClip marcoDeathClip;    // Marco Death Sound
+        public AudioClip marcoDeathClip;
 
         [Header("Effects")]
         public AudioClip normalShotClip;
@@ -37,39 +48,97 @@ namespace _01.Scripts.Sound
 
         [Header("Menu")]
         public AudioClip insertCoin;
-        public AudioClip marco;             // marco chosen
-        public AudioClip menuSound;         // menu sound
-        public AudioClip preselect;         // any button
-        public AudioClip select;            // press start
+        public AudioClip marco;
+        public AudioClip menuSound;
+        public AudioClip preselect;
+        public AudioClip select;
 
         [Header("Mixer Groups")]
-        public AudioMixerGroup musicGroup;  // The music mixer group
-        public AudioMixerGroup effectGroup; // The effect mixer group
-        public AudioMixerGroup enemyGroup;  // The enemy mixer group
-        public AudioMixerGroup playerGroup; // The player mixer group
-        public AudioMixerGroup voiceGroup;  // The voice mixer group
+        public AudioMixerGroup musicGroup;
+        public AudioMixerGroup effectGroup;
+        public AudioMixerGroup enemyGroup;
+        public AudioMixerGroup playerGroup;
+        public AudioMixerGroup voiceGroup;
+        public AudioMixerGroup sirenGroup;
 
-        private AudioSource _musicSource;            // Reference to the generated music Audio Source
-        private AudioSource _effectSource;           // Reference to the generated effect Audio Source
-        private AudioSource _enemySource;            // Reference to the generated enemy Audio Source
-        private AudioSource _playerSource;           // Reference to the generated player Audio Source
-        private AudioSource _voiceSource;            // Reference to the generated voice Audio Source
+        // 사운드 데이터를 관리하는 Dictionary
+        private Dictionary<string, AudioClip> _soundDictionary = new Dictionary<string, AudioClip>();
+
+        // AudioSource 채널들
+        private AudioSource _musicSource;
+        private AudioSource _effectSource;
+        private AudioSource _enemySource;
+        private AudioSource _playerSource;
+        private AudioSource _voiceSource;
+        private AudioSource _sirenSource;
 
         private void Start()
+        {
+            InitializeAudioSources();
+            InitializeSoundDictionary();
+            RefreshAudioVolume();
+            SubscribeToSoundEvents();
+        }
+        
+        private void OnDisable()
+        {
+            UnsubscribeFromSoundEvents();
+        }
+
+        private void InitializeAudioSources()
         {
             _musicSource = gameObject.AddComponent<AudioSource>();
             _effectSource = gameObject.AddComponent<AudioSource>();
             _enemySource = gameObject.AddComponent<AudioSource>();
             _playerSource = gameObject.AddComponent<AudioSource>();
             _voiceSource = gameObject.AddComponent<AudioSource>();
+            _sirenSource = gameObject.AddComponent<AudioSource>();
 
             _musicSource.outputAudioMixerGroup = musicGroup;
             _effectSource.outputAudioMixerGroup = effectGroup;
             _enemySource.outputAudioMixerGroup = enemyGroup;
             _playerSource.outputAudioMixerGroup = playerGroup;
             _voiceSource.outputAudioMixerGroup = voiceGroup;
+            _sirenSource.outputAudioMixerGroup = sirenGroup;
+        }
 
-            RefreshAudioVolume();
+        private void InitializeSoundDictionary()
+        {
+            // Music
+            _soundDictionary["charSelect"] = charSelect;
+            _soundDictionary["musicClip"] = musicClip;
+            _soundDictionary["gameOverClip"] = gameOverClip;
+            _soundDictionary["bossClip"] = bossClip;
+
+            // Player
+            _soundDictionary["marcoDeathClip"] = marcoDeathClip;
+
+            // Effects
+            _soundDictionary["normalShotClip"] = normalShotClip;
+            _soundDictionary["heavyMachineShotClip"] = heavyMachineShotClip;
+            _soundDictionary["shotHitClip"] = shotHitClip;
+            _soundDictionary["grenadeHitClip"] = grenadeHitClip;
+            _soundDictionary["meleeHitClip"] = meleeHitClip;
+            _soundDictionary["meleeTakeClip"] = meleeTakeClip;
+            _soundDictionary["collectibleGrabClip"] = collectibleGrabClip;
+            _soundDictionary["grenadeGrabClip"] = grenadeGrabClip;
+            _soundDictionary["metalSlugDestroy1"] = metalSlugDestroy1;
+            _soundDictionary["metalSlugDestroy2"] = metalSlugDestroy2;
+            _soundDictionary["metalSlugDestroy3"] = metalSlugDestroy3;
+            _soundDictionary["continueSiren"] = continueSiren;
+
+            // Voice
+            _soundDictionary["levelStart"] = levelStart;
+            _soundDictionary["levelComplete"] = levelComplete;
+            _soundDictionary["heavyMachineGunGrab"] = heavyMachineGunGrab;
+            _soundDictionary["okayClip"] = okayClip;
+
+            // Menu
+            _soundDictionary["insertCoin"] = insertCoin;
+            _soundDictionary["marco"] = marco;
+            _soundDictionary["menuSound"] = menuSound;
+            _soundDictionary["preselect"] = preselect;
+            _soundDictionary["select"] = select;
         }
 
         private void RefreshAudioVolume()
@@ -84,209 +153,137 @@ namespace _01.Scripts.Sound
             _voiceSource.volume = GameManager.Instance.GetSfxAudio();
         }
 
-        private void StartLevelAudio()
+        // SoundEventType에 정의된 이벤트들을 구독합니다.
+        private void SubscribeToSoundEvents()
         {
-            _musicSource.clip = musicClip;
-            _musicSource.loop = true;
-            _musicSource.Play();
-            PlayLevelStartAudio();
+            EventManager<SoundEventType>.StartListening<string>(SoundEventType.EnemyAttack, OnEnemyAttackSound);
+            EventManager<SoundEventType>.StartListening<string>(SoundEventType.EnemyDeath, OnEnemyDeathSound);
+            EventManager<SoundEventType>.StartListening<string>(SoundEventType.PlayMusic, OnMusicSound);
+            EventManager<SoundEventType>.StartListening<string>(SoundEventType.PlayVoice, OnVoiceSound);
+            EventManager<SoundEventType>.StartListening<string>(SoundEventType.PlayEffect, OnVoiceSound);
+            EventManager<SoundEventType>.StartListening<string>(SoundEventType.ContinueSiren, OnSirenSound);
+            EventManager<SoundEventType>.StartListening(SoundEventType.ClearAllSounds, ClearAllSounds);
         }
 
-        public void PlayBGM()
+        // SoundEventType에 정의된 이벤트들을 구독 해제합니다.
+        private void UnsubscribeFromSoundEvents()
         {
-            _musicSource.clip = musicClip;
-            _musicSource.loop = true;
-            _musicSource.Play();
+            EventManager<SoundEventType>.StopListening<string>(SoundEventType.EnemyAttack, OnEnemyAttackSound);
+            EventManager<SoundEventType>.StopListening<string>(SoundEventType.EnemyDeath, OnEnemyDeathSound);
+            EventManager<SoundEventType>.StopListening<string>(SoundEventType.PlayMusic, OnMusicSound);
+            EventManager<SoundEventType>.StopListening<string>(SoundEventType.PlayVoice, OnVoiceSound);
+            EventManager<SoundEventType>.StopListening<string>(SoundEventType.PlayEffect, OnVoiceSound);
+            EventManager<SoundEventType>.StopListening<string>(SoundEventType.ContinueSiren, OnSirenSound);
+            EventManager<SoundEventType>.StopListening(SoundEventType.ClearAllSounds, ClearAllSounds);
         }
 
-        public void StartBossAudio()
+        // 이벤트 발생 시 전달된 사운드 키에 따라 재생
+        private void OnEnemyAttackSound(string soundKey)
         {
-            _musicSource.clip = bossClip;
-            _musicSource.loop = true;
-            _musicSource.Play();
+            PlaySound(soundKey, AudioChannel.Enemy);
         }
 
-        public void PlayLevelStartAudio()
+        private void OnEnemyDeathSound(string soundKey)
         {
-            _voiceSource.clip = levelStart;
-            _voiceSource.Play();
+            PlaySound(soundKey, AudioChannel.Enemy);
+        }
+        
+        private void OnMusicSound(string soundKey)
+        {
+            PlaySound(soundKey, AudioChannel.Music);
         }
 
-        public void PlayLevelCompleteAudio()
+        private void OnEffectSound(string soundKey)
         {
-            _voiceSource.clip = levelComplete;
-            _voiceSource.Play();
+            PlaySound(soundKey, AudioChannel.Effect);
+        }
+        
+        private void OnVoiceSound(string soundKey)
+        {
+            PlaySound(soundKey, AudioChannel.Voice);
+        }
+        
+        private void OnSirenSound(string soundKey)
+        {
+            PlaySound(soundKey, AudioChannel.Siren);
         }
 
-        public void PlayGameOverAudio()
+        public void PlaySound(string soundKey, AudioChannel channel)
         {
-            _musicSource.clip = gameOverClip;
-            _musicSource.loop = false;
-            _musicSource.Play();
-        }
+            if (!_soundDictionary.ContainsKey(soundKey))
+            {
+                DebugLogger.LogWarning($"Sound key not found: {soundKey}");
+                return;
+            }
 
-        public void PlayDeathAudio()
-        {
-            _playerSource.clip = marcoDeathClip;
-            _playerSource.Play();
-        }
+            AudioClip clip = _soundDictionary[soundKey];
+            if (clip == null)
+            {
+                DebugLogger.LogWarning($"AudioClip is null for key: {soundKey}");
+                return;
+            }
 
-        private bool IsPlayingOtherAudio(AudioClip clip, AudioSource source)
-        {
-            if (source.clip != clip && source.isPlaying) return true;
-            return false;
-        }
+            AudioSource source = GetAudioSource(channel);
+            if (source == null)
+            {
+                DebugLogger.LogWarning($"AudioSource not found for channel: {channel}");
+                return;
+            }
 
-        public void PlayNormalShotAudio()
-        {
-            AudioClip clip = normalShotClip;
-            AudioSource source = _playerSource;
+            // 반복 재생 여부 설정: Music 채널은 반복, 나머지는 단발 재생
+            if (channel == AudioChannel.Music || channel == AudioChannel.Siren)
+                source.loop = true;
+            else
+                source.loop = false;
 
-            //Don't overshadow the other sounds
-            if (IsPlayingOtherAudio(clip, source)) return;
-
-            //Set the clip for music audio, and then tell it to play
             source.clip = clip;
             source.Play();
         }
 
-        public void PlayHeavyMachineShotAudio()
+        private AudioSource GetAudioSource(AudioChannel channel)
         {
-            AudioClip clip = heavyMachineShotClip;
-            AudioSource source = _playerSource;
+            switch (channel)
+            {
+                case AudioChannel.Music:
+                    return _musicSource;
+                case AudioChannel.Effect:
+                    return _effectSource;
+                case AudioChannel.Enemy:
+                    return _enemySource;
+                case AudioChannel.Player:
+                    return _playerSource;
+                case AudioChannel.Voice:
+                    return _voiceSource;
+                case AudioChannel.Siren:
+                    return _sirenSource;
+                default:
+                    return null;
+            }
+        }
+        
+        public void ClearAllSounds()
+        {
+            // 각 AudioSource의 재생을 중지합니다.
+            _musicSource.Stop();
+            _effectSource.Stop();
+            _enemySource.Stop();
+            _playerSource.Stop();
+            _voiceSource.Stop();
 
-            //Don't overshadow the other sounds
-            if (IsPlayingOtherAudio(clip, source)) return;
+            // (원하는 경우) 각 채널의 클립을 null로 설정하여 메모리에서 해제
+            _musicSource.clip = null;
+            _effectSource.clip = null;
+            _enemySource.clip = null;
+            _playerSource.clip = null;
+            _voiceSource.clip = null;
 
-            //Set the clip for music audio, and then tell it to play
-            source.clip = clip;
-            source.Play();
+            DebugLogger.Log("모든 사운드가 중지되고 클리어되었습니다.");
         }
 
-        public void PlayEnemyAttackAudio(AudioClip attackClip)
-        {
-            _enemySource.clip = attackClip;
-            _enemySource.Play();
-        }
-
-        public void PlayEnemyDeathAudio(AudioClip deathClip)
-        {
-            _enemySource.clip = deathClip;
-            _enemySource.Play();
-        }
-
-        public void PlayShotHitAudio()
-        {
-            _playerSource.clip = shotHitClip;
-            _playerSource.Play();
-        }
-
-        public void PlayGrenadeHitAudio()
-        {
-            _playerSource.clip = grenadeHitClip;
-            _playerSource.Play();
-        }
-
-        public void PlayMeleeHitAudio()
-        {
-            _playerSource.clip = meleeHitClip;
-            _playerSource.Play();
-        }
-
-        public void PlayMeleeTakeAudio()
-        {
-            _playerSource.clip = meleeTakeClip;
-            _playerSource.Play();
-        }
-
-        public void PlayInsertCoin()
-        {
-            _effectSource.clip = insertCoin;
-            _effectSource.Play();
-        }
-
-        public void PlayCharSelect()
-        {
-            _musicSource.clip = charSelect;
-            _musicSource.Play();
-        }
-
-        public void PlayPreSelect()
-        {
-            _effectSource.clip = preselect;
-            _effectSource.Play();
-        }
-
-        public void PlaySelectMarco()
-        {
-            _effectSource.clip = marco;
-            _effectSource.Play();
-        }
-
-        public void PlayMenuSelect()
-        {
-            _effectSource.clip = select;
-            _effectSource.Play();
-        }
-
-        public void PlayMenuBGM()
-        {
-            _musicSource.clip = menuSound;
-            _musicSource.loop = true;
-            _musicSource.Play();
-        }
-
-        public void PlayAmmoGrab()
-        {
-            _playerSource.clip = grenadeGrabClip;
-            _playerSource.Play();
-        }
-
-        public void PlayHeavyMachineGunVoice()
-        {
-            _voiceSource.clip = heavyMachineGunGrab;
-            _voiceSource.Play();
-        }
-
-        public void PlayOkayVoice()
-        {
-            _voiceSource.clip = okayClip;
-            _voiceSource.Play();
-        }
-
-        public void PlayMedKitGrab()
-        {
-            _playerSource.clip = collectibleGrabClip;
-            _playerSource.Play();
-        }
-
-        public void PlayMetalSlugDestroy1()
-        {
-            _effectSource.clip = metalSlugDestroy1;
-            _effectSource.Play();
-        }
-
-        public void PlayMetalSlugDestroy2()
-        {
-            _effectSource.clip = metalSlugDestroy2;
-            _effectSource.Play();
-        }
-
-        public void PlayMetalSlugDestroy3()
-        {
-            _effectSource.clip = metalSlugDestroy3;
-            _effectSource.Play();
-        }
-
-        public void PlayContinueSiren()
-        {
-            _effectSource.clip = continueSiren;
-            _effectSource.Play();
-        }
-
-        public void ClearEffectSource()
-        {
-            _effectSource = null;
-        }
+        // 기존의 특정 재생 메서드들을 통합 메서드 호출로 대체할 수 있음
+        public void PlayBGM() => PlaySound("musicClip", AudioChannel.Music);
+        public void StartBossAudio() => PlaySound("bossClip", AudioChannel.Music);
+        public void PlayGameOverAudio() => PlaySound("gameOverClip", AudioChannel.Music);
+        public void PlayDeathAudio() => PlaySound("marcoDeathClip", AudioChannel.Player);
     }
 }
