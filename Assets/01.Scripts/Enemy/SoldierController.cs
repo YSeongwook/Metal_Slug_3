@@ -226,7 +226,7 @@ public class SoldierController : MonoBehaviour
     private void OnDead()
     {
         // 적 사망 시 직접 SoundManager 호출 대신 이벤트 발생
-        EventManager<SoundEventType>.TriggerEvent(SoundEventType.EnemyDeath, "soldier");
+        EventManager<SoundEventType>.TriggerEvent(SoundEventType.EnemyDeath, "soldierDeath");
         StartCoroutine(Die());
     }
 

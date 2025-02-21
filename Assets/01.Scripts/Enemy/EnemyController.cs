@@ -276,7 +276,7 @@ public class EnemyController : MonoBehaviour
 
     private void PlayDeathAudio()
     {
-        if (deathClip) EventManager<SoundEventType>.TriggerEvent(SoundEventType.EnemyDeath, "enemyDeath");
+        if (deathClip) EventManager<SoundEventType>.TriggerEvent(SoundEventType.EnemyDeath, "crabDeath");
     }
 
     private void OnCollisionEnter2D(Collision2D col)

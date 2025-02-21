@@ -70,6 +70,15 @@ MonoBehaviour:
   menuSound: {fileID: 8300000, guid: ed9ebcf8b8161c5468dcb2d690107b0e, type: 3}
   preselect: {fileID: 8300000, guid: c25b080bf029cc44183c425417455dae, type: 3}
   select: {fileID: 8300000, guid: 587f56e4b924e16408c0ede33ab5ed2a, type: 3}
+  crabDeathClip: {fileID: 8300000, guid: 7472b6a26fc9bac448a62bb61cc2fd21, type: 3}
+  soldierDeathClips:
+  - {fileID: 8300000, guid: 8942dfc61419ec845bd1d1f1bdb8a3fd, type: 3}
+  - {fileID: 8300000, guid: 9a9e5c40a24d80842a1b88f694cc85da, type: 3}
+  - {fileID: 8300000, guid: 4330657d52ecaf045986ec4485b35919, type: 3}
+  - {fileID: 8300000, guid: da681aa2646340b4492d41229ff7eb0d, type: 3}
+  - {fileID: 8300000, guid: 03b9619608681884dad4241046d69714, type: 3}
+  - {fileID: 8300000, guid: b6564d50d3ce2d64e97634d7ee69e721, type: 3}
+  - {fileID: 8300000, guid: 6918d7b9556684e41b48bfa2c58d09e6, type: 3}
   musicGroup: {fileID: 243248386772865564, guid: e890f615dbd1d714eb257944c4ba3fe6, type: 2}
   effectGroup: {fileID: 243798907181180866, guid: e890f615dbd1d714eb257944c4ba3fe6, type: 2}
   enemyGroup: {fileID: 243000552685421218, guid: e890f615dbd1d714eb257944c4ba3fe6, type: 2}
