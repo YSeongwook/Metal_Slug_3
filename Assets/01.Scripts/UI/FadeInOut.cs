@@ -7,11 +7,6 @@ public class FadeInOut : MonoBehaviour
     public CanvasGroup canvasGroup;
     public float fadeDuration = 3f; // 페이드 인/아웃에 걸리는 시간 설정
 
-    void Awake()
-    {
-        // canvasGroup.gameObject.SetActive(false);
-    }
-
     public void FadeIn() //페이드 인 사용
     {
         StartCoroutine(Fade(true));

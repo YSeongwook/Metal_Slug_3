@@ -1,4 +1,3 @@
-using _01.Scripts.Sound;
 using _01.Scripts.Utils;
 using UnityEngine;
 
@@ -14,21 +13,23 @@ public class MenuManager : MonoBehaviour
     public GameObject p1;
     public FadeInOut fadeInOut;
 
-    private Animator[] m3Animators;
+    private Animator[] _m3Animators;
+    private bool _isTitleActivated = true;
+    
+    // 애니메이터 파라미터 캐싱
+    private static readonly int Open = Animator.StringToHash("Open");
 
-    private bool isTitleActivated = true;
-
-    void Awake()
+    private void Awake()
     {
         fadeInOut.FadeIn();
-        m3Animators = m3.GetComponentsInChildren<Animator>();
+        _m3Animators = m3.GetComponentsInChildren<Animator>();
     }
 
-    void Update()
+    private void Update()
     {
-        if(isTitleActivated && Input.anyKeyDown)
+        if(_isTitleActivated && Input.anyKeyDown)
         {
-            isTitleActivated = false; // 한 번만 실행되도록 플래그 설정
+            _isTitleActivated = false; // 한 번만 실행되도록 플래그 설정
             EventManager<SoundEventType>.TriggerEvent(SoundEventType.PlayEffect, "insertCoin");
 
             // 페이드 아웃 실행 후 title을 비활성화
@@ -39,26 +40,26 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    void SetActiveSoldierSelect()
+    private void SetActiveSoldierSelect()
     {
         title.SetActive(false);
         // title이 비활성화된 후에 페이드인 실행
         fadeInOut.FadeIn();
         soldierSelect.SetActive(true);
-        Invoke("PlayCharSelectSound", 1f);
-        Invoke("OpenM3", 1f);
+        Invoke(nameof(PlayCharSelectSound), 1f);
+        Invoke(nameof(OpenM3), 1f);
     }
 
-    void PlayCharSelectSound()
+    private void PlayCharSelectSound()
     {
         EventManager<SoundEventType>.TriggerEvent(SoundEventType.PlayMusic, "charSelect");
     }
 
-    void OpenM3()
+    private void OpenM3()
     {
-        foreach (Animator animator in m3Animators)
+        foreach (var animator in _m3Animators)
         {
-            animator.SetBool("Open", true);
+            animator.SetBool(Open, true);
         }
     }
 }
