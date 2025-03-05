@@ -1,21 +1,20 @@
 using System.Collections;
-using _01.Scripts.Sound;
 using _01.Scripts.Utils;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
     [Header("Enemy information")]
-    GameObject followPlayer;
     public float speed = 1f;
-    public float attackDamage = 10f;
     public bool isMovable = true;
     public bool canMelee = true;
     public AudioClip deathClip;
     public AudioClip meleeAttackClip;
     public AudioClip rangeAttackClip;
-    private HealthManager healthManager;
     public GameObject projSpawner;
+    
+    private GameObject _followPlayer;
+    private HealthManager _healthManager;
 
     [Space(10)]
     public ProjectileProperties projectile;
@@ -28,81 +27,52 @@ public class EnemyController : MonoBehaviour
     public float activationDistance = 1.8f;
     public float attackDistance = 1f;         //Far attack
     public float meleeDistance = 1f;          //Near attack
-    public const float CHANGE_SIGN = -1;
-    private Rigidbody2D rb;
-    private Animator animator;
+    public const float ChangeSign = -1;
     public bool facingRight = false;
+    
+    private Rigidbody2D _rb;
+    private Animator _animator;
 
     //Enemy gravity
     public bool collidingDown = false;
-    Vector2 velocity = Vector2.zero;
 
     [Header("Time shoot")]
-    private float shotTime = 0.0f;
     public float fireDelta = 0.5f;
-    private float nextFire = 0.8f;  // 공격 쿨타임
     public float rangedDelta = 2f;
-
-    private bool canFall = false;
+    
+    private float _shotTime = 0.0f;
+    private float _nextFire = 0.8f;  // 공격 쿨타임
+    private bool _canFall = false;
 
     // 충돌 시 플레이어를 넉백할 힘의 크기
     public float knockbackForce = 5f;
+    
+    // 애니메이터 파라미터 캐싱
+    private static readonly int IsFalling = Animator.StringToHash("isFalling");
+    private static readonly int IsWalking = Animator.StringToHash("isWalking");
+    private static readonly int IsAttacking = Animator.StringToHash("isAttacking");
+    private static readonly int IsAttacking2 = Animator.StringToHash("isAttacking2");
+    private static readonly int IsHitten = Animator.StringToHash("isHitten");
+    private static readonly int IsDying = Animator.StringToHash("isDying");
 
     private void Start()
     {
         Initialize();
-        registerHealth();
-        checkCanFall();
+        RegisterHealth();
+        CheckCanFall();
     }
 
-    private void Initialize()
+    public void FixedUpdate()
     {
-        followPlayer = GameManager.Instance.GetPlayer();
-        animator = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
-    }
-
-    private void registerHealth()
-    {
-        healthManager = GetComponent<HealthManager>();
-        healthManager.onDead += OnDead;
-    }
-
-    private void checkCanFall()
-    {
-        foreach (var parameter in animator.parameters)
-        {
-            if (parameter.name == "isFalling")
-            {
-                canFall = true;
-                break;
-            }
-        }
-    }
-
-    public void setFollow(GameObject follow)
-    {
-        followPlayer = follow;
-    }
-
-    private void Update()
-    {
-        if (GameManager.Instance.IsGameOver()) return;
-    }
-
-    void FixedUpdate()
-    {
-        if (GameManager.Instance.IsGameOver()) return;
-
-        if (healthManager.IsAlive())
+        if (_healthManager.IsAlive())
         {
             FlipShoot();
-            if (canFall) animator.SetBool("isFalling", !collidingDown);
+            if (_canFall) _animator.SetBool(IsFalling, !collidingDown);
 
             float playerDistance = GetPlayerDistance();
 
             // 플레이어가 살아있다면 추적 및 공격
-            if(followPlayer.GetComponent<HealthManager>().IsAlive() && !GameManager.Instance.IsGameOver())
+            if(_followPlayer.GetComponent<HealthManager>().IsAlive())
             {
                 if (playerDistance < activationDistance && collidingDown)
                 {
@@ -122,29 +92,53 @@ public class EnemyController : MonoBehaviour
             } 
             else
             {
-                animator.SetBool("isWalking", false);
-                animator.SetBool("isAttacking", false);
-                animator.SetBool("isAttacking2", false);
+                _animator.SetBool(IsWalking, false);
+                _animator.SetBool(IsAttacking, false);
+                _animator.SetBool(IsAttacking2, false);
             }
 
             FlipEnemy(playerDistance);
         } 
         else
         {
-            rb.velocity = Vector2.zero;
+            _rb.velocity = Vector2.zero;
         }
 
         if(GameManager.Instance.IsGameOver())
         {
-            animator.SetBool("isWalking", false);
-            animator.SetBool("isAttacking", false);
-            animator.SetBool("isAttacking2", false);
+            _animator.SetBool(IsWalking, false);
+            _animator.SetBool(IsAttacking, false);
+            _animator.SetBool(IsAttacking2, false);
+        }
+    }
+    
+    private void Initialize()
+    {
+        _followPlayer = GameManager.Instance.GetPlayer();
+        _animator = GetComponent<Animator>();
+        _rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void RegisterHealth()
+    {
+        _healthManager = GetComponent<HealthManager>();
+        _healthManager.onDead += OnDead;
+    }
+
+    private void CheckCanFall()
+    {
+        foreach (var parameter in _animator.parameters)
+        {
+            if (parameter.name != "isFalling") continue;
+            
+            _canFall = true;
+            break;
         }
     }
 
     private float GetPlayerDistance()
     {
-        return transform.position.x - followPlayer.transform.position.x;
+        return transform.position.x - _followPlayer.transform.position.x;
     }
 
     private void FlipEnemy(float playerDistance)
@@ -152,74 +146,73 @@ public class EnemyController : MonoBehaviour
         if ((playerDistance < 0 && !facingRight) || (playerDistance > 0 && facingRight)) Flip();
     }
 
-    void MeleeAttack()
+    private void MeleeAttack()
     {
-        animator.SetBool("isAttacking", true);
-        animator.SetBool("isAttacking2", false);
+        _animator.SetBool(IsAttacking, true);
+        _animator.SetBool(IsAttacking2, false);
 
-        rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+        _rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
 
-        shotTime += Time.deltaTime;
+        _shotTime += Time.deltaTime;
 
-        if (shotTime > nextFire)
+        if (_shotTime > _nextFire)
         {
-            nextFire = shotTime + fireDelta;
+            _nextFire = _shotTime + fireDelta;
 
-            if (Mathf.Abs(GetComponent<SpriteRenderer>().bounds.SqrDistance(followPlayer.transform.position)) <= meleeDistance)
+            if (Mathf.Abs(GetComponent<SpriteRenderer>().bounds.SqrDistance(_followPlayer.transform.position)) <= meleeDistance)
             {
-                followPlayer.GetComponent<HealthManager>().OnHitByProjectile(projectile);
+                _followPlayer.GetComponent<HealthManager>().OnHitByProjectile(projectile);
 
                 if (meleeAttackClip) EventManager<SoundEventType>.TriggerEvent(SoundEventType.EnemyAttack, "enemyMeleeAttack");
             }
 
-            nextFire -= shotTime;
-            shotTime = 0.0f;
+            _nextFire -= _shotTime;
+            _shotTime = 0.0f;
         }
     }
 
-    void RangedAttack()
+    private void RangedAttack()
     {
-        animator.SetBool("isAttacking_2", true);
-        animator.SetBool("isAttacking", false);
+        _animator.SetBool(IsAttacking2, true);
+        _animator.SetBool(IsAttacking, false);
 
-        if (rb && !canMelee)
-            rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+        if (_rb && !canMelee)
+            _rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
         else
-            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+            _rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
-        shotTime += Time.deltaTime;
+        _shotTime += Time.deltaTime;
 
-        if (shotTime > nextFire)
+        if (_shotTime > _nextFire)
         {
-            nextFire = shotTime + rangedDelta;
+            _nextFire = _shotTime + rangedDelta;
 
             StartCoroutine(WaitSecondaryAttack());
 
-            nextFire -= shotTime;
-            shotTime = 0.0f;
+            _nextFire -= _shotTime;
+            _shotTime = 0.0f;
         }
     }
 
-    void MoveToPlayer(float playerDistance)
+    private void MoveToPlayer(float playerDistance)
     {
-        if (rb && isMovable)
+        if (_rb && isMovable)
         {
-            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+            _rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             if (collidingDown)
             {
-                // rb.MovePosition(rb.position + new Vector2(CHANGE_SIGN * Mathf.Sign(playerDistance) * speed, rb.position.y) * Time.deltaTime);
-                Vector2 movementDirection = new Vector2(CHANGE_SIGN * Mathf.Sign(playerDistance), 0f);
+                Vector2 movementDirection = new Vector2(ChangeSign * Mathf.Sign(playerDistance), 0f);
 
-                rb.velocity = movementDirection * speed * 100 * Time.deltaTime;
+                _rb.velocity = movementDirection * (speed * 100 * Time.deltaTime);
             }
 
-            animator.SetBool("isWalking", true);
-            animator.SetBool("isAttacking", false);
-            animator.SetBool("isAttacking2", false);
+            _animator.SetBool(IsWalking, true);
+            _animator.SetBool(IsAttacking, false);
+            _animator.SetBool(IsAttacking2, false);
         }
     }
 
-    void Flip()
+    private void Flip()
     {
         Vector3 scale = transform.localScale;
         scale.x *= -1;
@@ -228,7 +221,7 @@ public class EnemyController : MonoBehaviour
         facingRight = !facingRight;
     }
 
-    void FlipShoot()
+    private void FlipShoot()
     {
         if (projSpawner == null) return;
 
@@ -246,7 +239,7 @@ public class EnemyController : MonoBehaviour
 
     public void OnHit()
     {
-        animator.SetTrigger("isHitten");
+        _animator.SetTrigger(IsHitten);
     }
 
     private void OnDead()
@@ -257,10 +250,10 @@ public class EnemyController : MonoBehaviour
     private IEnumerator Die()
     {
         PlayDeathAudio();
-        animator.SetTrigger("isDying");
-        rb.velocity = Vector2.zero;
+        _animator.SetTrigger(IsDying);
+        _rb.velocity = Vector2.zero;
 
-        if (rb) rb.isKinematic = true;
+        if (_rb) _rb.isKinematic = true;
         if (GetComponent<BoxCollider2D>())
         {
             GetComponent<BoxCollider2D>().enabled = false;
@@ -281,7 +274,7 @@ public class EnemyController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        rb.velocity = Vector2.zero;
+        _rb.velocity = Vector2.zero;
 
         if (col.collider.CompareTag("Walkable") || col.collider.CompareTag("Marco Boat") || col.collider.CompareTag("Water Dead") || col.collider.CompareTag("World"))
         {
@@ -307,9 +300,8 @@ public class EnemyController : MonoBehaviour
 
         else if (col.collider.CompareTag("Water Dead"))
         {
-            healthManager.onDead();
+            _healthManager.onDead();
         }
-
     }
 
     private void OnCollisionExit2D(Collision2D col)

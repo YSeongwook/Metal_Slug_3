@@ -43,7 +43,7 @@ public class ProjectileUtils
     // 직선으로 이동하는 투사체의 위치를 업데이트
     public static void UpdatePositionStraightLine(Transform proj, ProjectileProperties projProp)
     {
-        proj.Translate(Vector3.right * projProp.speedInUnityUnitPerSec * Time.deltaTime * 4);
+        proj.Translate(Vector3.right * (projProp.speedInUnityUnitPerSec * Time.deltaTime * 4));
     }
 
     // 폭발 애니메이션과 사운드를 재생

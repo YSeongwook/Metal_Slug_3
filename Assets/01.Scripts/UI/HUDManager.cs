@@ -1,4 +1,3 @@
-using _01.Scripts.Sound;
 using _01.Scripts.Utils;
 using UnityEngine;
 using UnityEngine.UI;
