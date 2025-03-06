@@ -77,7 +77,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 114401969
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: -1120877330, guid: 09607efae263704429001653448b7541, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -170,9 +170,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc32c8e7f0c44b546bc04b9051a531a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 3
+  maxHp: 3
+  currentHp: 0
   lifeCount: 1
-  interestedInDamagesCount: 0
 --- !u!114 &1981758194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,7 +186,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.4
-  attackDamage: 10
   isMovable: 1
   canMelee: 1
   deathClip: {fileID: 8300000, guid: 7472b6a26fc9bac448a62bb61cc2fd21, type: 3}
@@ -281,7 +280,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 755307227
-  m_SortingLayer: 8
+  m_SortingLayer: 9
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
