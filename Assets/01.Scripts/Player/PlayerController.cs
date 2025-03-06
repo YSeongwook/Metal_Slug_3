@@ -53,7 +53,6 @@ namespace _01.Scripts.Player
         protected override void Awake()
         {
             base.Awake();
-
             EventManager<GameEvents>.StartListening(GameEvents.GameReset, GameReset);
         }
 
@@ -97,7 +96,6 @@ namespace _01.Scripts.Player
                 bottomAnimator.SetBool(DownPressed, true);
                 body = BodyPosture.Crouch;
                 IsCrouched = true;
-                // AdaptColliderCrouch(); // 앉은 상태에 맞게 콜라이더를 조정하는 메서드 (구현 필요)
             }
 
             CheckLookingDirection();
@@ -155,7 +153,7 @@ namespace _01.Scripts.Player
         private void OnMove(InputValue inputValue)
         {
             // 낙하산이 해제되면 움직임 가능
-            if (!parachute.gameObject.activeSelf || !_parachuteActive)
+            if (!_parachuteActive)
             {
                 _inputMovement = inputValue.Get<Vector2>(); // 입력 값을 가져옴
                 IsRunning = Mathf.Abs(_inputMovement.x) > 0f; // 움직이는지 확인
@@ -193,7 +191,7 @@ namespace _01.Scripts.Player
 
         private void OnJump(InputValue inputValue)
         {
-            if (!parachute.gameObject.activeSelf || !_parachuteActive)
+            if (!_parachuteActive)
             {
                 // 점프 허용 상태에서만 점프
                 if (_jumpCount < maxJumps && inputValue.isPressed)
@@ -259,6 +257,7 @@ namespace _01.Scripts.Player
                 }
 
                 _attackManager.PrimaryAttack(); // 실제 공격 실행
+                DisableParachute();
             }
         }
 
@@ -277,29 +276,22 @@ namespace _01.Scripts.Player
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.gameObject.layer == (int)Layers.World || collision.gameObject.layer == (int)Layers.Enemy ||
+            if (collision.gameObject.layer == (int)Layers.World ||
+                collision.gameObject.layer == (int)Layers.Enemy ||
                 collision.gameObject.CompareTag("Walkable"))
             {
-                // 낙하산이 활성화 되어 있다면 낙하산 해제
-                if (parachute.gameObject.activeSelf)
-                {
-                    _parachuteActive = false;
-                    parachute.GroundedParachute();
-                }
-
+                DisableParachute();
                 NotifyObservers(SlugEvents.HitGround);
                 body = BodyPosture.Stand;
-
                 InTheAir = false;
-
+                _waterHitHandled = false;
+                
                 if (LookingDirection == Vector2.down)
                 {
                     body = BodyPosture.Crouch;
 
                     CheckLeftRightDirection();
                 }
-
-                _waterHitHandled = false;
             }
 
             // 바닥에 닿으면 점프 회수 초기화
@@ -313,6 +305,14 @@ namespace _01.Scripts.Player
                 gameObject.GetComponent<HealthManager>().OnHitByProjectile(projectile);
                 _waterHitHandled = true;
             }
+        }
+        
+        private void DisableParachute()
+        {
+            if (!_parachuteActive) return;
+            _parachuteActive = false;
+            parachute.GroundedParachute();
+            _playerRigidbody.gravityScale = 2.0f;
         }
 
         private void OnCollisionExit2D(Collision2D collision)

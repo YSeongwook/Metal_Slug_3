@@ -9515,10 +9515,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc32c8e7f0c44b546bc04b9051a531a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 20
-  currentHP: 0
+  maxHp: 1
+  currentHp: 0
   lifeCount: 2
-  interestedInDamagesCount: 0
 --- !u!1 &1236051719
 GameObject:
   m_ObjectHideFlags: 0
@@ -15182,7 +15181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2936743216359932730, guid: 9e89b77d333074846b80bf0c489ff7bd, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e89b77d333074846b80bf0c489ff7bd, type: 3}
