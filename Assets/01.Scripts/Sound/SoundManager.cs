@@ -1,7 +1,9 @@
+using System;
 using System.Collections.Generic;
 using _01.Scripts.Utils;
 using UnityEngine;
 using UnityEngine.Audio;
+using Random = UnityEngine.Random;
 
 namespace _01.Scripts.Sound
 {
@@ -83,6 +85,10 @@ namespace _01.Scripts.Sound
             InitializeAudioSources();
             InitializeSoundDictionaries();
             RefreshAudioVolume();
+        }
+
+        private void OnEnable()
+        {
             SubscribeToSoundEvents();
         }
 
