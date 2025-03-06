@@ -183,7 +183,7 @@ public class AnimationManager : MonoBehaviour, IObserver
         EndOfDeathCB = cb;
         topAnimator.SetTrigger(trigger);
     }
-
+    
     public void EndOfDeathAnim()
     {
         if (EndOfDeathCB != null)

@@ -24,7 +24,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Crouch And Look Down",
+                    "name": "CrouchAndLookDown",
                     "type": "Button",
                     "id": "c73211ec-b2dd-40ba-86ce-b4ab0006459d",
                     "expectedControlType": "Button",
@@ -112,7 +112,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Crouch And Look Down",
+                    "action": "CrouchAndLookDown",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

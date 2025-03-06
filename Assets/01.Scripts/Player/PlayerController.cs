@@ -21,7 +21,7 @@ namespace _01.Scripts.Player
         [Space(10)] public BodyPosture body;
         private TimeUtils _timeUtils;
 
-        [SerializeField] float moveSpeed = 3.5f; // 이동 속도           
+        public float moveSpeed = 3.5f; // 이동 속도           
         [SerializeField] float jumpForce = 70f; // 점프 힘
         [SerializeField] int maxJumps = 1; // 최대 점프 횟수
 
@@ -31,10 +31,11 @@ namespace _01.Scripts.Player
         public float fixedZ = 0f; // 고정할 z축 값
         private float _rotationY = 0; // transform.rotation.eulerAngles.y;
 
-        public bool IsRunning { get; set; } // 움직이고 있는지 확인
-        public bool IsCrouched { get; set; } // 웅크리고 있는지 확인
-        public bool IsLookUp { get; set; } // 위를 보고 있는지 확인
-        public bool InTheAir { get; set; } // 공중에 떠 있는지 확인
+        public bool IsRunning { get; set; } // 움직이고 있는지 여부
+        public bool IsCrouched { get; set; } // 웅크리고 있는지 여부
+        public bool IsLookUp { get; set; } // 위를 보고 있는지 여부
+        public bool InTheAir { get; set; } // 공중에 떠 있는지 여부
+        public bool IsAttacking { get; set; } // 현재 공격 중인지 여부
         public Vector2 LookingDirection { get; set; }
 
         private Rigidbody2D _playerRigidbody; // 사용할 리지드바디 컴포넌트
@@ -156,39 +157,36 @@ namespace _01.Scripts.Player
             // 낙하산이 해제되면 움직임 가능
             if (!parachute.gameObject.activeSelf || !_parachuteActive)
             {
-                _inputMovement = inputValue.Get<Vector2>(); // 움직임 입력을 받음
+                _inputMovement = inputValue.Get<Vector2>(); // 입력 값을 가져옴
+                IsRunning = Mathf.Abs(_inputMovement.x) > 0f; // 움직이는지 확인
 
-                IsRunning = Mathf.Abs(_inputMovement.x) > 0f; // 입력된 방향을 기준으로 캐릭터가 움직이는지 여부를 판단
+                // 웅크린 상태에서는 다른 속도를 적용
+                float currentSpeed = IsCrouched ? moveSpeed * 0.5f : moveSpeed;
 
-                // transform.rotation을 변경하여 좌우 반전
+                // 이동 벡터 설정
+                Vector2 moveVelocity = _inputMovement * currentSpeed;
+                _playerRigidbody.velocity = new Vector2(moveVelocity.x, _playerRigidbody.velocity.y);
+
+                // 방향 전환 처리
                 if (_inputMovement.x > 0)
                 {
                     transform.rotation = Quaternion.Euler(0, 0, 0);
-                    // 왼쪽으로 움직이면 transform.position.z값이 변경됨
-                    transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
                     LookingDirection = Vector2.right;
                 }
                 else if (_inputMovement.x < 0)
                 {
                     transform.rotation = Quaternion.Euler(0, -180, 0);
-                    // 좌우 반전한 후 이동하면 반대로 이동되기에 이동값도 반전
-                    transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
                     LookingDirection = Vector2.left;
                 }
 
-                // 움직임이 감지되지 않으면 Animator의 isRunning을 false로 설정
-                if (!IsRunning) _animManager.StopRunningAnim();
-
-                if (GetKeyUp(KeyCode.UpArrow))
+                // 애니메이션 처리
+                if (IsRunning)
                 {
-                    if (_inputMovement.x > 0) LookingDirection = Vector2.right;
-                    else LookingDirection = Vector2.left;
+                    _animManager.StartRunningAnim(true);
                 }
-
-                if (GetKeyUp(KeyCode.DownArrow))
+                else
                 {
-                    if (_inputMovement.x > 0) LookingDirection = Vector2.right;
-                    else LookingDirection = Vector2.left;
+                    _animManager.StopRunningAnim();
                 }
             }
         }
@@ -227,14 +225,41 @@ namespace _01.Scripts.Player
                 }
             }
         }
+        
+        private void OnCrouchAndLookDown(InputValue inputValue)
+        {
+            if (inputValue.isPressed) // 키가 눌렸다면
+            {
+                if (!IsCrouched)
+                {
+                    _animManager.StartCrouchAnim();
+                    body = BodyPosture.Crouch;
+                    IsCrouched = true;
+                    moveSpeed = 1.75f; // 웅크린 상태의 이동속도 (기본 이동속도의 50%)
+                }
+            }
+            else // 키를 떼었을 때
+            {
+                _animManager.StartStandingUpAnim();
+                body = BodyPosture.Stand;
+                IsCrouched = false;
+                moveSpeed = 3.5f; // 원래 속도로 복구
+            }
+        }
 
         private void OnAttack(InputValue inputValue)
         {
-            if (inputValue.isPressed) _attackManager.PrimaryAttack();
+            if (inputValue.isPressed)
+            {
+                if (IsCrouched && !InTheAir) // 웅크린 상태에서 공격하면 이동 정지
+                {
+                    _playerRigidbody.velocity = Vector2.zero; // 즉시 이동 멈춤
+                    moveSpeed = 0f;
+                    IsAttacking = true;
+                }
 
-            _playerRigidbody.gravityScale = 2f;
-
-            _parachuteActive = false;
+                _attackManager.PrimaryAttack(); // 실제 공격 실행
+            }
         }
 
         private void OnGrenade(InputValue inputValue)
