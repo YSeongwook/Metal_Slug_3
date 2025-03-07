@@ -5,16 +5,29 @@ using Utils;
 
 public class AnimationManager : MonoBehaviour, IObserver
 {
+    // 상단, 하단, 혈흔 애니메이터 컴포넌트
     public Animator topAnimator;
     public Animator bottomAnimator;
     public Animator blood;
+    
+    // 상단, 하단 스프라이트 렌더러
+    private SpriteRenderer _topSpriteRenderer;
+    private SpriteRenderer _bottomSpriteRenderer;
+    
+    // 사망 및 기본 애니메이션 컨트롤러
     public RuntimeAnimatorController deathAnimController;
     public RuntimeAnimatorController defaultAnimController;
+    
+    // 사망 시 물 관련 애니메이션 오브젝트들
     public GameObject deathWaterWave;
     public GameObject deathWaterMarco;
 
+    // 수류탄 애니메이션 콜백 델리게이트
     public RetVoidTakeVoid grenadeCB;
-    private RetVoidTakeVoid EndOfDeathCB;
+    // 사망 애니메이션 종료 후 호출할 콜백 델리게이트
+    private RetVoidTakeVoid _endOfDeathCb;
+    
+    // 폭발성 사망 애니메이션 실행 여부 플래그
     private bool _inExplosiveDeathAnim;
     
     // 애니메이터 파라미터 캐싱
@@ -31,9 +44,16 @@ public class AnimationManager : MonoBehaviour, IObserver
     private static readonly int Grenade = Animator.StringToHash("grenade");
     private static readonly int MissionComplete = Animator.StringToHash("mission_complete");
 
+    public void Start()
+    {
+        _topSpriteRenderer = topAnimator.gameObject.GetComponent<SpriteRenderer>();
+        _bottomSpriteRenderer = bottomAnimator.gameObject.GetComponent<SpriteRenderer>();
+    }
+
     public void StartRunningAnim(bool isRunning)
     {
-        if (topAnimator.runtimeAnimatorController.name == "MarcoDeath") return;
+        if (topAnimator.runtimeAnimatorController.name == "MarcoDeath")
+            return;
         
         // 웅크리고 있지 않다면
         if (PlayerController.Instance.body != BodyPosture.Crouch)
@@ -51,11 +71,11 @@ public class AnimationManager : MonoBehaviour, IObserver
 
     public void StopRunningAnim()
     {
-        if (topAnimator.runtimeAnimatorController.name != "MarcoDeath")
-        {
-            topAnimator.SetBool(IsRunning, false);
-            bottomAnimator.SetBool(IsRunning, false);
-        }
+        if (topAnimator.runtimeAnimatorController.name == "MarcoDeath")
+            return;
+        
+        topAnimator.SetBool(IsRunning, false);
+        bottomAnimator.SetBool(IsRunning, false);
     }
 
     public void StartLowVelJumpAnim()
@@ -114,9 +134,7 @@ public class AnimationManager : MonoBehaviour, IObserver
     public void Observe(SlugEvents ev)
     {
         if (!topAnimator.isInitialized)
-        {
             return;
-        }
 
         if (ev == SlugEvents.Fall && !_inExplosiveDeathAnim)
         {
@@ -168,9 +186,8 @@ public class AnimationManager : MonoBehaviour, IObserver
         }
         else if(proj.type == ProjectileType.Water)
         {
-            // Todo: 컴포넌트 캐싱하기
-            topAnimator.gameObject.GetComponent<SpriteRenderer>().enabled = false;
-            bottomAnimator.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            _topSpriteRenderer.enabled = false;
+            _bottomSpriteRenderer.enabled = false;
 
             deathWaterWave.SetActive(true);
             Invoke(nameof(ActiveDeathWaterMarco), 0.4f);
@@ -180,16 +197,14 @@ public class AnimationManager : MonoBehaviour, IObserver
         {
             trigger = "slash";
         }
-        EndOfDeathCB = cb;
+        _endOfDeathCb = cb;
         topAnimator.SetTrigger(trigger);
     }
     
     public void EndOfDeathAnim()
     {
-        if (EndOfDeathCB != null)
-        {
-            EndOfDeathCB();
-        }
+        if (_endOfDeathCb != null)
+            _endOfDeathCb();
     }
 
     public void MissionCompleteAnim()
